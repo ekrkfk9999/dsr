@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="image/icon.png" type="image/x-icon">
+  <title>DSR</title>
+  <link rel="stylesheet" href="detailstyles.css">
+  <script src="character-detail.js" defer></script>
+</head>
+
+<body>
+  <!-- 네비게이션 바 추가 -->
+  <nav class="navbar">
+    <ul class="nav-menu">
+      <li><a href="index.html">홈</a></li>
+      <li><a href="digimon.html">도감</a></li>
+      <li><a href="evolution.html">진화트리</a></li>
+      <li><a href="map.html">맵</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <!-- 이미지로 타이틀 교체 -->
+    <div class="logo-container">
+      <img src="image/logo.webp" alt="디지몬 슈퍼럼블 도감" class="title-logo">
+    </div>  
+    
+  <div class="filters">
+    <!-- 캐릭터 이미지 및 기본 정보 -->
+    <div id="character-info" class="details" style="position: relative";>
+      <h1 id="character-name">캐릭터 이름</h1>
+      <img id="character-img" src="" alt="캐릭터 이미지">
+      <span id="evoution-name">진화 단계</span>
+      <img id="evolution-img" src="" alt="진화등급 이미지" style="width: 50px; height: 50px;">
+      <span id="type-name">타입</span>
+      <img id="type-img" src="" alt="타입 이미지" style="width: 35px; height: 35px;">
+      <span id="field-name">필드</span>
+      <img id="field-img1" src="" alt="필드 이미지 1" style="width: 35px; height: 35px;">
+      <img id="field-img2" src="" alt="필드 이미지 2" style="width: 35px; height: 35px;">
+      <img id="field-img3" src="" alt="필드 이미지 3" style="width: 35px; height: 35px;">
+
+      <!-- 스탯 정보 테이블 -->
+      <table id="stat-table" class="stat-table">
+        <thead>
+          <tr>
+            <th>레벨</th>
+            <th>HP</th>
+            <th>SP</th>
+            <th>힘</th>
+            <th>지능</th>
+            <th>수비</th>
+            <th>저항</th>
+            <th>속도</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="stat-level">0</td>
+            <td id="stat-hp">0</td>
+            <td id="stat-sp">0</td>
+            <td id="stat-power">0</td>
+            <td id="stat-intelligence">0</td>
+            <td id="stat-defense">0</td>
+            <td id="stat-resistance">0</td>
+            <td id="stat-speed">0</td>
+          </tr>
+        </tbody>
+      </table>
+    
+
+    
+
+    <!-- 스킬 정보 테이블 -->
+
+      <h2>* 스킬</h2>
+      <table id="skill-details" class="skill-table">
+        <thead>
+          <tr>
+            <th>스킬 아이콘</th>
+            <th>스킬 이름</th>
+            <th>속성</th>
+            <th>레벨</th>
+            <th>데미지 범위</th>
+            <th>타수</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 동적으로 추가될 스킬 데이터 -->
+        </tbody>
+      </table>
+
+    <details id="tree">
+      <summary >진화 트리</summary>
+  
+    </details> 
+  </div>
+  </div>
+</body>
+</html>

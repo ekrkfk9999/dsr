@@ -1,0 +1,681 @@
+{
+    "시작의 마을": {
+        "backgroundImage": "image/map/시작의마을.webp",
+        "portals": [
+            { "id": "portal1", "tooltip": "용의 눈 호수<br>포탈", "top": 346, "left": 547, "src": "image/map/포탈.webp" },
+            { "id": "portal1", "tooltip": "기어 사바나<br>포탈", "top": 147, "left": 393, "src": "image/map/포탈.webp" },
+            { "id": "portal1", "tooltip": "무한 산<br>포탈", "top": 98, "left": 167, "src": "image/map/포탈.webp" }
+        ],
+        "warps": [
+            { "id": "warp1", "tooltip": "워프 포인트<br>시작의 마을 광장", "top": 432, "left": 255, "src": "image/map/워프포인트.webp" },
+            { "id": "warp1", "tooltip": "워프 포인트<br>시작의 마을 공터", "top": 306.4, "left": 45, "src": "image/map/워프포인트.webp" }
+        ],
+        "shops": [
+            { "id": "shop1", "tooltip": "디지털해저드 토큰 교환<br>오파니몬", "top": 397, "left": 149, "src": "image/map/상점.webp" },
+            { "id": "shop1", "tooltip": "디지몬 먹이 상인<br>요리사 백조몬", "top": 399, "left": 175, "src": "image/map/상점.webp" },
+            { "id": "shop1", "tooltip": "균열 교환 상인<br>텐타몬", "top": 502, "left": 263, "src": "image/map/상점.webp" },
+            { "id": "shop1", "tooltip": "오버플로우 교환 상인<br>피요몬", "top": 499, "left": 268, "src": "image/map/상점.webp" },
+            { "id": "shop1", "tooltip": "RANK토큰 교환 상인<br>쉬라몬", "top": 493, "left": 275, "src": "image/map/상점.webp" },
+            { "id": "shop1", "tooltip": "배틀 아이템 상인<br>제작자 데이터몬", "top": 460, "left": 282, "src": "image/map/상점.webp" },
+            { "id": "shop1", "tooltip": "소모품 상인<br>먹보 머슈몬", "top": 453, "left": 275, "src": "image/map/상점.webp" },
+            { "id": "shop1", "tooltip": "세계수의 힘을 원하는 자<br>쥬레이몬", "top": 413, "left": 290, "src": "image/map/상점.webp" },
+            { "id": "shop1", "tooltip": "상자 조각 교환<br>데뀨보물상자", "top": 412, "left": 258, "src": "image/map/상점.webp" }
+        ],
+        "overflows": [
+        ],
+        "datacube": [
+            { "id": "datacube11", "tooltip": "#11", "top": 480, "left": 365, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube12", "tooltip": "#12", "top": 500, "left": 365, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube13", "tooltip": "#13", "top": 550, "left": 290, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube14", "tooltip": "#14", "top": 535, "left": 210, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube15", "tooltip": "#15", "top": 460, "left": 175, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube16", "tooltip": "#16", "top": 415, "left": 215, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube17", "tooltip": "#17", "top": 395, "left": 250, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube18", "tooltip": "#18", "top": 395, "left": 300, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube19", "tooltip": "#19", "top": 415, "left": 360, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube20", "tooltip": "#20", "top": 245, "left": 295, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube21", "tooltip": "#21", "top": 200, "left": 370, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube22", "tooltip": "#22", "top": 170, "left": 300, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube23", "tooltip": "#23", "top": 75, "left": 285, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube24", "tooltip": "#24", "top": 130, "left": 325, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube25", "tooltip": "#25", "top": 310, "left": 260, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube26", "tooltip": "#26", "top": 155, "left": 225, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube27", "tooltip": "#27", "top": 317, "left": 183, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube28", "tooltip": "#28", "top": 290, "left": 130, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube29", "tooltip": "#29", "top": 235, "left": 25, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube30", "tooltip": "#30", "top": 133, "left": 113, "src": "image/map/데이터큐브.webp" }
+            
+        ]
+    },
+    "용의 눈 호수": {
+        "backgroundImage": "image/map/용의눈호수.webp",
+        "portals": [
+            { "id": "portal1", "tooltip": "시작의 마을<br>포탈", "top": 340, "left": 90, "src": "image/map/포탈.webp" }
+        ],
+        "warps": [
+            { "id": "warp1", "tooltip": "워프 포인트<br>용의 눈 호수 해변가", "top": 476, "left": 328, "src": "image/map/워프포인트.webp" }
+        ],
+        "shops": [
+        ],
+        "overflows": [
+        ],
+        "datacube": [
+            { "id": "datacube1", "tooltip": "#1", "top": 285, "left": 85, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube1", "tooltip": "#2", "top": 290, "left": 370, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube1", "tooltip": "#3", "top": 380, "left": 420, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube1", "tooltip": "#4", "top": 470, "left": 375, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube1", "tooltip": "#5", "top": 240, "left": 385, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube1", "tooltip": "#6", "top": 95, "left": 525, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube1", "tooltip": "#7", "top": 320, "left": 415, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube1", "tooltip": "#8", "top": 440, "left": 280, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube1", "tooltip": "#9", "top": 557, "left": 204, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube1", "tooltip": "#10", "top": 405, "left": 255, "src": "image/map/데이터큐브.webp" }
+        ]
+    },
+    "기어 사바나": {
+        "backgroundImage": "image/map/기어사바나.webp",
+        "portals": [
+            { "id": "portal1", "tooltip": "시작의 마을<br>포탈", "top": 147, "left": 415, "src": "image/map/포탈.webp" },
+            { "id": "portal2", "tooltip": "무한 산<br>포탈", "top": -15, "left": 205, "src": "image/map/포탈.webp" }
+        ],
+        "warps": [
+            { "id": "warp1", "tooltip": "워프 포인트<br>기어 사바나 바위산", "top": 155, "left": 200, "src": "image/map/워프포인트.webp" },
+            { "id": "warp2", "tooltip": "워프 포인트<br>기어 사바나 어니몬 마을", "top": 248, "left": 460, "src": "image/map/워프포인트.webp" },
+            { "id": "warp3", "tooltip": "워프 포인트<br>기어 사바나 공장", "top": 429, "left": 267, "src": "image/map/워프포인트.webp" }
+        ],
+        "shops": [
+            { "id": "shop1", "tooltip": "기어 사바나 상인<br>수집가 어니몬", "top": 250, "left": 473, "src": "image/map/상점.webp" }
+        ],
+        "overflows": [
+            { "id": "overflow1", "tooltip": "오버플로우 던전<br>파닥몬", "top": 252, "left": 505, "src": "image/map/오버플로우.webp" },
+            { "id": "overflow2", "tooltip": "무한 오버플로우 던전<br>운석몬", "top": 183, "left": 300, "src": "image/map/오버플로우.webp" }
+        ],
+        "datacube": [
+            { "id": "datacube31", "tooltip": "#31", "top": 383, "left": 222, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube32", "tooltip": "#32", "top": 535, "left": 230, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube33", "tooltip": "#33", "top": 515, "left": 180, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube34", "tooltip": "#34", "top": 537, "left": 263, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube35", "tooltip": "#35", "top": 567, "left": 277, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube36", "tooltip": "#36", "top": 508, "left": 259, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube37", "tooltip": "#37", "top": 445, "left": 230, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube38", "tooltip": "#38", "top": 383, "left": 183, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube39", "tooltip": "#39", "top": 575, "left": 135, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube40", "tooltip": "#40", "top": 490, "left": 135, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube41", "tooltip": "#41", "top": 470, "left": 85, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube42", "tooltip": "#42", "top": 325, "left": 300, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube43", "tooltip": "#43", "top": 215, "left": 205, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube44", "tooltip": "#44", "top": 220, "left": 290, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube45", "tooltip": "#45", "top": 100, "left": 425, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube46", "tooltip": "#46", "top": 175, "left": 280, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube47", "tooltip": "#47", "top": 265, "left": 370, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube48", "tooltip": "#48", "top": 315, "left": 345, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube49", "tooltip": "#49", "top": 445, "left": 245, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube50", "tooltip": "#50", "top": 65, "left": 160, "src": "image/map/데이터큐브.webp" }
+        ]
+    },
+    "무한 산": {
+        "backgroundImage": "image/map/무한산.webp",
+        "portals": [
+            { "id": "portal1", "tooltip": "시작의 마을<br>포탈", "top": 520, "left": 555, "src": "image/map/포탈.webp" },
+            { "id": "portal2", "tooltip": "기어 사바나<br>포탈", "top": 457, "left": 418, "src": "image/map/포탈.webp" }
+        ],
+        "warps": [
+            { "id": "warp1", "tooltip": "워프 포인트<br>무한 산 숲", "top": 360, "left": 500, "src": "image/map/워프포인트.webp" },
+            { "id": "warp2", "tooltip": "워프 포인트<br>무한 산 중턱", "top": 225, "left": 98, "src": "image/map/워프포인트.webp" },
+            { "id": "warp3", "tooltip": "워프 포인트<br>무한 산 정상", "top": 423, "left": 47, "src": "image/map/워프포인트.webp" },
+            { "id": "warp4", "tooltip": "워프 포인트<br>무한 산 미궁", "top": 243, "left": 334, "src": "image/map/워프포인트.webp" }
+        ],
+        "shops": [
+            { "id": "shop1", "tooltip": "무한 산 상인<br>판매상 워매몬", "top": 213, "left": 343, "src": "image/map/상점.webp" }
+        ],
+        "overflows": [
+            { "id": "overflow1", "tooltip": "오버플로우 던전<br>쉬라몬", "top": 254, "left": 111, "src": "image/map/오버플로우.webp" }
+        ],
+        "datacube": [
+            { "id": "datacube51", "tooltip": "#51", "top": 505, "left": 515, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube52", "tooltip": "#52", "top": 465, "left": 490, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube53", "tooltip": "#53", "top": 395, "left": 493, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube54", "tooltip": "#54", "top": 300, "left": 456, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube55", "tooltip": "#55", "top": 380, "left": 380, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube56", "tooltip": "#56", "top": 435, "left": 325, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube57", "tooltip": "#57", "top": 505, "left": 295, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube58", "tooltip": "#58", "top": 525, "left": 350, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube59", "tooltip": "#59", "top": 335, "left": 285, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube60", "tooltip": "#60", "top": 350, "left": 260, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube61", "tooltip": "#61", "top": 262, "left": 363, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube62", "tooltip": "#62", "top": 212, "left": 445, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube63", "tooltip": "#63", "top": 72, "left": 317, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube64", "tooltip": "#64", "top": 205, "left": 205, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube65", "tooltip": "#65", "top": 285, "left": 190, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube66", "tooltip": "#66", "top": 343, "left": 73, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube67", "tooltip": "#67", "top": 346, "left": 95, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube68", "tooltip": "#68", "top": 155, "left": 100, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube69", "tooltip": "#69", "top": 110, "left": 80, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube70", "tooltip": "#70", "top": 240, "left": 370, "src": "image/map/데이터큐브.webp" }
+        ]
+    },
+    "사막 지대": {
+        "backgroundImage": "image/map/사막지대.webp",
+        "portals": [
+            { "id": "portal1", "tooltip": "용의 눈 호수<br>포탈", "top": 465, "left": 375, "src": "image/map/포탈.webp" },
+            { "id": "portal2", "tooltip": "어둠 성 계곡<br>포탈", "top": 440, "left": 115, "src": "image/map/포탈.webp" },
+            { "id": "portal3", "tooltip": "사막 지대 피라미드 내부<br>포탈", "top": 445, "left": 85, "src": "image/map/포탈.webp" },
+            { "id": "portal4", "tooltip": "사막 지대 스핑크스 하단<br>포탈", "top": 353, "left": 103, "src": "image/map/포탈.webp" },
+            { "id": "portal5", "tooltip": "사막 지대 피라미드 입구<br>포탈", "top": 318, "left": 101, "src": "image/map/포탈.webp" }
+        ],
+        "warps": [
+            { "id": "warp1", "tooltip": "워프 포인트<br>사막 지대 스핑크스", "top": 310, "left": 128, "src": "image/map/워프포인트.webp" },
+            { "id": "warp2", "tooltip": "워프 포인트<br>사막 지대 중앙", "top": 200, "left": 365, "src": "image/map/워프포인트.webp" },
+            { "id": "warp3", "tooltip": "워프 포인트<br>사막 지대 코로몬 마을", "top": 395, "left": 330, "src": "image/map/워프포인트.webp" }
+        ],
+        "shops": [
+            { "id": "shop1", "tooltip": "사막 지대 상인<br>판매상 코로몬", "top": 415, "left": 320, "src": "image/map/상점.webp" }
+        ],
+        "overflows": [
+            { "id": "overflow1", "tooltip": "오버플로우 던전<br>파피몬", "top": 295, "left": 270, "src": "image/map/오버플로우.webp" }
+        ],
+        "datacube": [
+            { "id": "datacube71", "tooltip": "#71", "top": 490, "left": 380, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube72", "tooltip": "#72", "top": 435, "left": 350, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube73", "tooltip": "#73", "top": 440, "left": 375, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube74", "tooltip": "#74", "top": 375, "left": 425, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube75", "tooltip": "#75", "top": 305, "left": 405, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube76", "tooltip": "#76", "top": 370, "left": 550, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube77", "tooltip": "#77", "top": 295, "left": 345, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube78", "tooltip": "#78", "top": 205, "left": 340, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube79", "tooltip": "#79", "top": 225, "left": 130, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube80", "tooltip": "#80", "top": 465, "left": 243, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube81", "tooltip": "#81", "top": 425, "left": 200, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube82", "tooltip": "#82", "top": 480, "left": 90, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube83", "tooltip": "#83", "top": 267, "left": 203, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube84", "tooltip": "#84", "top": 185, "left": 385, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube85", "tooltip": "#85", "top": 315, "left": 375, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube86", "tooltip": "#86", "top": 375, "left": 340, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube87", "tooltip": "#87", "top": 200, "left": 143, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube88", "tooltip": "#88", "top": 218, "left": 318, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube89", "tooltip": "#89", "top": 160, "left": 185, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube90", "tooltip": "#90", "top": 250, "left": 145, "src": "image/map/데이터큐브.webp" }
+        ]
+    },
+    "어둠성 계곡": {
+        "backgroundImage": "image/map/어둠성계곡.webp",
+        "portals": [
+            { "id": "portal1", "tooltip": "레스토랑 내부<br>포탈", "top": 166, "left": 542, "src": "image/map/포탈.webp" },
+            { "id": "portal2", "tooltip": "개굴몬 성 내부<br>포탈", "top": 0, "left": 500, "src": "image/map/포탈.webp" },
+            { "id": "portal3", "tooltip": "어둠성 앞 절벽 올라가는 포탈<br>포탈", "top": 217, "left": 219, "src": "image/map/포탈.webp" },
+            { "id": "portal4", "tooltip": "어둠성 계곡 나루터 어둠성 쪽<br>포탈", "top": 88, "left": 274, "src": "image/map/포탈.webp" },
+            { "id": "portal5", "tooltip": "어둠성 계곡 나루터 어둠성 반대<br>포탈", "top": 125, "left": 318, "src": "image/map/포탈.webp" },
+            { "id": "portal6", "tooltip": "어둠성 내부<br>포탈", "top": 60, "left": 100, "src": "image/map/포탈.webp" },
+            { "id": "portal7", "tooltip": "사막 지대 이동 포탈<br>포탈", "top": 250, "left": 540, "src": "image/map/포탈.webp" },
+            { "id": "portal8", "tooltip": "어둠성 앞 절벽 내려가는 포탈<br>포탈", "top": -15, "left": 175, "src": "image/map/포탈.webp" }
+        ],
+        "warps": [
+            { "id": "warp1", "tooltip": "워프 포인트<br>어둠성 계곡 레스토랑", "top": 176, "left": 540, "src": "image/map/워프포인트.webp" },
+            { "id": "warp2", "tooltip": "워프 포인트<br>어둠성 계곡 암석지대", "top": 220, "left": 440, "src": "image/map/워프포인트.webp" },
+            { "id": "warp3", "tooltip": "워프 포인트<br>어둠성 입구", "top": 40, "left": 110, "src": "image/map/워프포인트.webp" },
+            { "id": "warp4", "tooltip": "워프 포인트<br>어둠성 계곡 피요몬마을", "top": 527, "left": 384, "src": "image/map/워프포인트.webp" },
+            { "id": "warp5", "tooltip": "워프 포인트<br>어둠성 계곡 어둠성 초입", "top": 432, "left": 72, "src": "image/map/워프포인트.webp" }
+        ],
+        "shops": [
+            { "id": "shop1", "tooltip": "소모품 상인<br>피요몬", "top": 530, "left": 375, "src": "image/map/상점.webp" },
+            { "id": "shop2", "tooltip": "소모품 상인<br>판매상 워매몬", "top": 103, "left": 482, "src": "image/map/상점.webp" }
+        ],
+        "overflows": [
+            { "id": "overflow1", "tooltip": "오버플로우 던전<br>플롯트몬", "top": 20, "left": 514, "src": "image/map/오버플로우.webp" }
+        ],
+        "datacube": [
+            { "id": "datacube91", "tooltip": "#91", "top": 185, "left": 537, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube92", "tooltip": "#92", "top": 90, "left": 525, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube93", "tooltip": "#93", "top": 15, "left": 520, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube94", "tooltip": "#94", "top": 18, "left": 448, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube95", "tooltip": "#95", "top": 115, "left": 390, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube96", "tooltip": "#96", "top": 135, "left": 493, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube97", "tooltip": "#97", "top": 80, "left": 370, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube98", "tooltip": "#98", "top": 225, "left": 425, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube99", "tooltip": "#99", "top": 270, "left": 375, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube100", "tooltip": "#100", "top": 315, "left": 480, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube101", "tooltip": "#101", "top": 410, "left": 355, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube102", "tooltip": "#102", "top": 490, "left": 425, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube103", "tooltip": "#103", "top": 515, "left": 295, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube104", "tooltip": "#104", "top": 565, "left": 200, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube105", "tooltip": "#105", "top": 490, "left": 245, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube106", "tooltip": "#106", "top": 510, "left": 70, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube107", "tooltip": "#107", "top": 365, "left": 65, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube108", "tooltip": "#108", "top": 350, "left": 150, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube109", "tooltip": "#109", "top": 260, "left": 113, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube110", "tooltip": "#110", "top": 365, "left": 35, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube111", "tooltip": "#111", "top": 137, "left": 70, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube112", "tooltip": "#112", "top": 235, "left": 73, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube113", "tooltip": "#113", "top": 215, "left": 0, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube114", "tooltip": "#114", "top": 140, "left": 135, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube115", "tooltip": "#115", "top": 23, "left": 205, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube116", "tooltip": "#116", "top": 40, "left": 180, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube117", "tooltip": "#117", "top": 570, "left": 115, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube118", "tooltip": "#118", "top": 120, "left": 165, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube119", "tooltip": "#119", "top": 550, "left": 265, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube120", "tooltip": "#120", "top": 240, "left": 455, "src": "image/map/데이터큐브.webp" }
+        ]
+    },
+    "개굴몬 성 1F": {
+        "backgroundImage": "image/map/개굴몬성1F.webp",
+        "portals": [
+            { "id": "portal1", "tooltip": "1", "top": 230, "left": 480, "src": "image/map/포탈.webp" }
+        ],
+        "warps": [
+        ],
+        "shops": [
+        ],
+        "overflows": [
+        ],
+        "datacube": [
+    
+        ]
+    },
+    "개굴몬 성 2F": {
+        "backgroundImage": "image/map/개굴몬성2F.webp",
+        "portals": [
+        ],
+        "warps": [
+        ],
+        "shops": [
+        ],
+        "overflows": [
+        ],
+        "datacube": [
+    
+        ]
+    },
+    "캠핑장": {
+        "backgroundImage": "image/map/캠핑장.webp",
+        "portals": [
+            { "id": "portal1", "tooltip": "빛의 언덕<br>포탈", "top": 365, "left": 540, "src": "image/map/포탈.webp" }
+        ],
+        "warps": [
+            { "id": "warp1", "tooltip": "워프 포인트<br>캠핑장", "top": 240, "left": 223, "src": "image/map/워프포인트.webp" },
+            { "id": "warp2", "tooltip": "워프 포인트<br>캠핑장 출구", "top": 300, "left": 265, "src": "image/map/워프포인트.webp" }
+        ],
+        "shops": [
+        ],
+        "overflows": [
+        ],
+        "datacube": [
+            { "id": "datacube121", "tooltip": "#121", "top": 45, "left": 65, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube122", "tooltip": "#122", "top": 395, "left": 365, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube123", "tooltip": "#123", "top": 160, "left": 415, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube124", "tooltip": "#124", "top": 193, "left": 285, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube125", "tooltip": "#125", "top": 355, "left": 100, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube126", "tooltip": "#126", "top": 480, "left": 85, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube127", "tooltip": "#127", "top": 395, "left": 275, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube128", "tooltip": "#128", "top": 375, "left": 515, "src": "image/map/데이터큐브.webp" }
+        ]
+    },
+    "빛의 언덕": {
+        "backgroundImage": "image/map/빛의언덕.webp",
+        "portals": [
+            { "id": "portal1", "tooltip": "캠핑장<br>포탈", "top": 265, "left": -10, "src": "image/map/포탈.webp" },
+            { "id": "portal2", "tooltip": "지하철 역<br>포탈", "top": 183, "left": 566, "src": "image/map/포탈.webp" }
+        ],
+        "warps": [
+            { "id": "warp1", "tooltip": "워프 포인트<br>빛의 언덕 사거리", "top": 250, "left": 53, "src": "image/map/워프포인트.webp" },
+            { "id": "warp2", "tooltip": "워프 포인트<br>빛의 언덕 육교", "top": 283, "left": 268, "src": "image/map/워프포인트.webp" },
+            { "id": "warp3", "tooltip": "워프 포인트<br>공원", "top": 243, "left": 449, "src": "image/map/워프포인트.webp" }
+        ],
+        "shops": [
+            { "id": "shop1", "tooltip": "소모품 상인<br>톱니몬", "top": 316, "left": 138, "src": "image/map/상점.webp" }
+        ],
+        "overflows": [
+        ],
+        "datacube": [
+            { "id": "datacube129", "tooltip": "#129", "top": 220, "left": 60, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube130", "tooltip": "#130", "top": 230, "left": 265, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube131", "tooltip": "#131", "top": 420, "left": 387, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube132", "tooltip": "#132", "top": 375, "left": 300, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube133", "tooltip": "#133", "top": 420, "left": 70, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube134", "tooltip": "#134", "top": 350, "left": 170, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube135", "tooltip": "#135", "top": 330, "left": 25, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube136", "tooltip": "#136", "top": 278, "left": 190, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube137", "tooltip": "#137", "top": 235, "left": 510, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube138", "tooltip": "#138", "top": 355, "left": 440, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube139", "tooltip": "#139", "top": 225, "left": 565, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube140", "tooltip": "#140", "top": 227, "left": 352, "src": "image/map/데이터큐브.webp" }            
+        ]
+    },
+    "지하철 역": {
+        "backgroundImage": "image/map/지하철역.webp",
+        "portals": [
+            { "id": "portal1", "tooltip": "빛의 언덕<br>포탈", "top": 540, "left": 40, "src": "image/map/포탈.webp" },
+            { "id": "portal2", "tooltip": "시부야<br>포탈", "top": 290, "left": 325, "src": "image/map/포탈.webp" },
+            { "id": "portal3", "tooltip": "오다이바 입구<br>포탈", "top": 322, "left": 325, "src": "image/map/포탈.webp" }
+        ],
+        "warps": [
+            { "id": "warp1", "tooltip": "워프 포인트<br>지하철 역 광장", "top": 328, "left": 81, "src": "image/map/워프포인트.webp" },
+            { "id": "warp2", "tooltip": "워프 포인트<br>지하철 역 주차장", "top": 71, "left": 246, "src": "image/map/워프포인트.webp" }
+        ],
+        "shops": [
+            { "id": "shop1", "tooltip": "배틀 아이템 상인<br>?", "top": 111, "left": 129, "src": "image/map/상점.webp" },
+            { "id": "shop1", "tooltip": "소모품 상인<br>?", "top": 110, "left": 126, "src": "image/map/상점.webp" }
+        ],
+        "overflows": [
+        ],
+        "datacube": [
+            { "id": "datacube141", "tooltip": "#141", "top": 3, "left": 360, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube142", "tooltip": "#142", "top": 425, "left": 45, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube143", "tooltip": "#143", "top": 205, "left": 105, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube144", "tooltip": "#144", "top": 263, "left": 357, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube145", "tooltip": "#145", "top": 245, "left": 405, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube146", "tooltip": "#146", "top": 88, "left": 185, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube147", "tooltip": "#147", "top": 307, "left": 198, "src": "image/map/데이터큐브.webp" }
+        ]
+    },
+    "오다이바 입구": {
+        "backgroundImage": "image/map/오다이바입구.webp",
+        "portals": [
+            { "id": "portal1", "tooltip": "오다이바 북부<br>포탈", "top": 433, "left": -3, "src": "image/map/포탈.webp" },
+            { "id": "portal2", "tooltip": "지하철 역<br>포탈", "top": 265, "left": 525, "src": "image/map/포탈.webp" }
+        ],
+        "warps": [
+            { "id": "warp1", "tooltip": "워프 포인트<br>오다이바 입구 호텔 앞", "top": 321, "left": 275, "src": "image/map/워프포인트.webp" },
+            { "id": "warp2", "tooltip": "워프 포인트<br>오다이바 입구 광장", "top": 235, "left": 448, "src": "image/map/워프포인트.webp" },
+            { "id": "warp3", "tooltip": "워프 포인트<br>오다이바 입구 다리", "top": 303, "left": 121, "src": "image/map/워프포인트.webp" }
+        ],
+        "shops": [
+            { "id": "shop1", "tooltip": "소모품 상인<br>텐타몬", "top": 207, "left": 278, "src": "image/map/상점.webp" }
+        ],
+        "overflows": [
+        ],
+        "datacube": [
+            { "id": "datacube148", "tooltip": "#148", "top": 370, "left": 289, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube149", "tooltip": "#149", "top": 280, "left": 295, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube150", "tooltip": "#150", "top": 400, "left": 410, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube151", "tooltip": "#151", "top": 310, "left": 315, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube152", "tooltip": "#152", "top": 185, "left": 315, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube153", "tooltip": "#153", "top": 226, "left": 310, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube154", "tooltip": "#154", "top": 265, "left": 490, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube155", "tooltip": "#155", "top": 315, "left": 348, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube156", "tooltip": "#156", "top": 325, "left": 25, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube157", "tooltip": "#157", "top": 350, "left": 30, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube158", "tooltip": "#158", "top": 390, "left": 33, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube159", "tooltip": "#159", "top": 335, "left": 65, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube160", "tooltip": "#160", "top": 170, "left": 112, "src": "image/map/데이터큐브.webp" }
+        ]
+    },
+    "오다이바 북부": {
+        "backgroundImage": "image/map/오다이바북부.webp",
+        "portals": [
+            { "id": "portal1", "tooltip": "오다이바 입구<br>포탈", "top": -20, "left": 171, "src": "image/map/포탈.webp" },
+            { "id": "portal2", "tooltip": "오다이바 남부<br>포탈", "top": 455, "left": 25, "src": "image/map/포탈.webp" }
+        ],
+        "warps": [
+            { "id": "warp1", "tooltip": "워프 포인트<br>오다이바 북부 아파트 앞", "top": 168, "left": 139, "src": "image/map/워프포인트.webp" },
+            { "id": "warp2", "tooltip": "워프 포인트<br>오다이바 북부 해변", "top": 405, "left": 230, "src": "image/map/워프포인트.webp" }
+        ],
+        "shops": [
+        ],
+        "overflows": [
+        ],
+        "datacube": [
+            { "id": "datacube161", "tooltip": "#161", "top": 147, "left": 108, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube162", "tooltip": "#162", "top": 107, "left": 100, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube163", "tooltip": "#163", "top": 365, "left": 75, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube164", "tooltip": "#164", "top": 520, "left": 165, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube165", "tooltip": "#165", "top": 539, "left": 87, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube166", "tooltip": "#166", "top": 230, "left": 100, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube167", "tooltip": "#167", "top": 513, "left": 295, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube167", "tooltip": "#200", "top": 420, "left": 100, "src": "image/map/데이터큐브.webp" }
+        ]
+    },
+    "시부야": {
+        "backgroundImage": "image/map/시부야.webp",
+        "portals": [
+            { "id": "portal1", "tooltip": "지하철 역<br>포탈", "top": 60, "left": 550, "src": "image/map/포탈.webp" }
+        ],
+        "warps": [
+            { "id": "warp1", "tooltip": "워프 포인트<br>시부야 번화가", "top": 159, "left": 322, "src": "image/map/워프포인트.webp" },
+            { "id": "warp2", "tooltip": "워프 포인트<br>시부야 골목길", "top": 253, "left": 33, "src": "image/map/워프포인트.webp" }
+        ],
+        "shops": [
+            { "id": "shop1", "tooltip": "배틀아이템 상인<br>코에몬", "top": 160, "left": 117, "src": "image/map/상점.webp" },
+            { "id": "shop1", "tooltip": "소모품 상인<br>테리어몬", "top": 163, "left": 120, "src": "image/map/상점.webp" }
+        ],
+        "overflows": [
+        ],
+        "datacube": [
+            { "id": "datacube168", "tooltip": "#168", "top": 156, "left": 497, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube169", "tooltip": "#169", "top": 345, "left": 445, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube170", "tooltip": "#170", "top": 160, "left": 55, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube171", "tooltip": "#171", "top": 420, "left": 270, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube172", "tooltip": "#172", "top": 523, "left": 33, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube173", "tooltip": "#173", "top": 33, "left": 567, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube174", "tooltip": "#174", "top": 465, "left": 315, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube175", "tooltip": "#175", "top": 280, "left": 220, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube175", "tooltip": "#199", "top": 205, "left": 133, "src": "image/map/데이터큐브.webp" }
+        ]
+    },
+    "오다이바 남부": {
+        "backgroundImage": "image/map/오다이바남부.webp",
+        "portals": [
+            { "id": "portal1", "tooltip": "국제 전시장<br>포탈", "top": 527, "left": 322, "src": "image/map/포탈.webp" },
+            { "id": "portal2", "tooltip": "오다이바 북부<br>포탈", "top": 433, "left": 423, "src": "image/map/포탈.webp" }
+        ],
+        "warps": [
+            { "id": "warp1", "tooltip": "워프 포인트<br>오다이바 남부 오메가몬 동상 앞", "top": 168, "left": 127, "src": "image/map/워프포인트.webp" },
+            { "id": "warp2", "tooltip": "워프 포인트<br>오다이바 남부 방송국 앞", "top": 365, "left": 325, "src": "image/map/워프포인트.webp" }
+        ],
+        "shops": [
+        ],
+        "overflows": [
+        ],
+        "datacube": [
+            { "id": "datacube176", "tooltip": "#176", "top": 165, "left": 405, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube177", "tooltip": "#177", "top": 255, "left": 208, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube178", "tooltip": "#178", "top": 450, "left": 245, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube179", "tooltip": "#179", "top": 395, "left": 395, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube180", "tooltip": "#180", "top": 352, "left": 298, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube181", "tooltip": "#181", "top": 576, "left": 377, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube182", "tooltip": "#182", "top": 378, "left": 298, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube183", "tooltip": "#183", "top": 250, "left": 363, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube184", "tooltip": "#184", "top": 260, "left": 380, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube185", "tooltip": "#185", "top": 202, "left": 365, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube184", "tooltip": "#197", "top": 222, "left": 193, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube185", "tooltip": "#198", "top": 47, "left": 150, "src": "image/map/데이터큐브.webp" }
+        ]
+    },
+    "국제 전시장": {
+        "backgroundImage": "image/map/국제전시장.webp",
+        "portals": [
+            { "id": "portal1", "tooltip": "오다이바 남부<br>포탈", "top": 5, "left": 457, "src": "image/map/포탈.webp" },
+            { "id": "portal2", "tooltip": "네트워크 바다<br>포탈", "top": 312, "left": 382, "src": "image/map/포탈.webp" }
+        ],
+        "warps": [
+            { "id": "warp1", "tooltip": "워프 포인트<br>국제 전시장", "top": 150, "left": 221, "src": "image/map/워프포인트.webp" },
+            { "id": "warp2", "tooltip": "워프 포인트<br>국제 전시장 공원", "top": 315, "left": 429, "src": "image/map/워프포인트.webp" }
+        ],
+        "shops": [
+            { "id": "shop1", "tooltip": "소모품 상인<br>돌몬", "top": 114, "left": 155, "src": "image/map/상점.webp" },
+            { "id": "shop2", "tooltip": "배틀아이템 상인<br>샤코몬", "top": 110, "left": 155, "src": "image/map/상점.webp" }
+        ],
+        "overflows": [
+            { "id": "overflow1", "tooltip": "오버플로우 던전<br>팔몬", "top": 113, "left": 316, "src": "image/map/오버플로우.webp" }
+        ],
+        "datacube": [
+            { "id": "datacube186", "tooltip": "#186", "top": 95, "left": 210, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube187", "tooltip": "#187", "top": 550, "left": 395, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube188", "tooltip": "#188", "top": 322, "left": 422, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube189", "tooltip": "#189", "top": 230, "left": 350, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube190", "tooltip": "#190", "top": 513, "left": 355, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube191", "tooltip": "#191", "top": 386, "left": 283, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube192", "tooltip": "#192", "top": 160, "left": 350, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube193", "tooltip": "#193", "top": 72, "left": 334, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube194", "tooltip": "#194", "top": 370, "left": 373, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube195", "tooltip": "#195", "top": 480, "left": 438, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube196", "tooltip": "#196", "top": 208, "left": 387, "src": "image/map/데이터큐브.webp" }
+        ]
+    },
+    "네트워크 바다": {
+        "backgroundImage": "image/map/네트워크바다.webp",
+        "portals": [
+            { "id": "portal1", "tooltip": "해변가 도로<br>포탈", "top": 15, "left": 330, "src": "image/map/포탈.webp" },
+            { "id": "portal2", "tooltip": "국제 전시장<br>포탈", "top": 195, "left": 460, "src": "image/map/포탈.webp" },
+            { "id": "portal3", "tooltip": "초승달 섬<br>포탈", "top": 235, "left": 457, "src": "image/map/포탈.webp" },
+            { "id": "portal4", "tooltip": "수목 지구<br>포탈", "top": 520, "left": 88, "src": "image/map/포탈.webp" }
+        ],
+        "warps": [
+            { "id": "warp1", "tooltip": "워프 포인트<br>초승달 섬", "top": 25, "left": 345, "src": "image/map/워프포인트.webp" },
+            { "id": "warp2", "tooltip": "워프 포인트<br>네트워크 해변", "top": 240, "left": 475, "src": "image/map/워프포인트.webp" },
+            { "id": "warp3", "tooltip": "워프 포인트<br>네트워크 해변가 도로", "top": 476, "left": 135, "src": "image/map/워프포인트.webp" }
+        ],
+        "shops": [
+            { "id": "shop1", "tooltip": "소모품 상인<br>크랩몬", "top": 474, "left": 90, "src": "image/map/상점.webp" }
+        ],
+        "overflows": [
+        ],
+        "datacube": [
+            { "id": "datacube1", "tooltip": "#201", "top": 265, "left": 515, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube3", "tooltip": "#202", "top": 312, "left": 497, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube2", "tooltip": "#203", "top": 423, "left": 488, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube2", "tooltip": "#204", "top": 43, "left": 365, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube3", "tooltip": "#205", "top": 70, "left": 323, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube4", "tooltip": "#206", "top": 265, "left": 102, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube5", "tooltip": "#207", "top": 480, "left": 110, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube5", "tooltip": "#208", "top": 485, "left": 80, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube6", "tooltip": "#209", "top": 485, "left": 93, "src": "image/map/데이터큐브.webp" }
+        ]
+    },
+    "수목 지구": {
+        "backgroundImage": "image/map/수목지구.webp",
+        "portals": [
+            { "id": "portal1", "tooltip": "네트워크 바다<br>포탈", "top": 30, "left": 315, "src": "image/map/포탈.webp" },
+            { "id": "portal2", "tooltip": "강철 도시<br>포탈", "top": 420, "left": 145, "src": "image/map/포탈.webp" }
+        ],
+        "warps": [
+            { "id": "warp1", "tooltip": "워프 포인트<br>수목 지구 폐허", "top": 292, "left": 90, "src": "image/map/워프포인트.webp" },
+            { "id": "warp2", "tooltip": "워프 포인트<br>수목 지구 공터", "top": 105, "left": 404, "src": "image/map/워프포인트.webp" }
+        ],
+        "shops": [
+        ],
+        "overflows": [
+        ],
+        "datacube": [
+            { "id": "datacube2", "tooltip": "#210", "top": 150, "left": 480, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube2", "tooltip": "#211", "top": 115, "left": 430, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube3", "tooltip": "#212", "top": 205, "left": 355, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube4", "tooltip": "#213", "top": 275, "left": 470, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube5", "tooltip": "#214", "top": 310, "left": 388, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube5", "tooltip": "#215", "top": 165, "left": 270, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube3", "tooltip": "#216", "top": 97, "left": 237, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube1", "tooltip": "#217", "top": 80, "left": 175, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube6", "tooltip": "#218", "top": 320, "left": 225, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube6", "tooltip": "#219", "top": 345, "left": 175, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube1", "tooltip": "#220", "top": 350, "left": 153, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube6", "tooltip": "#221", "top": 310, "left": 125, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube6", "tooltip": "#222", "top": 413, "left": 128, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube5", "tooltip": "#223", "top": 388, "left": 98, "src": "image/map/데이터큐브.webp" }
+        ]
+    },
+    "강철 도시": {
+        "backgroundImage": "image/map/강철도시.webp",
+        "portals": [
+            { "id": "portal1", "tooltip": "수목 지구<br>포탈", "top": 255, "left": 95, "src": "image/map/포탈.webp" },
+            { "id": "portal2", "tooltip": "강철 도시 지하 1층<br>포탈", "top": 210, "left": 377, "src": "image/map/포탈.webp" },
+            { "id": "portal3", "tooltip": "어둠의 권역<br>포탈", "top": 257, "left": 555, "src": "image/map/포탈.webp" }
+        ],
+        "warps": [
+            { "id": "warp1", "tooltip": "워프 포인트<br>강철 도시 광장", "top": 266, "left": 285, "src": "image/map/워프포인트.webp" }
+        ],
+        "shops": [
+            { "id": "shop1", "tooltip": "배틀아이템 상인<br>머슈몬", "top": 237, "left": 324, "src": "image/map/상점.webp" },
+            { "id": "shop1", "tooltip": "소모품 상인<br>톱니몬", "top": 235, "left": 322, "src": "image/map/상점.webp" }
+        ],
+        "overflows": [
+        ],
+        "datacube": [
+            { "id": "datacube1", "tooltip": "#224", "top": 273, "left": 115, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube3", "tooltip": "#225", "top": 202, "left": 210, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube2", "tooltip": "#226", "top": 230, "left": 185, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube2", "tooltip": "#227", "top": 245, "left": 260, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube3", "tooltip": "#228", "top": 345, "left": 333, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube4", "tooltip": "#229", "top": 183, "left": 330, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube5", "tooltip": "#230", "top": 172, "left": 405, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube5", "tooltip": "#231", "top": 230, "left": 375, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube6", "tooltip": "#232", "top": 200, "left": 415, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube6", "tooltip": "#233", "top": 215, "left": 508, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube1", "tooltip": "#234", "top": 202, "left": 540, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube6", "tooltip": "#235", "top": 435, "left": 440, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube6", "tooltip": "#236", "top": 370, "left": 420, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube5", "tooltip": "#237", "top": 415, "left": 400, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube6", "tooltip": "#238", "top": 405, "left": 350, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube5", "tooltip": "#239", "top": 385, "left": 290, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube5", "tooltip": "#240", "top": 465, "left": 175, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube6", "tooltip": "#241", "top": 413, "left": 245, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube4", "tooltip": "#242", "top": 385, "left": 165, "src": "image/map/데이터큐브.webp" }
+        ]
+    },
+    "강철 도시 지하": {
+        "backgroundImage": "image/map/강철도시지하.webp",
+        "portals": [
+            { "id": "portal1", "tooltip": "강철 도시<br>포탈", "top": 520, "left": 420, "src": "image/map/포탈.webp" },
+            { "id": "portal1", "tooltip": "강철 도시 지하 1층<br>포탈", "top": 55, "left": 390, "src": "image/map/포탈.webp" },
+            { "id": "portal1", "tooltip": "강철 도시 지하 2층<br>포탈", "top": 412, "left": 122, "src": "image/map/포탈.webp" }
+        ],
+        "warps": [
+        ],
+        "shops": [
+        ],
+        "overflows": [
+        ],
+        "datacube": [
+            { "id": "datacube1", "tooltip": "#243", "top": 448, "left": 335, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube3", "tooltip": "#244", "top": 555, "left": 375, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube2", "tooltip": "#245", "top": 525, "left": 305, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube2", "tooltip": "#246", "top": 420, "left": 255, "src": "image/map/데이터큐브.webp" }
+        ]
+    },
+    "어둠의 권역": {
+        "backgroundImage": "image/map/어둠의권역.webp",
+        "portals": [
+            { "id": "portal1", "tooltip": "스파이럴 마운틴 정상<br>포탈", "top": 250, "left": 560, "src": "image/map/포탈.webp" },
+            { "id": "portal2", "tooltip": "강철 도시<br>포탈", "top": 403, "left": 2, "src": "image/map/포탈.webp" }
+        ],
+        "warps": [
+            { "id": "warp1", "tooltip": "워프 포인트<br>폐허가 된 시작의 마을", "top": 302, "left": 191, "src": "image/map/워프포인트.webp" }
+        ],
+        "shops": [
+        ],
+        "overflows": [
+        ],
+        "datacube": [
+            { "id": "datacube6", "tooltip": "#247", "top": 490, "left": 280, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube5", "tooltip": "#248", "top": 418, "left": 278, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube4", "tooltip": "#249", "top": 375, "left": 358, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube5", "tooltip": "#250", "top": 368, "left": 427, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube6", "tooltip": "#251", "top": 385, "left": 217, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube2", "tooltip": "#252", "top": 171, "left": 330, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube3", "tooltip": "#253", "top": 268, "left": 420, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube1", "tooltip": "#254", "top": 294, "left": 338, "src": "image/map/데이터큐브.webp" }  
+        ]
+    },
+    "스파이럴 마운틴 정상": {
+        "backgroundImage": "image/map/스파이럴마운틴정상.webp",
+        "portals": [
+            { "id": "portal1", "tooltip": "어둠의 권역<br>포탈", "top": 205, "left": 500, "src": "image/map/포탈.webp" },
+            { "id": "portal2", "tooltip": "???<br>포탈", "top": 403, "left": 448, "src": "image/map/포탈.webp" }
+        ],
+        "warps": [
+            { "id": "warp1", "tooltip": "워프 포인트<br>정상으로 가는 길", "top": 70, "left": 270, "src": "image/map/워프포인트.webp" },
+            { "id": "warp2", "tooltip": "워프 포인트<br>스파이럴 마운틴 정상 부근", "top": 382, "left": 370, "src": "image/map/워프포인트.webp" }
+        ],
+        "shops": [
+        ],
+        "overflows": [
+        ],
+        "datacube": [
+            { "id": "datacube3", "tooltip": "#255", "top": 135, "left": 470, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube2", "tooltip": "#256", "top": 105, "left": 355, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube1", "tooltip": "#257", "top": 35, "left": 220, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube4", "tooltip": "#258", "top": 445, "left": 145, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube5", "tooltip": "#259", "top": 460, "left": 280, "src": "image/map/데이터큐브.webp" },
+            { "id": "datacube6", "tooltip": "#260", "top": 455, "left": 250, "src": "image/map/데이터큐브.webp" }
+        ]
+    }
+    
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="image/icon.png" type="image/x-icon">
+  <title>DSR</title>
+  <link rel="stylesheet" href="calculator.css">
+  <script src="calculator.js" defer></script>
+</head>
+
+<body>
+  <!-- 네비게이션 바 추가 -->
+  <nav class="navbar">
+    <ul class="nav-menu">
+      <li><a href="index.html">홈</a></li>
+      <li><a href="digimon.html">도감</a></li>
+      <li><a href="evolution.html">진화트리</a></li>
+      <li><a href="map.html">맵</a></li>
+      <li><a href="calculator.html">계산기</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <!-- 이미지로 타이틀 교체 -->
+    <div class="logo-container">
+      <img src="image/logo.webp" alt="디지몬 슈퍼럼블 도감" class="title-logo">
+    </div>  
+    
+  <div class="calculator">
+    <table class="mydigimon">
+        <tr>
+          <th colspan="3">내 디지몬</th>
+        </tr>
+        <tr>
+          <td>진화 단계</td>
+          <td colspan="2">
+            <select id="stage-select">
+              <option value="완전체">완전체</option>
+              <option value="궁극체">궁극체</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>이름</td>
+          <td colspan="2">
+            <select id="character-select">
+              <!-- Character names will be dynamically populated here -->
+            </select>
+          </td>
+        </tr>
+        <tr>
+            <td colspan="3" id="character-image-cell"></td>
+        </tr>
+        <tr>
+            <td >타입</td>
+            <td colspan="2" id="type-image-cell"></td>
+        </tr>
+        <tr>
+            <td>레벨</td>
+            <td colspan="2" id="level-cell"></td>
+        </tr>
+        <tr>
+            <td>기본 힘</td>
+            <td colspan="2" id="힘-cell"></td>
+        </tr>
+        <tr>
+            <td rowspan="2">스킬</td>
+            <td>
+                <select id="skill-select">
+                    <option value="skill1">1스킬</option>
+                    <option value="skill2">2스킬</option>
+                    <option value="skill3">3스킬</option>
+                </select>
+            </td>
+            <td>
+              <select id="skilllevel-select">
+                  <option value="1레벨">1레벨</option>
+                  <option value="2레벨">2레벨</option>
+                  <option value="3레벨">3레벨</option>
+                  <option value="4레벨">4레벨</option>
+                  <option value="5레벨">5레벨</option>
+                  <option value="6레벨">6레벨</option>
+                  <option value="7레벨">7레벨</option>
+                  <option value="8레벨">8레벨</option>
+                  <option value="9레벨">9레벨</option>
+                  <option value="10레벨">10레벨</option>
+              </select>
+          </td>
+        </tr>
+        <tr>
+            <td colspan="2" id="skill-cell"></td>
+        </tr>
+    </table>
+
+    <table class="monster">
+      <tr>
+        <th colspan="4">악역 디지몬</th>
+      </tr>
+      <tr>
+        <td colspan="4">출현 지역</td>
+      </tr>
+      <tr>
+          <td colspan="4" class="map1-cell">
+              <select id="map1-select">
+                  <option value="서버대륙">서버대륙</option>
+                  <option value="현실 세계">현실 세계</option>
+                  <option value="스파이럴 마운틴">스파이럴 마운틴</option>
+              </select>
+          </td>
+      <tr>
+          <td colspan="4" class="map2-cell">
+          <select id="map2-select"></select>
+        </td>
+      </tr>
+
+      </tr>
+      <tr>
+        <td colspan="4">이름</td>
+      </tr>
+      <tr>
+          <td colspan="4">
+              <select id="mob-select">
+                  <!-- Character names will be dynamically populated here -->
+              </select>
+          </td>
+      </tr>
+      <!-- 몹 이미지와 나머지 정보를 나란히 배치 -->
+      <tr>
+          <td id="mob-image-cell" colspan="2" rowspan="6"></td> <!-- 몹 이미지를 왼쪽에 두고, 나머지 정보를 오른쪽에 나란히 -->
+          <td>레벨</td>
+          <td id="mob-level"></td>
+      </tr>
+      <tr>
+          <td>타입</td>
+          <td id="mob-type"></td>
+      </tr>
+      <tr>
+          <td>체력</td>
+          <td id="mob-hp"></td>
+      </tr>
+      <tr>
+          <td>수비</td>
+          <td id="mob-def"></td>
+      </tr>
+      <tr>
+          <td>강점</td>
+          <td id="mob-strong"></td>
+      </tr>
+      <tr>
+          <td>약점</td>
+          <td id="mob-weak"></td>
+      </tr>
+  </table>
+  
+
+    <table class="result">
+      <tr>
+        <th colspan="2">계산 결과</th>
+      </tr>
+      <tr>
+        <td>총 힘 스탯</td>
+        <td id="str-result"></td>
+      </tr>
+      <tr>
+        <td rowspan="2">필요 힘</td>
+        <td>
+          <select id="skillcount">
+            <option value="1킬">1킬</option>
+            <option value="2킬">2킬</option>
+            <option value="3킬">3킬</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td id="needstr"></td>
+      </tr>
+      <tr>
+        <td>스킬 사용 시 최소 데미지</td>
+        <td id="min-damage"></td>
+      </tr>
+    </table>
+    <table class="custom">
+        <tr>
+          <th colspan="2">추가 수치</th>
+        </tr>
+        <tr >
+          <td>포텐셜(+%)</td>
+          <td><input id="potential"></td>
+        </tr>
+        <tr class="custom-head">
+          <td>유년기 교정(+%)</td>
+          <td><input id="correction"></td>
+        </tr>
+        <tr class="custom-head">
+          <td>시너지(+%)</td>
+          <td><input id="synergy"></td>
+        </tr>
+        <tr class="custom-head">
+          <td>버프</td>
+          <td><input id="buff"></td>
+        </tr>
+        <tr class="custom-head">
+          <td>특화</td>
+          <td><input id="specialization"></td>
+        </tr>
+        <tr class="custom-head">
+          <td>장비</td>
+          <td><input id="equipment"></td>
+        </tr>
+    </table>
+  </div>
+</body>
+</html>
