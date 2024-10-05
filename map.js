@@ -99,7 +99,7 @@ function initMap() {
         });
     });
 
-    mapButtons[1].click();
+    mapButtons[0].click();
 }
 
 // 동적으로 체크박스를 생성하는 함수

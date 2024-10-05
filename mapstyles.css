@@ -260,7 +260,7 @@ height: 47px;
 }
 
 .dropdown-button {
-  background-color: #15132e;
+  background-color: rgb(21, 19, 46);
   color: white;
   padding: 5px 6px;
   font-size: 14px;
@@ -270,6 +270,7 @@ height: 47px;
   display: flex;
   justify-content: space-between; /* 버튼 안에서 텍스트와 화살표를 양쪽 끝에 위치 */
   align-items: center; /* 수직 중앙 정렬 */
+  border: 1px solid white; /* 하얀색 테두리 추가 */
 }
 
 .dropdown-button:hover {
@@ -279,7 +280,7 @@ height: 47px;
 .dropdown-content {
   display: none; /* 기본 상태는 숨겨짐 */
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(21, 19, 46, 0.7);
   color: white;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 10;
@@ -288,10 +289,23 @@ height: 47px;
   padding: 5px 10px;
   border-radius: 8px;
   margin-top: 5px;
+  border: 1px solid white; /* 하얀색 테두리 추가 */
 }
 
 .dropdown-content div {
+  display: flex; /* 체크박스와 텍스트를 한 줄에 배치 */
+  align-items: center; /* 체크박스와 텍스트를 수직 중앙으로 정렬 */
   margin-bottom: 5px; /* 각 체크박스 간 간격 추가 */
+}
+
+.dropdown-content input[type="checkbox"] {
+  margin-right: 5px; /* 체크박스와 텍스트 사이에 간격 추가 */
+  vertical-align: middle; /* 수직 중앙 정렬 (대체 옵션) */
+}
+
+.dropdown-content label {
+  line-height: 1.5; /* 텍스트 줄 높이 조정 */
+  vertical-align: middle; /* 수직 정렬을 텍스트에 추가 */
 }
 
 .arrow {
