@@ -258,12 +258,14 @@ function showSpecialTooltipAtImage(event, imageElement, name, src, level, hp, �
         </div>
         <div style="text-align: center; font-size: 20px; font-weight: bold; margin-top: 10px; color: rgb(0,183,255);"><strong>드랍 아이템</strong> 
             <ul style="margin-top: 5px; list-style-type: none; padding-left: 0; font-size: 14px; text-align: left; color: white;">
-                ${드랍아이템목록.map(item => `
-                    <li style="display: flex; align-items: center; justify-content: flex-start; margin-bottom: 5px; margin-left: 5px;">
-                        <img src="image/item/${item.trim()}.png" alt="${item.trim()}" style="width: 25px; height: 25px; margin-right: 5px; background-color: black; border-radius: 5px; border: 1px solid grey; vertical-align: middle;">
-                        ${item.trim()}
-                    </li>
-                `).join('')}
+                ${드랍아이템목록.map(item => {
+                    const itemImageSrc = item.includes("조합법") ? 'image/item/조합법.png' : `image/item/${item.trim()}.png`;
+                    return `
+                        <li style="display: flex; align-items: center; justify-content: flex-start; margin-bottom: 5px; margin-left: 5px;">
+                            <img src="${itemImageSrc}" alt="${item.trim()}" style="width: 25px; height: 25px; margin-right: 5px; background-color: black; border-radius: 5px; border: 1px solid grey; vertical-align: middle;">
+                            ${item.trim()}
+                        </li>`;
+                }).join('')}
             </ul>
         </div>
         ${evol ? `
@@ -273,7 +275,6 @@ function showSpecialTooltipAtImage(event, imageElement, name, src, level, hp, �
          </div>
         ` : ''}
     `;
-
     document.body.appendChild(tooltip);
 
     // 툴팁 위치 조정
