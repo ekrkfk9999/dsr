@@ -221,9 +221,10 @@
                 "items": ["성장기 스킬 강화석","유년기1 디지타마","식빵","막대 사탕","고장난 디스켓","아기벌몬의 작은 날개","부서진 머슈몬 디지코어"]
             },
             {
-                "id": "mob1","top": 660,"left": 350,"src": "image/digimon/쉘몬/쉘몬.webp",
-                "name": "쉘몬", "level": 14, "hp": 288, "type": "데이터", "강점": "물리,반사", "약점": "흙,회피불가",
-                "items": ["성숙기 스킬 강화석","유년기1 디지타마","식빵","막대 사탕","고장난 디스켓","부서진 쉘몬 디지코어"]
+                "id": "mob1","top": 670,"left": 360,"src": "image/digimon/쉘몬/쉘몬.webp",
+                "name": "신태일에게 패배한 쉘몬", "level": 14, "hp": 288, "type": "데이터", "강점": "물리,반사", "약점": "흙,회피불가",
+                "items": ["성숙기 스킬 강화석","유년기1 디지타마","식빵","막대 사탕","고장난 디스켓","부서진 쉘몬 디지코어"],
+                "evol": "아구몬"
             },
             {
                 "id": "mob1","top": 560,"left": 470,"src": "image/digimon/쉘몬/쉘몬.webp",
@@ -233,12 +234,14 @@
             {
                 "id": "mob1","top": 680,"left": 470,"src": "image/digimon/츄몬/츄몬.webp",
                 "name": "츄몬", "level": 22, "hp": 689, "type": "바이러스", "강점": "물리,회피", "약점": "어둠,회피불가",
-                "items": []
+                "items": [],
+                "isAggressive": true
             },
             {
                 "id": "mob1","top": 290,"left": 210,"src": "image/digimon/시드라몬/시드라몬.webp",
                 "name": "시드라몬", "level": 26, "hp": 2218, "type": "데이터", "강점": "얼음,내성", "약점": "천둥,효과확률",
-                "items": ["부서진 시드라몬 디지코어"]
+                "items": ["부서진 시드라몬 디지코어"],
+                "evol": "파피몬"
             },
             {
                 "id": "mob1","top": 590,"left": 430,"src": "image/digimon/레어몬/레어몬.webp",
@@ -373,7 +376,8 @@
             {
                 "id": "mob1","top": 390,"left": 600,"src": "image/digimon/레어몬/레어몬.webp",
                 "name": "레어몬", "level": 26, "hp": 3060, "type": "바이러스", "강점": "어둠,반사", "약점": "불,약점",
-                "items": []
+                "items": [],
+                "isAggressive": true
             },
             {
                 "id": "mob1","top": 440,"left": 105,"src": "image/digimon/레어몬/레어몬.webp",
@@ -388,12 +392,14 @@
             {
                 "id": "mob1","top": 730,"left": 280,"src": "image/digimon/안드로몬/안드로몬.webp",
                 "name": "안드로몬", "level": 21, "hp": 2285, "type": "백신", "강점": "강철,내성", "약점": "천둥,약점",
-                "items": ["부서진 안드로몬 디지코어"]
+                "items": ["부서진 안드로몬 디지코어"],
+                "evol": "텐타몬"
             },
             {
                 "id": "mob1","top": 255,"left": 415,"src": "image/digimon/유니몬/유니몬.webp",
                 "name": "유니몬", "level": 21, "hp": 1475, "type": "백신", "강점": "물리,회피", "약점": "천둥,회피불가",
-                "items": ["부서진 유니몬 디지코어"]
+                "items": ["부서진 유니몬 디지코어"],
+                "evol": "쉬라몬"
             },
             {
                 "id": "mob1","top": 250,"left": 85,"src": "image/digimon/유니몬/유니몬.webp",
@@ -403,17 +409,20 @@
             {
                 "id": "mob1","top": 720,"left": 170,"src": "image/digimon/퍼펫몬/퍼펫몬.webp",
                 "name": "퍼펫몬", "level": 21, "hp": 2188, "type": "백신", "강점": "물리,회피", "약점": "불,효과확률",
-                "items": ["부서진 퍼펫몬 디지코어"]
+                "items": ["부서진 퍼펫몬 디지코어"],
+                "evol": "팔몬"
             },
             {
                 "id": "mob1","top": 430,"left": 580,"src": "image/digimon/츄몬/츄몬.webp",
                 "name": "츄몬", "level": 22, "hp": 689, "type": "바이러스", "강점": "물리,회피", "약점": "어둠,회피불가",
-                "items": []
+                "items": [],
+                "isAggressive": true
             },
             {
                 "id": "mob1","top": 420,"left": 540,"src": "image/digimon/츄몬/츄몬.webp",
                 "name": "츄몬", "level": 30, "hp": 2447, "type": "바이러스", "강점": "물리,회피", "약점": "어둠,회피불가",
-                "items": []
+                "items": [],
+                "isAggressive": true
             },
             {
                 "id": "mob1","top": 420,"left": 480,"src": "image/digimon/톱니몬/톱니몬.webp",
@@ -433,7 +442,8 @@
             {
                 "id": "mob1","top": 360,"left": 535,"src": "image/digimon/메라몬/메라몬.webp",
                 "name": "메라몬", "level": 26, "hp": 1851, "type": "데이터", "강점": "불,내성", "약점": "물,약점",
-                "items": ["부서진 메라몬 디지코어"]
+                "items": ["부서진 메라몬 디지코어"],
+                "evol": "피요몬"
             },
             {
                 "id": "mob1","top": 520,"left": 90,"src": "image/digimon/말벌몬/말벌몬.webp",
@@ -552,7 +562,8 @@
             {
                 "id": "mob1","top": 330,"left": 240,"src": "image/digimon/츄몬/츄몬.webp",
                 "name": "츄몬", "level": 22, "hp": 689, "type": "바이러스", "강점": "물리,회피", "약점": "어둠,회피불가",
-                "items": []
+                "items": [],
+                "isAggressive": true
             },
             {
                 "id": "mob1","top": 680,"left": 420,"src": "image/digimon/고스몬/고스몬.webp",
@@ -732,7 +743,8 @@
             {
                 "id": "mob1","top": 265,"left": 535,"src": "image/digimon/츄몬/츄몬.webp",
                 "name": "츄몬", "level": 22, "hp": 689, "type": "바이러스", "강점": "물리,회피", "약점": "어둠,회피불가",
-                "items": []
+                "items": [],
+                "isAggressive": true
             },
             {
                 "id": "mob1","top": 420,"left": 670,"src": "image/digimon/가드로몬/가드로몬.webp",
@@ -772,7 +784,8 @@
             {
                 "id": "mob1","top": 385,"left": 610,"src": "image/digimon/쿠가몬/쿠가몬.webp",
                 "name": "쿠가몬", "level": 52, "hp": 17105, "type": "바이러스", "강점": "강철,내성", "약점": "물리,약점",
-                "items": []
+                "items": [],
+                "isAggressive": true
             },
             {
                 "id": "mob1","top": 340,"left": 450,"src": "image/digimon/말벌몬/말벌몬.webp",
@@ -797,7 +810,8 @@
             {
                 "id": "mob1","top": 550,"left": 100,"src": "image/digimon/모노크로몬/모노크로몬.webp",
                 "name": "모노크로몬", "level": 60, "hp": 19728, "type": "데이터", "강점": "물리,내성", "약점": "물,약점",
-                "items": []
+                "items": [],
+                "isAggressive": true
             },
             {
                 "id": "mob1","top": 180,"left": 285,"src": "image/digimon/브이드라몬/브이드라몬.webp",
@@ -995,7 +1009,8 @@
             {
                 "id": "mob1","top": 230,"left": 660,"src": "image/digimon/스콜피온몬/스콜피온몬.webp",
                 "name": "스콜피온몬", "level": 68, "hp": 13852, "type": "데이터", "강점": "흙,내성", "약점": "물리,회피불가",
-                "items": []
+                "items": [],
+                "isAggressive": true
             },
             {
                 "id": "mob1","top": 280,"left": 625,"src": "image/digimon/우드몬/우드몬.webp",
@@ -1166,32 +1181,38 @@
             {
                 "id": "mob1","top":675,"left": 310,"src": "image/digimon/베지몬/베지몬.webp",
                 "name": "베지몬", "level": 79, "hp": 9383, "type": "바이러스", "강점": "나무,반사", "약점": "불,약점",
-                "items": ["조합법 : 부서진 제로유니트"]
+                "items": ["조합법 : 부서진 제로유니트"],
+                "isAggressive": true
             },
             {
                 "id": "mob1","top":675,"left": 350,"src": "image/digimon/스카몬/스카몬.webp",
                 "name": "스카몬", "level": 79, "hp": 9679, "type": "바이러스", "강점": "흙,회피", "약점": "얼음,회피불가",
-                "items": ["조합법 : 빛나는 제로유니트"]
+                "items": ["조합법 : 빛나는 제로유니트"],
+                "isAggressive": true
             },
             {
                 "id": "mob1","top":615,"left": 380,"src": "image/digimon/데블드라몬/데블드라몬.webp",
                 "name": "데블드라몬", "level": 80, "hp": 11314, "type": "바이러스", "강점": "어둠,회피", "약점": "빛,약점",
-                "items": ["조합법 : 빛나는 제로유니트","진홍빛 겹눈"]
+                "items": ["조합법 : 빛나는 제로유니트","진홍빛 겹눈"],
+                "isAggressive": true
             },
             {
                 "id": "mob1","top":410,"left": 400,"src": "image/digimon/데블드라몬/데블드라몬.webp",
                 "name": "데블드라몬", "level": 80, "hp": 11314, "type": "바이러스", "강점": "어둠,회피", "약점": "빛,약점",
-                "items": ["조합법 : 빛나는 제로유니트","진홍빛 겹눈"]
+                "items": ["조합법 : 빛나는 제로유니트","진홍빛 겹눈"],
+                "isAggressive": true
             },
             {
                 "id": "mob1","top":570,"left": 380,"src": "image/digimon/스파이더몬/스파이더몬.webp",
                 "name": "스파이더몬", "level": 80, "hp": 10367, "type": "바이러스", "강점": "바람,회피", "약점": "불,회피불가",
-                "items": ["조합법 : 부서진 제로유니트"]
+                "items": ["조합법 : 부서진 제로유니트"],
+                "isAggressive": true
             },
             {
                 "id": "mob1","top":460,"left": 370,"src": "image/digimon/스파이더몬/스파이더몬.webp",
                 "name": "스파이더몬", "level": 80, "hp": 10367, "type": "바이러스", "강점": "바람,회피", "약점": "불,회피불가",
-                "items": ["조합법 : 부서진 제로유니트"]
+                "items": ["조합법 : 부서진 제로유니트"],
+                "isAggressive": true
             }
 
         ]
@@ -1483,7 +1504,8 @@
             {
                 "id": "mob1","top": 60,"left": 440,"src": "image/digimon/츄몬/츄몬.webp",
                 "name": "츄몬", "level": 86, "hp": 8281, "type": "바이러스", "강점": "물리,회피", "약점": "어둠,회피불가",
-                "items": []
+                "items": [],
+                "isAggressive": true
             },
             {
                 "id": "mob1","top": 250,"left": 90,"src": "image/digimon/해바라기몬/해바라기몬.webp",
@@ -1673,7 +1695,8 @@
             {
                 "id": "mob1","top": 540,"left": 95,"src": "image/digimon/츄몬/츄몬.webp",
                 "name": "츄몬", "level": 90, "hp": 8518, "type": "바이러스", "강점": "물리,회피", "약점": "어둠,회피불가",
-                "items": []
+                "items": [],
+                "isAggressive": true
             }
         ]
     },
