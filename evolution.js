@@ -122,7 +122,7 @@ function showNameTooltip(event, digimonName) {
     // 툴팁의 위치를 이미지의 좌하단에 맞춰 설정
     const imgRect = event.target.getBoundingClientRect();
     nameTooltip.style.left = `${imgRect.left}px`;
-    nameTooltip.style.top = `${imgRect.bottom + window.scrollY - 72}px`;  // 이미지 아래에 표시 (10px 간격)
+    nameTooltip.style.top = `${imgRect.bottom + window.scrollY - 185}px`;  // 이미지 아래에 표시 (10px 간격)
 
     nameTooltip.classList.add('visible-tooltip');
 }
@@ -139,7 +139,7 @@ function showEvolutionTooltip(event, digimonName) {
     // 이미지의 현재 위치를 기준으로 툴팁 위치 설정 (이미지의 좌하단에 붙도록)
     const imgRect = event.target.getBoundingClientRect();
     evolutionTooltip.style.left = `${imgRect.left + window.scrollX - 2}px`; 
-    evolutionTooltip.style.top = `${imgRect.bottom + window.scrollY - 68}px`;  // 이미지 아래에 표시 (10px 간격)
+    evolutionTooltip.style.top = `${imgRect.bottom + window.scrollY - 180}px`;  // 이미지 아래에 표시 (10px 간격)
 
     evolutionTooltip.classList.add('visible-tooltip');
 }
@@ -156,8 +156,6 @@ function showEvolutionTreeForDigimon(digimonName) {
 
     // 선택된 디지몬의 하위 진화체를 찾음
     const lowerEvolutions = findAllLowerEvolutions(digimonName);
-    console.log("하위 진화체:", lowerEvolutions);  // 하위 진화체 콘솔 출력
-
     const filteredData = filterTreeByDigimonName(digimonName);
     if (filteredData.length > 0) {
         createEvolutionTree(filteredData, lowerEvolutions);
@@ -250,10 +248,7 @@ function activateHighlightedChildPlusButtons(parentNode) {
         // 디지몬 이름 추출 (':'를 '_'로 변환된 상태를 복구하여 원래 이름과 비교)
         const digimonImage = Array.from(node.querySelectorAll('img')).find(img => !img.classList.contains('type-image'));
         const digimonName = digimonImage ? digimonImage.alt : '';  // 디지몬 이름 추출
-
-        console.log('Selected Digimon Name:', selectedDigimonName);
-        console.log('Current Node Digimon Name:', digimonName);
-
+    
         // 선택된 디지몬의 이름과 일치하는 노드는 확장에서 제외
         if (digimonName !== selectedDigimonName) {
             const plusBtn = node.querySelector('.plus-btn');
@@ -361,15 +356,7 @@ function createDigimonNode(digimon, data, lowerEvolutions) {
                             // 마우스 오버 시 툴팁 표시
                             jogressImage.addEventListener('mouseover', (event) => {
                                 const evolution23rdValue = digimon[Object.keys(digimon)[22]];  // evolution.csv의 23번째 컬럼 값
-                                
-                                // console.log로 값 확인
-                                console.log("evolution23rdValue: ", evolution23rdValue);
-                                
                                 const jogressDataEntry = jogressData.find(jogress => jogress.name === evolution23rdValue);  // jogress.csv에서 해당 값 찾기
-                                
-                                // console.log로 jogressDataEntry가 제대로 가져와졌는지 확인
-                                console.log("jogressDataEntry: ", jogressDataEntry);
-                                
                                 showJogressTooltip(jogressImage, jogressDataEntry);  // 조그레스 툴팁 표시, jogress.csv에서 찾은 데이터를 사용
                             });
                             
@@ -492,7 +479,7 @@ function showJogressTooltip(jogressImage, jogressDataEntry) {
     // 이미지 위치를 기준으로 툴팁 위치 설정
     const imgRect = jogressImage.getBoundingClientRect();  // 이미지의 위치 정보 가져오기
     tooltip.style.left = `${imgRect.left + window.scrollX}px`;  // 이미지의 왼쪽에 맞춤
-    tooltip.style.top = `${imgRect.bottom + window.scrollY - 25}px`;  // 이미지의 바로 아래로 설정
+    tooltip.style.top = `${imgRect.bottom + window.scrollY - 130}px`;  // 이미지의 바로 아래로 설정
 
     tooltip.classList.add('visible-tooltip');
 }
@@ -523,7 +510,6 @@ function showTooltip(event, digimonName) {
         const parentImg = parentNode.querySelector('.digimon img:not(.type-image)'); // 타입 이미지가 아닌 디지몬 이미지 찾기
         if (parentImg) {
             parentDigimonName = parentImg.alt; // 부모 노드의 디지몬 이름 (alt 값) 저장
-            console.log("부모 노드의 디지몬 이미지 alt 값: ", parentDigimonName);
         }
     }
 
@@ -615,8 +601,8 @@ function showTooltip(event, digimonName) {
 function updateTooltipPosition(targetElement, tooltipElement) {
     const rect = targetElement.getBoundingClientRect();
     
-    tooltipElement.style.left = `${rect.left + window.scrollX - 3}px`; 
-    tooltipElement.style.top = `${rect.top + window.scrollY  + 25}px`; 
+    tooltipElement.style.left = `${rect.left + window.scrollX - 2}px`; 
+    tooltipElement.style.top = `${rect.top + window.scrollY - 80}px`; 
 }
 
 function observeNodeChanges(nodeElement, tooltipElement) {
