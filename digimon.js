@@ -209,16 +209,18 @@ async function fetchCSV() {
                 <!-- 캐릭터 이름을 링크로 추가 -->
                 <a href="character-detail.html?name=${encodeURIComponent(name)}" style="text-decoration: none; color: black;">${name}</a> <!-- 링크 추가 -->
             </td>
-            <td>${level}</td>
-            <td>${evolution}</td> <!-- 진화 단계 추가 -->
-            <td><img src="${typeImagePath}" alt="${type}" title="${type}" style="width: 23px; height: 23px;"></td> <!-- 타입을 이미지로 표시 -->
-            <td>${HP}</td>
-            <td>${SP}</td>
-            <td>${힘}</td>
-            <td>${지능}</td>
-            <td>${수비}</td>
-            <td>${저항}</td>
-            <td>${속도}</td>
+            <td style="text-align: center; vertical-align: middle;">${level}</td>
+            <td style="text-align: center; vertical-align: middle;">${evolution}</td>
+            <td style="text-align: center; vertical-align: middle;">
+                <img src="${typeImagePath}" alt="${type}" title="${type}" style="width: 23px; height: 23px; display: block; margin: 0 auto;">
+            </td>
+            <td style="text-align: center; vertical-align: middle;">${HP}</td>
+            <td style="text-align: center; vertical-align: middle;">${SP}</td>
+            <td style="text-align: center; vertical-align: middle;">${힘}</td>
+            <td style="text-align: center; vertical-align: middle;">${지능}</td>
+            <td style="text-align: center; vertical-align: middle;">${수비}</td>
+            <td style="text-align: center; vertical-align: middle;">${저항}</td>
+            <td style="text-align: center; vertical-align: middle;">${속도}</td>
             <td>${strongHtml}</td> <!-- 강점 데이터를 추가 (속성을 기준으로 이미지 및 텍스트) -->
             <td>${weakHtml}</td> <!-- 약점 데이터를 추가 (속성을 기준으로 이미지 및 텍스트) -->
             ${skillHtml(skill1)} <!-- 1스킬 -->
@@ -612,7 +614,3 @@ function hideTooltip(tooltipId) {
       event.stopPropagation(); // 툴팁 내부에서 클릭해도 툴팁이 닫히지 않도록 이벤트 차단
     });
   });
-
-
-
-
