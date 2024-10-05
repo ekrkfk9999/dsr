@@ -1,5 +1,21 @@
 let maps = {};
+let charactersData = [];
 
+// CSV 파일을 읽고 파싱하는 함수
+function loadCharactersCSV() {
+    Papa.parse("characters.csv", {
+        download: true,
+        header: true,
+        complete: function(results) {
+            charactersData = results.data; // CSV 데이터를 저장
+        }
+    });
+}
+
+// CSV 데이터를 불러오고 초기화
+loadCharactersCSV();
+
+// JSON 데이터 처리
 fetch('scaled_map_data.json')
     .then(response => response.json())
     .then(data => {
@@ -213,6 +229,12 @@ function createCheckbox(labelText, checkboxId, iconName, mapData, currentArray) 
     });
 }
 
+// 진화 단계 추출 함수
+function getEvolutionStageFromName(digimonName) {
+    const digimon = charactersData.find(character => character.name === digimonName);
+    return digimon ? digimon.evolution_stage : null;
+}
+
 // mobs 전용 툴팁 처리 함수
 function addSpecialTooltipToMobs(imageElement, name, src, level, hp, 강점, 약점, items, evol) {
     imageElement.addEventListener('mouseenter', function(event) {
@@ -259,7 +281,21 @@ function showSpecialTooltipAtImage(event, imageElement, name, src, level, hp, �
         <div style="text-align: center; font-size: 20px; font-weight: bold; margin-top: 10px; color: rgb(0,183,255);"><strong>드랍 아이템</strong> 
             <ul style="margin-top: 5px; list-style-type: none; padding-left: 0; font-size: 14px; text-align: left; color: white;">
                 ${드랍아이템목록.map(item => {
-                    const itemImageSrc = item.includes("조합법") ? 'image/item/조합법.png' : `image/item/${item.trim()}.png`;
+                    let itemImageSrc;
+                    
+                    if (item.includes("부서진")) {
+                        // "부서진 xx몬 디지코어" 처리
+                        const digimonName = item.split(" ")[1]; // 부서진 다음 단어 추출
+                        const evolutionStage = getEvolutionStageFromName(digimonName);
+                        if (evolutionStage) {
+                            itemImageSrc = `image/item/${evolutionStage}.png`;
+                        } else {
+                            itemImageSrc = `image/item/default.png`; // 진화 단계를 찾지 못한 경우 기본 이미지
+                        }
+                    } else {
+                        itemImageSrc = `image/item/${item.trim()}.png`;
+                    }
+                    
                     return `
                         <li style="display: flex; align-items: center; justify-content: flex-start; margin-bottom: 5px; margin-left: 5px;">
                             <img src="${itemImageSrc}" alt="${item.trim()}" style="width: 25px; height: 25px; margin-right: 5px; background-color: black; border-radius: 5px; border: 1px solid grey; vertical-align: middle;">
@@ -275,6 +311,7 @@ function showSpecialTooltipAtImage(event, imageElement, name, src, level, hp, �
          </div>
         ` : ''}
     `;
+
     document.body.appendChild(tooltip);
 
     // 툴팁 위치 조정
@@ -283,22 +320,16 @@ function showSpecialTooltipAtImage(event, imageElement, name, src, level, hp, �
     const imageBottomRightX = rect.right + window.pageXOffset;
     const imageBottomRightY = rect.bottom + window.pageYOffset;
     
-    // 맵 컨테이너의 높이를 가져와서 경계 체크
     const containerRect = imageContainer.getBoundingClientRect();
-
-    // 툴팁이 맵 컨테이너 아래쪽으로 벗어나지 않도록 조정
+    
     let tooltipTop = imageBottomRightY;
     if (tooltipTop + tooltipRect.height > containerRect.bottom + window.pageYOffset) {
-        // 툴팁이 하단 경계를 벗어나면 위로 이동
-        tooltipTop = containerRect.bottom + window.pageYOffset - tooltipRect.height - 10; // 여유 공간 추가
+        tooltipTop = containerRect.bottom + window.pageYOffset - tooltipRect.height - 10;
     }
-
-    // 툴팁 위치 설정
     tooltip.style.position = 'absolute';
     tooltip.style.left = `${imageBottomRightX + 10}px`;
     tooltip.style.top = `${tooltipTop}px`;
 }
-
 // 특별한 툴팁 숨기기 함수 (특별한 툴팁만)
 function hideSpecialTooltip() {
     const tooltip = document.querySelector('.special-tooltip');
