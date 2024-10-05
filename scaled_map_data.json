@@ -2637,5 +2637,18 @@
                 "items": ["스파이럴 탐지기 랜덤 박스","성숙기 스킬 강화석","유년기1 디지타마","유년기2 디지타마","미트파이","조각케이크","오래된 USB","이블몬의 가죽 팔찌","부서진 이블몬 디지코어","천사 귀걸이"]
             }
         ]
+    },
+    "???": {
+        "backgroundImage": "image/map/ApocalymonArea.png",
+        "portals": [
+            {
+                "id": "portal1","tooltip": "스파이럴 마운틴 정상<br>포탈","top": 410,"left": 380,"src": "image/map/포탈.webp"
+            }
+        ],
+        "overflows": [
+            {
+                "id": "overflow1","tooltip": "오버플로우 던전<br>아구몬","top": 335,"left": 380,"src": "image/map/오버플로우.webp"
+            }
+        ]
     }
 }
