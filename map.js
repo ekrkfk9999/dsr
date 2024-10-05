@@ -274,15 +274,28 @@ function showSpecialTooltipAtImage(event, imageElement, name, src, level, hp, �
         ` : ''}
     `;
 
+    document.body.appendChild(tooltip);
+
+    // 툴팁 위치 조정
     const rect = imageElement.getBoundingClientRect();
+    const tooltipRect = tooltip.getBoundingClientRect();
     const imageBottomRightX = rect.right + window.pageXOffset;
     const imageBottomRightY = rect.bottom + window.pageYOffset;
+    
+    // 맵 컨테이너의 높이를 가져와서 경계 체크
+    const containerRect = imageContainer.getBoundingClientRect();
 
+    // 툴팁이 맵 컨테이너 아래쪽으로 벗어나지 않도록 조정
+    let tooltipTop = imageBottomRightY;
+    if (tooltipTop + tooltipRect.height > containerRect.bottom + window.pageYOffset) {
+        // 툴팁이 하단 경계를 벗어나면 위로 이동
+        tooltipTop = containerRect.bottom + window.pageYOffset - tooltipRect.height - 10; // 여유 공간 추가
+    }
+
+    // 툴팁 위치 설정
     tooltip.style.position = 'absolute';
-    tooltip.style.left = `${imageBottomRightX - 10}px`;
-    tooltip.style.top = `${imageBottomRightY}px`;
-
-    document.body.appendChild(tooltip);
+    tooltip.style.left = `${imageBottomRightX + 10}px`;
+    tooltip.style.top = `${tooltipTop}px`;
 }
 
 // 특별한 툴팁 숨기기 함수 (특별한 툴팁만)
