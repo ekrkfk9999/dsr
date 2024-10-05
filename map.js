@@ -81,8 +81,8 @@ function initMap() {
             }
 
             // 오버플로우 데이터가 있는 경우에만 체크박스 생성
-            if (selectedMap.overflow && selectedMap.overflow.length > 0) {
-                createCheckbox('오버플로우', 'toggle-overflow', '오버플로우 아이콘', selectedMap.overflow, currentOverflows);
+            if (selectedMap.overflows && selectedMap.overflows.length > 0) {
+                createCheckbox('오버플로우', 'toggle-overflows', '오버플로우 아이콘', selectedMap.overflows, currentOverflows);
             }
 
             // 데이터큐브 데이터가 있는 경우에만 체크박스 생성
@@ -172,8 +172,8 @@ function createCheckbox(labelText, checkboxId, iconName, mapData, currentArray) 
             imgElement.classList.add('warp-image');
         } else if (checkboxId === 'toggle-shops') {
             imgElement.classList.add('shop-image');
-        } else if (checkboxId === 'toggle-overflow') {
-            imgElement.classList.add('overflow-image');
+        } else if (checkboxId === 'toggle-overflows') {
+            imgElement.classList.add('overflows-image');
         } else if (checkboxId === 'toggle-datacube') {
             imgElement.classList.add('datacube-image');
         }

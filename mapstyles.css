@@ -165,7 +165,7 @@ body {
 }
 
 /* 각 아이콘의 기본 크기 */
-.portal-image, .warp-image, .shop-image, .overflow-image{
+.portal-image, .warp-image, .shop-image, .overflows-image{
 width: 47px;
 height: 47px;
 }
