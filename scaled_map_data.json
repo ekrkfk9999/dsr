@@ -144,6 +144,9 @@
         "portals": [
             {
                 "id": "portal1","tooltip": "시작의 마을<br>포탈","top": 452.2,"left": 119.7,"src": "image/map/포탈.webp"
+            },
+            {
+                "id": "portal1","tooltip": "고래몬<br>고래몬","top": 640,"left": 510,"src": "image/map/포탈.webp"
             }
         ],
         "warps": [
