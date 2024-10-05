@@ -123,11 +123,17 @@ function createCheckbox(labelText, checkboxId, iconName, mapData, currentArray) 
     input.addEventListener('change', function() {
         const displayStyle = this.checked ? 'block' : 'none';
         currentArray.forEach(item => {
-            // 몹 이미지, 타입 이미지, evol 아이콘 모두 표시/숨김 처리
-            item.mobImage.style.display = displayStyle;
-            item.typeImage.style.display = displayStyle;
-            if (item.evolIcon) {  // evolIcon이 있는 경우에만 처리
-                item.evolIcon.style.display = displayStyle;
+            // 각 아이콘에 대해 처리
+            if (item.mobImage) {
+                // 몹 이미지일 경우
+                item.mobImage.style.display = displayStyle;
+                item.typeImage.style.display = displayStyle;
+                if (item.evolIcon) {
+                    item.evolIcon.style.display = displayStyle;
+                }
+            } else {
+                // 일반 아이콘일 경우
+                item.style.display = displayStyle;
             }
         });
     });
@@ -159,7 +165,6 @@ function createCheckbox(labelText, checkboxId, iconName, mapData, currentArray) 
             imageContainer.appendChild(evolIcon);
         }
 
-
         // 아이콘 타입에 맞는 클래스를 추가하여 CSS 적용
         if (checkboxId === 'toggle-portals') {
             imgElement.classList.add('portal-image');
@@ -175,14 +180,8 @@ function createCheckbox(labelText, checkboxId, iconName, mapData, currentArray) 
 
         // mobs 전용 로직: 몹과 타입 이미지를 함께 추가
         if (checkboxId === 'toggle-mob') {
-
-                // 몹 이미지에 'mob-image' 클래스 추가
             imgElement.classList.add('mob-image');  // 이 코드로 'mob-image' 클래스를 추가
 
-            imgElement.style.position = 'absolute';
-            imgElement.style.top = `${item.top}px`;
-            imgElement.style.left = `${item.left}px`;
-            imgElement.style.display = input.checked ? 'block' : 'none';
             // 몹 이미지와 타입 이미지를 함께 표시
             const typeElement = document.createElement('img');
             typeElement.src = `image/${item.type}.webp`; // type 이미지 경로
@@ -209,7 +208,7 @@ function createCheckbox(labelText, checkboxId, iconName, mapData, currentArray) 
             
             // 이미지 컨테이너에 일반 아이콘 추가
             imageContainer.appendChild(imgElement);
-            currentArray.push(imgElement); // 배열에 아이콘 추가
+            currentArray.push(imgElement); // 배열에 일반 아이콘 추가
         }
     });
 }
