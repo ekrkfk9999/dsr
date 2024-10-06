@@ -1,7 +1,7 @@
 let maps = {};
 
 // JSON 데이터 처리
-fetch('scaled_map_data.json')
+fetch('map.json')
     .then(response => response.json())
     .then(data => {
         maps = data;
@@ -237,19 +237,19 @@ function showSpecialTooltipAtImage(event, imageElement, name, src, level, hp, �
     const 드랍아이템목록 = Array.isArray(items) ? items : [];
 
     tooltip.innerHTML = `
-        <div style="text-align: center; font-size: 20px; font-weight: bold; color: rgb(0,183,255);">${name}</div>
+        <div style="text-align: center; font-size: 20px; color: rgb(0,183,255); font-weight: bold;">${name}</div>
         <div style="display: flex; align-items: center;">
             <img src="${src}" alt="${name}" style="width: 100px; height: 100px; margin-top: 5px; background-color: #000000; border-radius: 5px; border: 1px solid white;">
             <div style="margin-left: 5px;">
-                <div style="margin-bottom: 5px; margin-top: 5px; color: white;"><strong>레벨 :</strong> ${level}</div>
-                <div style="margin-bottom: 5px; color: white;"><strong>체력 :</strong> ${hp}</div>
-                <div style= "color: white;"><strong>강점 :</strong> 
+                <div style="margin-bottom: 5px; margin-top: 5px; color: white;"><span>레벨 :</span> ${level}</div>
+                <div style="margin-bottom: 5px; color: white;"><span>체력 :</span> ${hp}</div>
+                <div style= "color: white;"><span>강점 :</span> 
                     <div style="background-image: url('image/strongbackground.webp'); background-size: cover; width: 25px; height: 25px; display: inline-block; vertical-align: middle;">
                         ${강점이미지 ? `<img src="${강점이미지}" alt="${강점Parts[0]}" style="width: 24px; height: 24px;">` : ''}
                     </div>
                     ${강점텍스트 ? `<span>${강점텍스트}</span>` : ''}
                 </div>
-                <div style= "color: white;"><strong>약점 :</strong>
+                <div style= "color: white;"><span>약점 :</span>
                     <div style="background-image: url('image/weakbackground.webp'); background-size: cover; width: 25px; height: 25px; display: inline-block; vertical-align: middle;">
                         ${약점이미지 ? `<img src="${약점이미지}" alt="${약점Parts[0]}" style="width: 24px; height: 24px;">` : ''}
                     </div>
@@ -257,7 +257,7 @@ function showSpecialTooltipAtImage(event, imageElement, name, src, level, hp, �
                 </div>
             </div>
         </div>
-        <div style="text-align: center; font-size: 20px; font-weight: bold; margin-top: 10px; color: rgb(0,183,255);"><strong>드랍 아이템</strong> 
+        <div style="text-align: center; font-size: 20px; margin-top: 10px; color: rgb(0,183,255);"><strong>드랍 아이템</strong> 
             <ul style="margin-top: 5px; list-style-type: none; padding-left: 0; font-size: 14px; text-align: left; color: white;">
                 ${드랍아이템목록.map(item => {
                     const itemImageSrc = item.includes("조합법") ? 'image/item/조합법.png' : `image/item/${item.trim()}.png`;
@@ -270,7 +270,7 @@ function showSpecialTooltipAtImage(event, imageElement, name, src, level, hp, �
             </ul>
         </div>
         ${evol ? `
-        <div style="text-align: center; font-size: 20px; font-weight: bold; margin-top: 10px; color: rgb(0,183,255);"><strong>조건 진화</strong></div>
+        <div style="text-align: center; font-size: 20px; margin-top: 10px; color: rgb(0,183,255);"><strong>조건 진화</strong></div>
         <div style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
         <img src="image/digimon/${evol}/${evol}.webp" alt="${evol}" style="width: 50px; height: 50px; background-color: black; border-radius: 5px; border: 1px solid white;">
          </div>

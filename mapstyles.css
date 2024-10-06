@@ -20,7 +20,7 @@ body {
 
 .container {
   width: 90%;
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 20px auto;
 }
 
@@ -160,28 +160,28 @@ body {
 /* 이미지 컨테이너 */
 #image-container {
   position: relative;
-  width: 800px; 
-  height: 800px; 
+  width: 700px; 
+  height: 700px; 
   background-size: cover;
   overflow: hidden; /* 배경 밖으로 벗어난 부분은 숨김 */
   margin-top: 20px; 
-  margin-left: 115px;
+  margin-left: 130px;
   z-index: 1;
 }
 
 /* 각 아이콘의 기본 크기 */
 .portal-image, .warp-image, .shop-image, .overflows-image{
-width: 47px;
-height: 47px;
+width: 41px;
+height: 41px;
 }
 
 .datacube-image {
-  width: 16px;
-  height: 16px; 
+  width: 14px;
+  height: 14px; 
 }
 .mob-image {
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   border-radius: 5px; 
   background-color: #000000;
   z-index: 999;
@@ -252,7 +252,6 @@ height: 47px;
   padding: 10px;
   border-radius: 10px;
   font-size: 14px;
-  font-weight: bold;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   z-index: 1000;
 }
@@ -260,7 +259,7 @@ height: 47px;
 .dropdown {
   position: absolute;
   top: 335px; /* 원하는 위치로 수정 */
-  left: 820px; /* 원하는 위치로 수정 */
+  left: 720px; /* 원하는 위치로 수정 */
   z-index: 10; /* 드롭다운이 항상 이미지 컨테이너보다 위에 표시되도록 설정 */
 }
 
