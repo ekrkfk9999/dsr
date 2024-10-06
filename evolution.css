@@ -68,10 +68,12 @@
       padding: 0 60px;
     }
     
-  .wrapper {
-    position: relative;
-    width: 100%; /* 전체 너비를 wrapper에 맞춤 */
-}
+    .wrapper {
+        position: relative; /* 모든 내부 요소들의 기준이 되는 상대적 부모 */
+        width: 100%; /* 전체 너비를 wrapper에 맞춤 */
+        max-width: 1100px; /* 스크롤 컨테이너에 맞춘 최대 너비 설정 */
+        margin: 0 auto; /* 가운데 정렬 */
+    }
 .tree-container {
     display: flex;
     flex-direction: row;
@@ -194,23 +196,22 @@
 .visible {
     display: flex;
 }
-/* 세로 스크롤 가능한 디지몬 이미지 목록 */
+/* 스크롤 컨테이너 */
 .scroll-container {
-    width: 1100px;
+    width: 100%; /* wrapper 너비에 맞추어 설정 */
     height: 400px;
     overflow-y: auto;
     overflow-x: hidden;
     margin-bottom: 20px;
     border: 1px solid #ccc;
     padding: 10px;
-    margin: 0 auto; /* 가로 중앙 정렬 */
+    margin-top: 80px; /* 메뉴 컨테이너와 겹치지 않도록 여백 추가 */
     display: grid; /* 그리드 레이아웃 사용 */
-    grid-template-columns: repeat(12, 1fr); /* 가로로 10개씩 배치 */
+    grid-template-columns: repeat(12, 1fr); /* 가로로 12개의 열 */
     grid-auto-rows: 80px; /* 각 줄의 높이를 고정 */
     gap: 10px; /* 이미지 간격 */
-    border-radius: 10px;
-    margin-top: 80px; /* 메뉴 컨테이너와 겹치지 않도록 여백 추가 */
     background-color: white;
+    border-radius: 10px;
 }
 .scroll-container .digimon-image-container {
     background-color: rgb(34, 34, 34); /* 배경색 */
@@ -268,12 +269,13 @@ background: rgba(0, 0, 0, 0.9);
 .name-tooltip.visible-tooltip {
     display: block;
 }
+/* 메뉴 컨테이너 */
 .menu-container {
     position: absolute;
-    top: -60px;
-    left: 405px; 
+    top: -60px; /* 상단에 고정 */
+    left: 0; /* 스크롤 컨테이너와 동일 선상 */
     display: flex;
-    justify-content: flex-start; 
+    justify-content: flex-start;
     gap: 10px;
     padding: 10px;
     border-radius: 10px;
@@ -339,10 +341,11 @@ background: rgba(0, 0, 0, 0.9);
     transform: scale(1.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+/* 검색창 */
 .search-container {
     position: absolute;
     top: -45px;
-    left: 1200px; 
+    right: 0; /* 오른쪽 끝에 고정 */
     display: flex;
 }
 
