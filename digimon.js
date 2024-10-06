@@ -214,19 +214,19 @@ async function fetchCSV() {
             <td style="text-align: center; vertical-align: middle;">
                 <img src="${typeImagePath}" alt="${type}" title="${type}" style="width: 23px; height: 23px; display: block; margin: 0 auto;">
             </td>
-            <td style="text-align: center; vertical-align: middle;">${HP}</td>
+            <td style="text-align: center; vertical-align: middle; border-left: 2px solid darkgrey;">${HP}</td>
             <td style="text-align: center; vertical-align: middle;">${SP}</td>
             <td style="text-align: center; vertical-align: middle;">${힘}</td>
             <td style="text-align: center; vertical-align: middle;">${지능}</td>
             <td style="text-align: center; vertical-align: middle;">${수비}</td>
             <td style="text-align: center; vertical-align: middle;">${저항}</td>
             <td style="text-align: center; vertical-align: middle;">${속도}</td>
-            <td>${strongHtml}</td> <!-- 강점 데이터를 추가 (속성을 기준으로 이미지 및 텍스트) -->
-            <td>${weakHtml}</td> <!-- 약점 데이터를 추가 (속성을 기준으로 이미지 및 텍스트) -->
+            <td style="border-left: 2px solid darkgrey;">${strongHtml}</td> <!-- 강점 데이터를 추가 (속성을 기준으로 이미지 및 텍스트) -->
+            <td style="border-right: 2px solid darkgrey;">${weakHtml}</td> <!-- 약점 데이터를 추가 (속성을 기준으로 이미지 및 텍스트) -->
             ${skillHtml(skill1)} <!-- 1스킬 -->
             ${skillHtml(skill2)} <!-- 2스킬 -->
             ${skillHtml(skill3)} <!-- 3스킬 -->
-            <td>${fieldsHtml}</td> <!-- 필드 이미지 표시 -->
+            <td style="border-left: 2px solid darkgrey;">${fieldsHtml}</td> <!-- 필드 이미지 표시 -->
         `;
         newRow.style.display = 'none'; // 모든 행을 초기에는 숨김 처리
         tableBody.appendChild(newRow);
@@ -614,3 +614,7 @@ function hideTooltip(tooltipId) {
       event.stopPropagation(); // 툴팁 내부에서 클릭해도 툴팁이 닫히지 않도록 이벤트 차단
     });
   });
+
+
+
+

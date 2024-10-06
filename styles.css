@@ -20,7 +20,7 @@
   
   .container {
     width: 90%;
-    max-width: 1520px;
+    max-width: 1465px;
     margin: 20px auto;
   }
   
@@ -59,7 +59,7 @@
 
   .filter-label {
     width: 150px;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: bold;
   }
   
@@ -95,7 +95,7 @@
   .result-table th, 
   .result-table td {
     white-space: nowrap;
-    font-size: 15px; /* You can change 14px to your preferred size */
+    font-size: 14px; /* You can change 14px to your preferred size */
     font-weight:600;
     padding: 10px;
     border: 1px solid #ccc; /* Adds a solid border to each cell */
@@ -127,8 +127,8 @@
   
   .evolution-btn img {
     display: block;
-    width: 40px; /* 이미지 너비 */
-    height: 40px; /* 이미지 높이 */
+    width: 37px; /* 이미지 너비 */
+    height: 37px; /* 이미지 높이 */
     object-fit: cover; /* 이미지가 버튼에 맞게 표시되도록 설정 */
     border-radius: 8px; /* 이미지도 둥글게 */
     margin: 0;
@@ -151,8 +151,8 @@
   
   .type-btn img {
     display: block;
-    width: 40px; /* 이미지 너비 */
-    height: 39px; /* 이미지 높이 */
+    width: 37px; /* 이미지 너비 */
+    height: 37px; /* 이미지 높이 */
     margin: 0;
     padding: 0;
   }
@@ -176,8 +176,8 @@
   
   .skill-btn img {
     display: block;
-    width: 40px; /* 이미지 너비 */
-    height: 40px; /* 이미지 높이 */
+    width: 37px; /* 이미지 너비 */
+    height: 37px; /* 이미지 높이 */
     margin: 0;
     padding: 0;
   }
@@ -201,8 +201,8 @@
   
   .skillweak-btn img {
     display: block;
-    width: 40px; /* 이미지 너비 */
-    height: 40px; /* 이미지 높이 */
+    width: 37px; /* 이미지 너비 */
+    height: 37px; /* 이미지 높이 */
     margin: 0;
     padding: 0;
   }
@@ -226,8 +226,8 @@
   
   .skillstrong-btn img {
     display: block;
-    width: 40px; /* 이미지 너비 */
-    height: 40px; /* 이미지 높이 */
+    width: 37px; /* 이미지 너비 */
+    height: 37px; /* 이미지 높이 */
     margin: 0;
     padding: 0;
   }
@@ -252,8 +252,8 @@
   
   .field-btn img {
     display: block;
-    width: 40px; /* 이미지 너비 */
-    height: 40px; /* 이미지 높이 */
+    width: 37px; /* 이미지 너비 */
+    height: 37px; /* 이미지 높이 */
     margin: 0;
     padding: 0;
   }

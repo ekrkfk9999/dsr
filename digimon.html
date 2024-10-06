@@ -441,26 +441,26 @@
     
     <!-- 결과 테이블 -->
     <div class="results">
-      <table class="result-table">
+      <table class="result-table" style="border: 2px solid darkgrey;">
         <thead>
-          <tr>
+          <tr style="border: 2px solid darkgrey;">
             <th onclick="sortTable(0)" class="sortable">이름 <span id="sort-name"></span></th>
             <th onclick="sortTable(1)">레벨</th>
             <th onclick="sortTable(2)">진화 단계</th>
             <th onclick="sortTable(3)" class="sortable">타입 <span id="sort-type"></span></th>
-            <th onclick="sortTable(4)" class="sortable">HP <span id="sort-hp"></span></th>
+            <th onclick="sortTable(4)" class="sortable" style="border-left: 2px solid darkgrey;">HP <span id="sort-hp"></span></th>
             <th onclick="sortTable(5)" class="sortable">SP <span id="sort-sp"></span></th>
             <th onclick="sortTable(6)" class="sortable">힘 <span id="sort-power"></span></th>
             <th onclick="sortTable(7)" class="sortable">지능 <span id="sort-intelligence"></span></th>
             <th onclick="sortTable(8)" class="sortable">수비 <span id="sort-defense"></span></th>
             <th onclick="sortTable(9)" class="sortable">저항 <span id="sort-resistance"></span></th>
             <th onclick="sortTable(10)" class="sortable">속도 <span id="sort-speed"></span></th>
-            <th>강점</th>
-            <th>약점</th>
+            <th style="border-left: 2px solid darkgrey;">강점</th>
+            <th style="border-right: 2px solid darkgrey;">약점</th>
             <th>1스킬</th>
             <th>2스킬</th>
             <th>3스킬</th>
-            <th>필드</th>
+            <th style="border-left: 2px solid darkgrey;">필드</th>
           </tr>
         </thead>
         <tbody id="characterTable">
