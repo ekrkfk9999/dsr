@@ -141,7 +141,7 @@ function getQueryParam(param) {
                   <td colspan="3" style="vertical-align: middle; position: relative; left: 50px; top: -30px;">
                     <div style="font-size: 16px; font-weight: bold; display: flex; align-items: center; margin-top: 12px; margin-left: 8px;">
                       <span>${skillColumns[12]}</span> <!-- 스킬 이름 -->
-                      <img src="${skill1ImgPath}" alt="속성" style="width: 23px; margin-left: 5px; background-image: url('image/background.webp'); background-size: cover; background-position: center; "> <!-- 속성 이미지 -->
+                      <img src="${skill1ImgPath}" alt="속성" style="width: 22px; margin-left: 5px; background-image: url('image/background.webp'); background-size: 120%; background-position: center; "> <!-- 속성 이미지 -->
                     </div>
                   </td>
                 </tr>
