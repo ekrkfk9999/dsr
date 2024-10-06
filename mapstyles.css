@@ -129,13 +129,13 @@ body {
     background-color: #f0f0f0;
     border: 1px solid #ccc;
     padding: 5px 10px; /* 버튼 내부 여백을 유지 */
-    margin-top: 15px;
+    margin-top: 10px;
     margin-right: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     display: inline-block; /* 버튼 크기를 글씨에 맞춰 자동으로 조정 */
     text-align: center; /* 텍스트를 버튼 안에서 중앙 정렬 */
-    border-radius: 8px; /* 버튼 모서리를 둥글게 처리 */
+    border-radius: 5px; /* 버튼 모서리를 둥글게 처리 */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 버튼에 살짝 그림자 추가 */
     white-space: nowrap; /* 긴 텍스트가 줄바꿈되지 않도록 설정 */
     font-weight: 800;
@@ -150,7 +150,7 @@ body {
 .map-button.active {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 활성화된 버튼에 더 진한 그림자 */
     transform: scale(1.05); /* 활성화된 버튼을 살짝 확대 */
-    border-radius: 8px; /* 둥근 모서리 유지 */
+    border-radius: 5px; /* 둥근 모서리 유지 */
     background-color: #6c757d; /* 세련된 그레이 색상 */
     color: white;
     border: 1px solid #5a6268; /* 더 어두운 그레이 테두리 */
@@ -258,8 +258,8 @@ height: 41px;
 
 .dropdown {
   position: absolute;
-  top: 335px; /* 원하는 위치로 수정 */
-  left: 730px; /* 원하는 위치로 수정 */
+  top: 315px; /* 원하는 위치로 수정 */
+  left: 735px; /* 원하는 위치로 수정 */
   z-index: 10; /* 드롭다운이 항상 이미지 컨테이너보다 위에 표시되도록 설정 */
 }
 
