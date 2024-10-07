@@ -98,7 +98,7 @@ async function fetchCSV() {
         };
 
         // 스킬1, 스킬2, 스킬3 데이터를 테이블에 추가 (속성을 기준으로 이미지 및 텍스트)
-        const skillHtml = (skill) => {
+        const skillHtml = (skill, skillNumber, digimonName) => {
             if (!skill) return '<td></td>'; // 스킬이 없으면 빈 td 반환
             
             let backgroundColor = '';
@@ -140,15 +140,23 @@ async function fetchCSV() {
                 ? effectDescriptionsLower[normalizedEffect]
                 : '효과 설명을 찾을 수 없습니다.'; // 일치하는 효과가 없으면 기본 값 설정
             
-            const effectImagePath = skill.effect ? `image/debuff/${skill.effect}.webp` : ''; // 효과 이미지 경로 설정
+            let effectImagePath = skill.effect ? `image/debuff/${skill.effect}.webp` : ''; // 효과 이미지 경로 설정
+                // 회복 효과일 경우 스킬 이미지를 사용
+            if (normalizedEffect === '회복') {
+                // 디지몬 스킬 이미지 경로 설정
+                effectImagePath = `image/digimon/${digimonName}/skill${skillNumber}.webp`;
+
+                // 이미지가 제대로 설정되었는지 디버그 출력
+                console.log(`회복 효과 이미지 경로: ${effectImagePath}`);
+            }
             
             // 효과가 있을 때만 툴팁을 생성
             const effectTooltipHtml = skill.effect && effectDescription 
                 ? `<div class="tooltip" style="display: inline-block; vertical-align: middle;">
-                       <img src="${effectImagePath}" alt="${skill.effect}" style="width: 23px; height: 23px; vertical-align: middle;">
+                       <img src="${effectImagePath}" alt="${skill.effect}" style="width: 23px; height: 23px; vertical-align: middle; border-radius: 50%;">
                        <div class="tooltiptext">
                            <div class="tooltip-content">
-                               <img src="${effectImagePath}" alt="${skill.effect} 이미지" style="width: 30px; height: 30px;">
+                               <img src="${effectImagePath}" alt="${skill.effect} 이미지" style="width: 30px; height: 30px; border-radius: 50%;">
                                <div class="tooltip-description">
                                    ${effectDescription}
                                </div>
@@ -223,9 +231,9 @@ async function fetchCSV() {
             <td style="text-align: center; vertical-align: middle;">${속도}</td>
             <td style="border-left: 2px solid darkgrey;">${strongHtml}</td> <!-- 강점 데이터를 추가 (속성을 기준으로 이미지 및 텍스트) -->
             <td style="border-right: 2px solid darkgrey;">${weakHtml}</td> <!-- 약점 데이터를 추가 (속성을 기준으로 이미지 및 텍스트) -->
-            ${skillHtml(skill1)} <!-- 1스킬 -->
-            ${skillHtml(skill2)} <!-- 2스킬 -->
-            ${skillHtml(skill3)} <!-- 3스킬 -->
+            ${skillHtml(skill1, 1, name)} <!-- 1번째 스킬 -->
+            ${skillHtml(skill2, 2, name)} <!-- 2번째 스킬 -->
+            ${skillHtml(skill3, 3, name)} <!-- 3번째 스킬 -->
             <td style="border-left: 2px solid darkgrey;">${fieldsHtml}</td> <!-- 필드 이미지 표시 -->
         `;
         newRow.style.display = 'none'; // 모든 행을 초기에는 숨김 처리
