@@ -520,6 +520,14 @@ function showTooltip(event, digimonName) {
         return; // 부모 디지몬 정보를 찾지 못하면 중단
     }
 
+    // 부모 디지몬의 조그레스 디지몬 여부 확인
+    const jogressTarget = allData.some(digimon => digimon.조그레스 === digimonName);
+    
+    // 조그레스 대상이면 툴팁을 표시하지 않음
+    if (jogressTarget) {
+        return;
+    }
+
     const digimonInfo = conditionData.find(d => d.name === parentDigimon.name);
     if (digimonInfo) {
         const thirdColumnValue = digimonInfo[Object.keys(digimonInfo)[2]];
@@ -595,6 +603,7 @@ function showTooltip(event, digimonName) {
         observeNodeChanges(event.target, tooltip);
     }
 }
+
 
 
 
