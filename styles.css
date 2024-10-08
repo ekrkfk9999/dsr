@@ -592,7 +592,7 @@ tbody {
 }
 
 .tooltip-footer {
-  color: #ff0000; /* 흰색 텍스트 */
+  color: #ff0000;
   padding: 7px;
   text-align: center;
   font-size: 10px;
@@ -605,19 +605,19 @@ tbody {
 }
 
 .reset-btn {
-  position: absolute; /* 절대 위치 */
-  top: 20px; /* 위에서 10px 떨어짐 */
-  right: 20px; /* 오른쪽에서 10px 떨어짐 */
+  position: absolute;
+  top: 20px;
+  right: 20px;
   padding: 8px 15px;
-  background-color: #f44336; /* 빨간색 */
+  background-color: #6c757d
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 14px;
-  z-index: 1; /* 버튼이 다른 요소 위에 나타나도록 함 */
+  z-index: 1; 
 }
 
 .reset-btn:hover {
-  background-color: #d32f2f; /* 마우스를 올렸을 때 더 어두운 빨간색 */
+  background-color: #494f53; 
 }
