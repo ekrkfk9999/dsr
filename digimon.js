@@ -145,9 +145,6 @@ async function fetchCSV() {
             if (normalizedEffect === '회복') {
                 // 디지몬 스킬 이미지 경로 설정
                 effectImagePath = `image/digimon/${digimonName}/skill${skillNumber}.webp`;
-
-                // 이미지가 제대로 설정되었는지 디버그 출력
-                console.log(`회복 효과 이미지 경로: ${effectImagePath}`);
             }
             
             // 효과가 있을 때만 툴팁을 생성
@@ -622,6 +619,34 @@ function hideTooltip(tooltipId) {
       event.stopPropagation(); // 툴팁 내부에서 클릭해도 툴팁이 닫히지 않도록 이벤트 차단
     });
   });
+
+  // 필터 초기화 함수
+function resetFilters() {
+    // 필터를 모두 초기화
+    filters.evolution = [];
+    filters.type = [];
+    filters.skill = [];
+    filters.strong = [];
+    filters.weak = [];
+    filters.field = [];
+
+    // 모든 버튼에서 활성화 상태를 제거
+    const filterButtons = document.querySelectorAll('.button-group button, .button-group-field button');
+    filterButtons.forEach(button => {
+        button.classList.remove('active');
+    });
+
+    // 체크박스 상태도 초기화
+    document.getElementById('select-all-evolution').checked = false;
+    document.getElementById('select-all-type').checked = false;
+    document.getElementById('select-all-skill').checked = false;
+    document.getElementById('select-all-strong').checked = false;
+    document.getElementById('select-all-weak').checked = false;
+
+    // 테이블 필터링 갱신
+    filterTable();
+}
+
 
 
 
