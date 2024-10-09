@@ -45,7 +45,7 @@ async function fetchCSV() {
 
     rows.forEach(row => {
         const columns = row.split(',');
-        const name = columns[0];  // 캐릭터 이름
+        const name = columns[0];
         const evolution = columns[1];
         const type = columns[2];
         const level = columns[3];
@@ -60,10 +60,7 @@ async function fetchCSV() {
         const 강점효과 = columns[12];
         const 약점 = columns[13];
         const 약점효과 = columns[14];
-        const 필드1 = columns[15];
-        const 필드2 = columns[16];
-        const 필드3 = columns[17];
-
+        const 필드 = columns[15];
         
         // 타입에 따른 이미지 경로 설정
         const typeImagePath = `image/${type}.webp`; // 타입에 따라 이미지 경로 설정
@@ -77,15 +74,12 @@ async function fetchCSV() {
             ? `<img src="image/${약점}.webp" alt="${약점}" title="${약점}" style="width: 25px; height: 25px; vertical-align: middle; background-image: url('image/weakbackground.webp'); background-size: 120%; background-position: center;"> <span>${약점효과 ? 약점효과 : ''}</span>`
             : ''; // 약점 이미지와 효과를 표시, 없으면 빈 값
 
-        // 필드 이미지 경로 설정 (존재하는 경우에만 이미지 표시)
-        const fieldImages = [
-            필드1 ? `<img src="image/field/${필드1}.webp" alt="${필드1}" title="${필드1}" style="width: 25px; height: 25px;">` : '',
-            필드2 ? `<img src="image/field/${필드2}.webp" alt="${필드2}" title="${필드2}" style="width: 25px; height: 25px;">` : '',
-            필드3 ? `<img src="image/field/${필드3}.webp" alt="${필드3}" title="${필드3}" style="width: 25px; height: 25px;">` : ''
-        ];
+        // 필드 데이터를 세미콜론으로 분리하여 이미지 요소를 생성하고, 필드 HTML을 바로 만듦
+        const fieldsHtml = 필드 ? 필드.split(';').map(field =>
+            `<img src="image/field/${field}.webp" alt="${field}" title="${field}" style="width: 25px; height: 25px;">`
+        ).join('') : ''; // 필드가 없을 경우 빈 문자열 반환
 
-        // 필드 이미지를 조합
-        const fieldsHtml = fieldImages.filter(Boolean).join(''); // 빈 문자열을 필터링하여 조합
+
 
         // 각 스킬 데이터를 skill1.csv, skill2.csv, skill3.csv에서 찾아서 추가
         const skill1 = skill1Data.find(skill => skill.name === name); // 캐릭터 이름을 기준으로 매칭
@@ -203,9 +197,7 @@ async function fetchCSV() {
         newRow.dataset.강점효과 = 강점효과; // 강점 효과 데이터 속성 추가
         newRow.dataset.약점 = 약점; // 약점 데이터 속성 추가
         newRow.dataset.약점효과 = 약점효과; // 약점 효과 데이터 속성 추가
-        newRow.dataset.필드1 = 필드1; // 필드1 데이터 속성 추가
-        newRow.dataset.필드2 = 필드2; // 필드2 데이터 속성 추가
-        newRow.dataset.필드3 = 필드3; // 필드3 데이터 속성 추가
+        newRow.dataset.fields = 필드; // 필드 데이터를 저장
         newRow.innerHTML = `
             <td>
                 <div style="width: 25px; height: 25px; background-color: black; display: inline-block; vertical-align: middle;">
@@ -454,25 +446,22 @@ function filterTable() {
     const tableBody = document.getElementById('characterTable');
     const rows = tableBody.querySelectorAll('tr');
 
-    // 필터가 비어있으면 모든 행을 숨김
-    const hasFilter = Object.values(filters).some(filter => filter.length > 0); // 필터가 하나라도 있으면 true
+    const hasFilter = Object.values(filters).some(filter => filter.length > 0);
 
     rows.forEach(row => {
-        // 진화 단계와 타입 필터링
         const evolutionMatches = filters.evolution.length === 0 || filters.evolution.includes(row.dataset.evolution);
         const typeMatches = filters.type.length === 0 || filters.type.includes(row.dataset.type);
+        
+        // 필드 데이터를 세미콜론으로 분리하여 배열로 변환하고, 필드 데이터가 비어있는 경우 빈 배열 처리
+        const fieldData = row.dataset.fields ? row.dataset.fields.split(';').filter(Boolean) : [];
+        // 필드 필터링 로직: 선택된 필터 중 하나라도 필드 데이터에 포함되는지 확인
+        const fieldMatches = filters.field.length === 0 || filters.field.some(filterField => fieldData.includes(filterField));
 
-        // 필드 필터링: 선택된 모든 필터가 캐릭터의 필드에 포함되는지 확인
-        const fields = [row.dataset.필드1, row.dataset.필드2, row.dataset.필드3];
-        const fieldMatches = filters.field.length === 0 || filters.field.every(filterField => fields.includes(filterField));
-
-        // 강점과 약점 필터 매칭 여부
         const strength = row.dataset.강점 ? row.dataset.강점.trim().toLowerCase() : '';
         const weakness = row.dataset.약점 ? row.dataset.약점.trim().toLowerCase() : '';
         const strengthsMatch = filters.strong.length === 0 || filters.strong.some(filter => filter.toLowerCase() === strength);
         const weaknessesMatch = filters.weak.length === 0 || filters.weak.some(filter => filter.toLowerCase() === weakness);
 
-        // 스킬 속성 필터링
         const skill1Image = row.cells[13].querySelector('img');
         const skill1 = skill1Image ? skill1Image.alt : '';
         const skill2Image = row.cells[14].querySelector('img');
@@ -484,11 +473,10 @@ function filterTable() {
                             filters.skill.includes(skill2) ||
                             filters.skill.includes(skill3);
 
-        // 필터 조건이 하나라도 맞으면 행을 표시, 아니면 숨김
         if (hasFilter && evolutionMatches && typeMatches && skillsMatch && fieldMatches && strengthsMatch && weaknessesMatch) {
-            row.style.display = ''; // 조건을 만족하면 보이기
+            row.style.display = '';
         } else {
-            row.style.display = 'none'; // 조건을 만족하지 않으면 숨기기
+            row.style.display = 'none';
         }
     });
 }
@@ -543,9 +531,6 @@ function sortTable(column) {
     // 정렬 상태 표시를 업데이트
     updateSortIndicator(column);
 }
-
-
-
 
 // 검색 기능 구현 (여러 검색어 지원)
 document.getElementById('search').addEventListener('input', function() {
