@@ -347,7 +347,7 @@ function createDigimonNode(digimon, data, lowerEvolutions) {
                         horizontalConnector.appendChild(percentageText);
 
                         if (evolution.name === digimon.조그레스) {
-                            const jogressImageName = digimon[Object.keys(digimon)[24]];  // 유지
+                            const jogressImageName = digimon[Object.keys(digimon)[26]];  // 유지
                             const jogressImagePath = `image/digimon/${jogressImageName}/${jogressImageName}.webp`;
                         
                             const jogressImage = document.createElement('img');
@@ -356,7 +356,7 @@ function createDigimonNode(digimon, data, lowerEvolutions) {
                             
                             // 마우스 오버 시 툴팁 표시
                             jogressImage.addEventListener('mouseover', (event) => {
-                                const evolution23rdValue = digimon[Object.keys(digimon)[22]];  // evolution.csv의 23번째 컬럼 값
+                                const evolution23rdValue = digimon[Object.keys(digimon)[24]];  // evolution.csv의 23번째 컬럼 값
                                 const jogressDataEntry = jogressData.find(jogress => jogress.name === evolution23rdValue);  // jogress.csv에서 해당 값 찾기
                                 showJogressTooltip(jogressImage, jogressDataEntry);  // 조그레스 툴팁 표시, jogress.csv에서 찾은 데이터를 사용
                             });
