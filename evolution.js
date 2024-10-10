@@ -176,7 +176,7 @@ function findAllLowerEvolutions(digimonName) {
         return [digimon.evol1, digimon.evol2, digimon.evol3,
                 digimon.evol4, digimon.evol5, digimon.evol6,
                 digimon.evol7, digimon.evol8, digimon.evol9,
-                digimon.evol10, digimon.조그레스].includes(digimonName);
+                digimon.evol10, digimon.evol11, digimon.조그레스].includes(digimonName);
     });
 
     // 찾은 하위 진화체들에 대해 다시 하위 진화체를 재귀적으로 찾음
@@ -226,8 +226,8 @@ function isDigimonInTree(digimon, searchName) {
     }
 
     const evolutions = [
-        digimon.evol1, digimon.evol2, digimon.evol3, digimon.evol4, digimon.evol5,
-        digimon.evol6, digimon.evol7, digimon.evol8, digimon.evol9, digimon.evol10,digimon.조그레스
+        digimon.evol1, digimon.evol2, digimon.evol3, digimon.evol4, digimon.evol5, digimon.evol6,
+        digimon.evol7, digimon.evol8, digimon.evol9, digimon.evol10, digimon.evol11, digimon.조그레스
     ].filter(e => e);  // 존재하는 진화체만 필터링
     for (const evolution of evolutions) {
         const nextDigimon = allData.find(d => d.name === evolution);
@@ -315,6 +315,7 @@ function createDigimonNode(digimon, data, lowerEvolutions) {
         { name: digimon.evol8, percent: digimon.percent8 },
         { name: digimon.evol9, percent: digimon.percent9 },
         { name: digimon.evol10, percent: digimon.percent10 },
+        { name: digimon.evol11, percent: digimon.percent11 },
         { name: digimon.조그레스, percent: digimon.percent }
     ].filter(e => e.name);
 
