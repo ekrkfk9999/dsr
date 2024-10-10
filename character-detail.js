@@ -27,35 +27,19 @@ function getQueryParam(param) {
           const characterImgPath = `image/digimon/${sanitizedCharacterName}/${sanitizedCharacterName}.webp`;
           const evolutionStage = columns[1]; // 진화 등급 가져오기
           const type = columns[2]; // 타입 가져오기
-          const field1 = columns[15] || ''; // 필드1
-          const field2 = columns[16] || ''; // 필드2
-          const field3 = columns[17] || ''; // 필드3
+          const fields = columns[15] ? columns[15].split(';').map(field => field.trim()) : []; 
 
-          if (field1) {
-            const fieldImg1 = document.getElementById('field-img1');
-            fieldImg1.src = `image/field/${field1}.webp`;
-            fieldImg1.alt = `${field1} 이미지`;
-            fieldImg1.title = `${field1}`;
-          } else {
-              document.getElementById('field-img1').style.display = 'none';
-          }
-
-          if (field2) {
-            const fieldImg2 = document.getElementById('field-img2');
-            fieldImg2.src = `image/field/${field2}.webp`;
-            fieldImg2.alt = `${field2} 이미지`;
-            fieldImg2.title = `${field2}`;
-          } else {
-              document.getElementById('field-img2').style.display = 'none';
-          }
-  
-          if (field3) {
-            const fieldImg3 = document.getElementById('field-img3');
-            fieldImg3.src = `image/field/${field3}.webp`;
-            fieldImg3.alt = `${field3} 이미지`;
-            fieldImg3.title = `${field3}`;
-          } else {
-            document.getElementById('field-img3').style.display = 'none';
+                // 필드 이미지 설정
+          for (let i = 1; i <= 3; i++) {
+              const fieldImgElement = document.getElementById(`field-img${i}`);
+              if (fields[i - 1]) {
+                  fieldImgElement.src = `image/field/${fields[i - 1]}.webp`;
+                  fieldImgElement.alt = `${fields[i - 1]} 이미지`;
+                  fieldImgElement.title = `${fields[i - 1]}`;
+                  fieldImgElement.style.display = 'inline'; 
+              } else {
+                  fieldImgElement.style.display = 'none'; 
+              }
           }
   
           // 캐릭터 기본 정보 표시

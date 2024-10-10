@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="image/icon.png" type="image/x-icon">
+    <title>DSR</title>
+    <link rel="stylesheet" href="detector.css">
+    <script src="detector.js" defer></script>
+</head>
+<body>
+    <nav id="nav3">
+        <a href="#"></a>
+        <ul>
+          <li><a href="index.html">홈</a></li>
+          <li><a href="digimon.html">도감</a></li>
+          <li><a href="evolution.html">진화트리</a></li>
+          <li><a href="map.html">맵</a></li>
+          <li><a href="detector.html">탐지기</a></li>
+        </ul>
+      </nav>
+
+    <div class="container" style="position: relative;">
+        <div class="filters">
+          <div class="filter-row">
+            <label class="filter-label">탐지기</label>
+            <div class="detector-buttons">
+              <button class="detector-button" data-detector="구형">구형 탐지기</button>
+              <button class="detector-button" data-detector="보급형">보급형 탐지기</button>
+              <button class="detector-button" data-detector="특수">특수 탐지기</button>
+              <button class="detector-button" data-detector="신형">신형 탐지기</button>
+              <button class="detector-button" data-detector="계곡">계곡 탐지기</button>
+              <button class="detector-button" data-detector="B형">현실 세계 B형 탐지기</button>
+              <button class="detector-button" data-detector="A형">현실 세계 A형 탐지기</button>
+              <button class="detector-button" data-detector="스파이럴">스파이럴 탐지기</button>
+              <button class="detector-button" data-detector="변조">변조된 스파이럴 탐지기</button>
+            </div>
+          </div>
+            
+          <div class="filter-row">
+            <label class="filter-label">악역 디지몬</label>
+            <div class="mob-buttons"></div>
+          </div>
+
+          <!-- 맵과 디지몬 정보를 함께 출력할 수 있도록 구조를 조정 -->
+          <div class="map-and-detail">
+            <div id="map-container" style="margin-top: 20px;"></div>
+
+            <!-- 선택한 악역 디지몬의 정보를 표시할 영역 -->
+            <div class="detail" style="margin-left: 20px;">
+              <!-- 디지몬 세부 정보가 여기 표시됩니다 -->
+            </div>
+          </div>
+        </div>
+    </div>
+</body>
+</html>
