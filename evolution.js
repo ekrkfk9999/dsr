@@ -354,15 +354,14 @@ function createDigimonNode(digimon, data, lowerEvolutions) {
                             jogressImage.src = jogressImagePath; 
                             jogressImage.classList.add('jogress-image'); 
                             
-                            // 마우스 오버 시 툴팁 표시
-                            jogressImage.addEventListener('mouseover', (event) => {
-                                const evolution23rdValue = digimon[Object.keys(digimon)[24]];  // evolution.csv의 23번째 컬럼 값
-                                const jogressDataEntry = jogressData.find(jogress => jogress.name === evolution23rdValue);  // jogress.csv에서 해당 값 찾기
-                                showJogressTooltip(jogressImage, jogressDataEntry);  // 조그레스 툴팁 표시, jogress.csv에서 찾은 데이터를 사용
-                            });
-                            
-                            // 마우스가 벗어났을 때 툴팁 숨기기
-                            jogressImage.addEventListener('mouseout', hideJogressTooltip);
+                            // 기존 마우스 오버 시 툴팁 표시 코드를 삭제하거나 주석 처리
+                            // jogressImage.addEventListener('mouseover', (event) => {
+                            //     const evolution25thValue = digimon[Object.keys(digimon)[24]];  // evolution.csv의 25번째 컬럼 값
+                            //     const jogressDataEntry = jogressData.find(jogress => jogress.name === evolution25thValue);  // jogress.csv에서 해당 값 찾기
+                            //     showJogressTooltip(jogressImage, jogressDataEntry);  // 조그레스 툴팁 표시
+                            // });
+
+                            // jogressImage.addEventListener('mouseout', hideJogressTooltip);
                         
                             horizontalConnector.appendChild(jogressImage);
                         }
@@ -526,7 +525,11 @@ function showTooltip(event, digimonName) {
     
     // 조그레스 대상이면 툴팁을 표시하지 않음
     if (jogressTarget) {
-        return;
+        const jogressDataEntry = jogressData.find(jogress => jogress.name === digimonName);  // jogress.csv에서 해당 값 찾기
+        if (jogressDataEntry) {
+            showJogressTooltip(event.target, jogressDataEntry); // jogressTooltip을 표시
+        }
+        return; // 조그레스 툴팁을 표시했으므로 함수 종료
     }
 
     const digimonInfo = conditionData.find(d => d.name === parentDigimon.name);
