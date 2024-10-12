@@ -25,7 +25,7 @@ body {
 }
 
 .maps-logo {
-  height: auto; /* 높이는 자동 조정 */
+  height: auto;
 }
 
 .maps {
@@ -105,71 +105,63 @@ body {
     font-weight: bold;
   }
 
-/* 대분류 스타일 */
 .map-group {
-  font-size: 24px;         /* 글자 크기 */
-  font-weight: bold;       /* 굵은 글씨 */
-  color: #333;             /* 어두운 글씨 색상 */
-  margin-bottom: 10px;     /* 아래쪽 여백 */
-  padding: 10px 20px;      /* 대분류 제목의 상하좌우 여백 */
-  background-color: #f0f0f0;  /* 배경색 */
-  border-left: 5px solid #4CAF50; /* 왼쪽에 색상 강조선 추가 */
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  padding: 10px 20px;    
+  background-color: #f0f0f0; 
+  border-left: 5px solid #4CAF50; 
   
 }
 
-
-/* 버튼들이 포함된 부모 div를 flexbox로 정렬 */
 .map-buttons {
     display: flex;
     align-items: center;
-    margin-bottom: 10px; /* 각 대륙 그룹 간의 간격 추가 */
+    margin-bottom: 10px; 
 }
 
 .map-button {
     background-color: #f0f0f0;
     border: 1px solid #ccc;
-    padding: 5px 10px; /* 버튼 내부 여백을 유지 */
+    padding: 5px 10px;
     margin-top: 10px;
     margin-right: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    display: inline-block; /* 버튼 크기를 글씨에 맞춰 자동으로 조정 */
-    text-align: center; /* 텍스트를 버튼 안에서 중앙 정렬 */
-    border-radius: 5px; /* 버튼 모서리를 둥글게 처리 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 버튼에 살짝 그림자 추가 */
-    white-space: nowrap; /* 긴 텍스트가 줄바꿈되지 않도록 설정 */
+    display: inline-block;
+    text-align: center; 
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
     font-weight: 800;
 }
 
-/* 맵 버튼에 마우스를 올렸을 때 스타일 */
 .map-button:hover {
-    background-color: #d6d6d6; /* 버튼 위에 마우스를 올렸을 때의 색상 변화 */
+    background-color: #d6d6d6; 
 }
 
-/* 활성화된 버튼에 곡선과 그림자 스타일 추가 */
 .map-button.active {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 활성화된 버튼에 더 진한 그림자 */
-    transform: scale(1.05); /* 활성화된 버튼을 살짝 확대 */
-    border-radius: 5px; /* 둥근 모서리 유지 */
-    background-color: #6c757d; /* 세련된 그레이 색상 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    transform: scale(1.05);
+    border-radius: 5px; 
+    background-color: #6c757d;
     color: white;
-    border: 1px solid #5a6268; /* 더 어두운 그레이 테두리 */
+    border: 1px solid #5a6268; 
 }
 
-
-/* 이미지 컨테이너 */
 #image-container {
   position: relative;
   width: 700px; 
   height: 700px; 
   background-size: cover;
-  overflow: hidden; /* 배경 밖으로 벗어난 부분은 숨김 */
+  overflow: hidden;
   margin-top: 20px; 
   margin-left: 130px;
   z-index: 1;
 }
 
-/* 각 아이콘의 기본 크기 */
 .portal-image, .warp-image, .shop-image, .overflows-image{
 width: 41px;
 height: 41px;
@@ -187,38 +179,34 @@ height: 41px;
   z-index: 999;
 }
 
-/* 포탈 이미지 */
 .portal-image {
     position: absolute;
-    display: none; /* 기본적으로 포탈 이미지는 숨겨져 있음 */
-    z-index: 1; /* 낮은 z-index 값 */
+    display: none;
+    z-index: 1; 
 }
 
-/* 워프포인트 이미지 */
 .warp-image {
     position: absolute;
-    display: none; /* 기본적으로 포탈 이미지는 숨겨져 있음 */
-    z-index: 2; /* 높은 z-index 값 */
+    display: none;
+    z-index: 2;
 }
 
-/* 상점 이미지 */
 .shop-image {
   position: absolute;
-  display: none; /* 기본적으로 포탈 이미지는 숨겨져 있음 */
+  display: none; 
 }
 
-/* 오버플로우 이미지 */
 .overflow-image {
   position: absolute;
-  display: none; /* 기본적으로 포탈 이미지는 숨겨져 있음 */
+  display: none; 
 }
 
 .datacube-image {
   position: absolute;
-  display: none; /* 기본적으로 포탈 이미지는 숨겨져 있음 */
-  z-index: 3; /* 높은 z-index 값 */
+  display: none; 
+  z-index: 3;
 }
-/* 몹 이미지를 감싸는 컨테이너 */
+
 .mob-container {
   position: relative;
   display: inline-block;
@@ -226,10 +214,9 @@ height: 41px;
 
 .mob-image {
   position: absolute;
-  display: none; /* 기본적으로 몹 이미지는 숨겨져 있음 */
+  display: none;
 }
 
-/* 툴팁 스타일 */
 .tooltip {
   background-color: rgba(0, 0, 0, 0.75);
   color: rgb(187, 186, 186);
@@ -240,10 +227,10 @@ height: 41px;
   max-width: 200px;
   text-align: center;
   line-height: 1.4;
-  white-space: normal; /* 줄바꿈 허용 */
+  white-space: normal; 
   z-index: 1000;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: visible; /* 툴팁은 백그라운드 밖으로 나가도 표시되게 설정 */
+  overflow: visible; 
 }
 
 .special-tooltip {
@@ -258,9 +245,9 @@ height: 41px;
 
 .dropdown {
   position: absolute;
-  top: 315px; /* 원하는 위치로 수정 */
-  left: 735px; /* 원하는 위치로 수정 */
-  z-index: 10; /* 드롭다운이 항상 이미지 컨테이너보다 위에 표시되도록 설정 */
+  top: 315px;
+  left: 160px; 
+  z-index: 10;
 }
 
 .dropdown-button {
@@ -272,17 +259,17 @@ height: 41px;
   cursor: pointer;
   border-radius: 8px;
   display: flex;
-  justify-content: space-between; /* 버튼 안에서 텍스트와 화살표를 양쪽 끝에 위치 */
-  align-items: center; /* 수직 중앙 정렬 */
-  border: 1px solid white; /* 하얀색 테두리 추가 */
+  justify-content: space-between; 
+  align-items: center; 
+  border: 1px solid white; 
 }
 
 .dropdown-button:hover {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* 그림자 추가 */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
 }
 
 .dropdown-content {
-  display: none; /* 기본 상태는 숨겨짐 */
+  display: none; 
   position: absolute;
   background-color: rgba(21, 19, 46, 0.7);
   color: white;
@@ -293,31 +280,31 @@ height: 41px;
   padding: 5px 10px;
   border-radius: 8px;
   margin-top: 5px;
-  border: 1px solid white; /* 하얀색 테두리 추가 */
+  border: 1px solid white;
 }
 
 .dropdown-content div {
-  display: flex; /* 체크박스와 텍스트를 한 줄에 배치 */
-  align-items: center; /* 체크박스와 텍스트를 수직 중앙으로 정렬 */
-  margin-bottom: 5px; /* 각 체크박스 간 간격 추가 */
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
 }
 
 .dropdown-content input[type="checkbox"] {
-  margin-right: 5px; /* 체크박스와 텍스트 사이에 간격 추가 */
-  vertical-align: middle; /* 수직 중앙 정렬 (대체 옵션) */
+  margin-right: 5px; 
+  vertical-align: middle;
 }
 
 .dropdown-content label {
-  line-height: 1.5; /* 텍스트 줄 높이 조정 */
-  vertical-align: middle; /* 수직 정렬을 텍스트에 추가 */
+  line-height: 1.5;
+  vertical-align: middle;
 }
 
 .arrow {
   margin-left: 8px;
-  font-size: 12px; /* 화살표 크기 조정 */
-  transition: transform 0.3s ease; /* 화살표 애니메이션 */
+  font-size: 12px;
+  transition: transform 0.3s ease;
 }
 
 .show {
-  display: block; /* 드롭다운이 보이도록 설정 */
+  display: block;
 }
