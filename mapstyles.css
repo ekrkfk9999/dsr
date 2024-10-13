@@ -125,17 +125,15 @@ body {
 .map-button {
     background-color: #f0f0f0;
     border: 1px solid #ccc;
-    padding: 5px 10px;
+    padding: 6px 10px;
     margin-top: 10px;
     margin-right: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
     display: inline-block;
     text-align: center; 
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    white-space: nowrap;
+    border-radius: 3px;
     font-weight: 800;
+    font-family: 'NanumBarunGothic';
 }
 
 .map-button:hover {
@@ -143,9 +141,7 @@ body {
 }
 
 .map-button.active {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
-    transform: scale(1.05);
-    border-radius: 5px; 
+    border-radius: 3px; 
     background-color: #6c757d;
     color: white;
     border: 1px solid #5a6268; 
@@ -245,7 +241,7 @@ height: 41px;
 
 .dropdown {
   position: absolute;
-  top: 315px;
+  top: 305px;
   left: 160px; 
   z-index: 10;
 }

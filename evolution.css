@@ -277,7 +277,7 @@ border-radius: 5px;
 
 .menu-container {
     position: absolute;
-    top: -41px; 
+    top: -39px; 
     display: flex;
     justify-content: flex-start;
     border: 1px solid #ccc;
@@ -295,7 +295,7 @@ border-radius: 5px;
     border-left: 1px solid #ccc; 
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-
+    font-family: 'NanumBarunGothic';
 }
 
 .menu-container button:first-child {
@@ -304,7 +304,7 @@ border-radius: 5px;
 }
 
 .menu-container button:last-child {
-    border-top-right-radius: 4px;
+    border-top-right-radius: 5px;
 }
 
 .menu-container button:hover {
@@ -347,7 +347,6 @@ border-radius: 5px;
     transform: scale(1.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-/* 검색창 */
 .search-container {
     position: absolute;
     top: -40px;
