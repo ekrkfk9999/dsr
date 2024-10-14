@@ -454,7 +454,7 @@ function sortTable(column) {
             return isAscending ? orderA - orderB : orderB - orderA;
         } else {
             const aValue = isNaN(cellA) ? cellA : parseFloat(cellA);
-            const bValue = isNaN(cellB) ? cellB : parseFloat(cellB);
+            const bValue = isNaN(cellB) ? 0 : parseFloat(cellB);
             if (aValue < bValue) return isAscending ? -1 : 1;
             if (aValue > bValue) return isAscending ? 1 : -1;
             return 0;
