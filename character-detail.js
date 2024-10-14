@@ -1,35 +1,31 @@
-// URL에서 쿼리 매개변수 가져오기
 function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(param);
   }
   
-  // 페이지가 로드되면 캐릭터 이름에 맞는 정보를 로드하고 표시
   document.addEventListener('DOMContentLoaded', () => {
-    const characterName = decodeURIComponent(getQueryParam('name')); // URL에서 캐릭터 이름 가져오기
+    const characterName = decodeURIComponent(getQueryParam('name')); 
     if (!characterName) {
       document.getElementById('character-name').textContent = '캐릭터 정보를 찾을 수 없습니다.';
       return;
     }
   
-    document.getElementById('character-name').textContent = characterName; // 캐릭터 이름 설정
+    document.getElementById('character-name').textContent = characterName; 
     const sanitizedCharacterName = characterName.replace(/:/g, '_');
   
-    // CSV 파일에서 캐릭터 정보 불러오기
     fetch('characters.csv')
       .then(response => response.text())
       .then(data => {
-        const rows = data.split('\n').slice(1); // 데이터에서 첫 번째 줄은 헤더이므로 제외
+        const rows = data.split('\n').slice(1);
         const character = rows.find(row => row.includes(characterName));
  
         if (character) {
           const columns = character.split(',');
           const characterImgPath = `image/digimon/${sanitizedCharacterName}/${sanitizedCharacterName}.webp`;
-          const evolutionStage = columns[1]; // 진화 등급 가져오기
-          const type = columns[2]; // 타입 가져오기
+          const evolutionStage = columns[1];
+          const type = columns[2];
           const fields = columns[15] ? columns[15].split(';').map(field => field.trim()) : []; 
 
-                // 필드 이미지 설정
           for (let i = 1; i <= 3; i++) {
               const fieldImgElement = document.getElementById(`field-img${i}`);
               if (fields[i - 1]) {
@@ -42,18 +38,13 @@ function getQueryParam(param) {
               }
           }
   
-          // 캐릭터 기본 정보 표시
           document.getElementById('character-img').src = characterImgPath;
 
-          // 진화 등급 이미지 설정 (확장자가 .webp인 이미지를 로드)
           const evolutionImgPath = `image/${evolutionStage}.webp`;
           document.getElementById('evolution-img').src = evolutionImgPath;
 
-          // 타입 이미지 설정
           const typeImgPath = `image/${type}.webp`;
           document.getElementById('type-img').src = typeImgPath
-
-          // 캐릭터 스탯 정보 설정 (각각의 값을 CSV 파일에서 불러와서 적용)
           document.getElementById('stat-level').textContent = columns[3];
           document.getElementById('stat-hp').textContent = columns[4];
           document.getElementById('stat-sp').textContent = columns[5];
@@ -63,7 +54,6 @@ function getQueryParam(param) {
           document.getElementById('stat-resistance').textContent = columns[9];
           document.getElementById('stat-speed').textContent = columns[10];
   
-          // 스킬 정보 로드 (CSV 파일을 가정하고 로드)
           Promise.all([
             fetch('skill1.csv').then(res => res.text()),
             fetch('skill2.csv').then(res => res.text()),
@@ -71,15 +61,14 @@ function getQueryParam(param) {
           ]).then(([skill1Data, skill2Data, skill3Data]) => {
             const skills = [skill1Data, skill2Data, skill3Data];
             const skillNames = ['1스킬', '2스킬', '3스킬'];
-  
-            // 테이블에 스킬 정보 표시
+
             const skillDetailsTable = document.getElementById('skill-details');
-            skillDetailsTable.innerHTML = ''; // 테이블 초기화
+            skillDetailsTable.innerHTML = ''; 
   
-            let isAdultStage = false; // 성장기인지 여부
+            let isAdultStage = false; 
   
             skills.forEach((skillData, index) => {
-              const skillRows = skillData.split('\n').slice(1); // 헤더 제외
+              const skillRows = skillData.split('\n').slice(1);
               const skill = skillRows.find(row => {
                 const columns = row.split(',');
                 return columns[10].trim() === characterName;
@@ -87,30 +76,21 @@ function getQueryParam(param) {
   
               if (skill) {
                 const skillColumns = skill.split(',');
-  
-                // 진화 단계가 성장기인지 확인 (11번째 열에 해당)
                 if (skillColumns[11] === '성장기') {
-                  isAdultStage = true; // 성장기임을 표시
+                  isAdultStage = true;
                 }
-  
-                // 성장기라면 3스킬을 표시하지 않음
                 if (index === 2 && isAdultStage) {
-                  return; // 3스킬 생략
+                  return; 
                 }
   
-                const skillImgPath = `image/digimon/${sanitizedCharacterName}/skill${index + 1}.webp`; // 각 스킬에 맞는 이미지 경로 생성
-                const skill1ImgPath = `image/${skillColumns[15]}.webp`; // 각 스킬에 맞는 이미지 경로 생성
+                const skillImgPath = `image/digimon/${sanitizedCharacterName}/skill${index + 1}.webp`; 
+                const skill1ImgPath = `image/${skillColumns[15]}.webp`; 
   
-                const hitCount = isNaN(parseFloat(skillColumns[13])) ? 1 : parseFloat(skillColumns[13]); // 타수 값 가져오기, 기본값 1로 설정
+                const hitCount = isNaN(parseFloat(skillColumns[13])) ? 1 : parseFloat(skillColumns[13]); 
 
                 const levelData = skillColumns.slice(0, 10).map(value => {
-                  // 값이 없거나 숫자로 변환할 수 없으면 0을 사용
                   let percentage = isNaN(parseFloat(value)) ? 0 : parseFloat(value) * 100;
-                
-                  // 타수 값을 곱함
                   const totalDamage = percentage * hitCount;
-                  
-                  // 소수점이 있는 경우만 표시, 그렇지 않으면 정수만 반환
                   return `${parseFloat(totalDamage.toFixed(2))}%`;
                 });
                 

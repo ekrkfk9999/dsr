@@ -1,330 +1,331 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  @font-face {
-    font-family: 'NanumBarunGothic';
-    font-style: normal;
-    font-weight: 400;
-    src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
-    src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
-   }
-
-  body {
-    font-family: 'NanumBarunGothic', sans-serif;
-    font-weight: normal;
-    background-color: #f4f4f9;
-  }
-
-  .container {
-    width: 90%;
-    max-width: 1040px;
-    margin: 20px auto;
-    margin-top: 100px;
-  }
-
-  #nav3 * {
-    padding: 0;
-    margin: 0;
-  }
-  
-  #nav3 ul, #nav3 ol {
-    list-style: none;
-  }
-  
-  #nav3 {
-    width: 80%;
-    overflow: hidden;
-    height: 80px;
-    background-color: #202020;
-  }
-    #nav3 {
-      width: 100%;
-      position: relative;
-      text-align: center;
-    }
-    #nav3 a {
-      text-decoration: none;
-      color: #fff;
-      font-size: 20px;
-    }
-    #nav3>a {
-      line-height: 80px;
-      display: block;
-      font-weight: 900;
-      position: absolute;
-      left: 30px;
-    }
-    #nav3>ul {
-      display: inline-block;
-    }
-    #nav3>ul li {
-      float: left;
-      line-height: 80px;
-      padding: 0 60px;
-    }
-
-  .logo-container {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .character-image {
-    max-width: 200px;
-    max-height: 200px;
-    background-color: black;
-    display: block;
-    margin: 0 auto;
-  }
-
-  .calculator {
-    position: relative;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    max-height: 490px;
-  }
-
-  .mydigimon {
-    position: relative;
-  }
-
-  .monster {
-    position: relative;
-    top: -449px;
-    left: 350px;
-  }
-  .custom {
-    position: relative;
-    top: -1097px;
-    left: 700px;
-  }
-  .result {
-    position: relative;
-    top: -649px;
-    left: 700px;
-  }
-
-  /* mydigimon 테이블의 너비를 줄이는 스타일 */
-table.mydigimon {
-  width: 100%; /* 기본적으로 테이블이 부모 컨테이너에 맞춰지도록 */
-  max-width: 300px; /* 최대 너비를 500px로 설정 (원하는 값으로 조정 가능) */
-  border-collapse: collapse; /* 셀 경계 겹침 방지 */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
-/* 테이블 내부 셀의 기본 스타일 */
-table.mydigimon th, table.mydigimon td {
-  border: 1px solid #ddd; /* 셀 경계선 */
-  text-align: center; /* 텍스트를 가운데 정렬 */
-  font-size: 14px;
+@font-face {
+  font-family: 'NanumBarunGothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+  src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
 }
 
-/* 특정 행만 높이 조절 */
-.mydigimon tr:nth-child(1) {
-  height: 40px; /* 3번째 행의 높이를 70px로 설정 */
+body {
+  font-family: 'NanumBarunGothic', sans-serif;
+  font-weight: normal;
+  background-color: #f4f4f9;
 }
-.mydigimon tr:nth-child(5) {
-  height: 40px; /* 3번째 행의 높이를 70px로 설정 */
+
+.container {
+  width: 90%;
+  max-width: 1040px;
+  margin: 20px auto;
+  margin-top: 100px;
 }
-.mydigimon tr:nth-child(6) {
-  height: 30px; /* 3번째 행의 높이를 70px로 설정 */
+
+#nav3 * {
+  padding: 0;
+  margin: 0;
 }
-.mydigimon tr:nth-child(7) {
-  height: 30px; /* 3번째 행의 높이를 70px로 설정 */
+
+#nav3 ul, #nav3 ol {
+  list-style: none;
 }
-.mydigimon tr:nth-child(9) {
-  height: 40px; /* 3번째 행의 높이를 70px로 설정 */
+
+#nav3 {
+  width: 80%;
+  overflow: hidden;
+  height: 80px;
+  background-color: #202020;
+  position: relative;
+  text-align: center;
+}
+
+#nav3 a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+}
+
+#nav3 > a {
+  line-height: 80px;
+  display: block;
+  font-weight: 900;
+  position: absolute;
+  left: 30px;
+}
+
+#nav3 > ul {
+  display: inline-block;
+}
+
+#nav3 > ul li {
+  float: left;
+  line-height: 80px;
+  padding: 0 60px;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .character-image {
-  width: 150px;  /* 너비 200px */
-  height: 150px; /* 높이 200px */
-  background-color: black; /* 검은색 배경 */
-  object-fit: cover; /* 이미지를 셀에 맞추어 자르기 */
+  max-width: 200px;
+  max-height: 200px;
+  background-color: black;
+  display: block;
+  margin: 0 auto;
+}
+
+.calculator {
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-height: 490px;
+}
+
+.mydigimon {
+  position: relative;
+}
+
+.monster {
+  position: relative;
+  top: -449px;
+  left: 350px;
+}
+
+.custom {
+  position: relative;
+  top: -1097px;
+  left: 700px;
+}
+
+.result {
+  position: relative;
+  top: -649px;
+  left: 700px;
+}
+
+table.mydigimon {
+  width: 100%;
+  max-width: 300px;
+  border-collapse: collapse;
+}
+
+table.mydigimon th, table.mydigimon td {
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 14px;
+}
+
+.mydigimon tr:nth-child(1) {
+  height: 40px;
+}
+
+.mydigimon tr:nth-child(5) {
+  height: 40px;
+}
+
+.mydigimon tr:nth-child(6) {
+  height: 30px;
+}
+
+.mydigimon tr:nth-child(7) {
+  height: 30px;
+}
+
+.mydigimon tr:nth-child(9) {
+  height: 40px;
+}
+
+.character-image {
+  width: 150px;
+  height: 150px;
+  background-color: black;
+  object-fit: cover;
 }
 
 th {
-  background-color: #a0a0a0; /* 헤더 셀의 배경색 */
-  color: #333; /* 헤더 글자색 */
+  background-color: #a0a0a0;
+  color: #333;
   font-size: 20px;
 }
 
 td {
-  background-color: #fff; /* 일반 셀의 배경색 */
+  background-color: #fff;
 }
 
-  /* monster 테이블의 너비를 줄이는 스타일 */
-  table.monster {
-    width: 100%; /* 기본적으로 테이블이 부모 컨테이너에 맞춰지도록 */
-    max-width: 300px; /* 최대 너비를 500px로 설정 (원하는 값으로 조정 가능) */
-    max-height: 300px;
-    border-collapse: collapse; /* 셀 경계 겹침 방지 */
-  }
-  
-  /* 테이블 내부 셀의 기본 스타일 */
-  table.monster th, table.monster td {
-    border: 1px solid #ddd; /* 셀 경계선 */
-    text-align: center; /* 텍스트를 가운데 정렬 */
-    font-size: 14px;
-  }
-  .monster tr:nth-child(1) {
-    height: 40px; /* 3번째 행의 높이를 70px로 설정 */
-  }
-  .monster tr:nth-child(2) {
-    height: 40px; /* 3번째 행의 높이를 70px로 설정 */
-  }
-  .monster tr:nth-child(5) {
-    height: 40px; /* 3번째 행의 높이를 70px로 설정 */
-  }
-  .monster tr:nth-child(6) {
-    height: 30px; /* 3번째 행의 높이를 70px로 설정 */
-  }
-  .monster tr:nth-child(7) {
-    height: 35px; /* 3번째 행의 높이를 70px로 설정 */
-  }
-  .monster tr:nth-child(8) {
-    height: 35px; /* 3번째 행의 높이를 70px로 설정 */
-  }
-  .monster tr:nth-child(9) {
-    height: 35px; /* 3번째 행의 높이를 70px로 설정 */
-  }
-  .monster tr:nth-child(10) {
-    height: 35px; /* 3번째 행의 높이를 70px로 설정 */
-  }
-  .monster tr:nth-child(11) {
-    height: 35px; /* 3번째 행의 높이를 70px로 설정 */
-  }
-  .monster tr:nth-child(12) {
-    height: 35px; /* 3번째 행의 높이를 70px로 설정 */
-  }
+table.monster {
+  width: 100%;
+  max-width: 300px;
+  max-height: 300px;
+  border-collapse: collapse;
+}
+
+table.monster th, table.monster td {
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 14px;
+}
+
+.monster tr:nth-child(1) {
+  height: 40px;
+}
+
+.monster tr:nth-child(2) {
+  height: 40px;
+}
+
+.monster tr:nth-child(5) {
+  height: 40px;
+}
+
+.monster tr:nth-child(6) {
+  height: 30px;
+}
+
+.monster tr:nth-child(7) {
+  height: 35px;
+}
+
+.monster tr:nth-child(8) {
+  height: 35px;
+}
+
+.monster tr:nth-child(9) {
+  height: 35px;
+}
+
+.monster tr:nth-child(10) {
+  height: 35px;
+}
+
+.monster tr:nth-child(11) {
+  height: 35px;
+}
+
+.monster tr:nth-child(12) {
+  height: 35px;
+}
 
 .mob-image {
-  width: 150px;  /* 너비 200px */
-  height: 150px; /* 높이 200px */
-  background-color: black; /* 검은색 배경 */
-  object-fit: cover; /* 이미지를 셀에 맞추어 자르기 */
+  width: 150px;
+  height: 150px;
+  background-color: black;
+  object-fit: cover;
 }
 
-  /* monster 테이블의 너비를 줄이는 스타일 */
-  table.custom {
-    width: 100%; /* 기본적으로 테이블이 부모 컨테이너에 맞춰지도록 */
-    max-width: 300px; /* 최대 너비를 500px로 설정 (원하는 값으로 조정 가능) */
-    max-height: 300px;
-    border-collapse: collapse; /* 셀 경계 겹침 방지 */
-  }
-  
-  /* 테이블 내부 셀의 기본 스타일 */
-  table.custom th, table.custom td {
-    border: 1px solid #ddd; /* 셀 경계선 */
-    text-align: center; /* 텍스트를 가운데 정렬 */
-    font-size: 14px;
-  }
-  .custom tr:nth-child(1) {
-    height: 40px; /* 3번째 행의 높이를 70px로 설정 */
-  }
-  .custom tr:nth-child(2) {
-    height: 30px; /* 3번째 행의 높이를 70px로 설정 */
-  }
-  .custom tr:nth-child(3) {
-    height: 30px; /* 3번째 행의 높이를 70px로 설정 */
-  }
-  .custom tr:nth-child(4) {
-    height: 30px; /* 3번째 행의 높이를 70px로 설정 */
-  }
-  .custom tr:nth-child(5) {
-    height: 30px; /* 3번째 행의 높이를 70px로 설정 */
-  }
-  .custom tr:nth-child(6) {
-    height: 30px; /* 3번째 행의 높이를 70px로 설정 */
-  }
-  .custom tr:nth-child(7) {
-    height: 30px; /* 3번째 행의 높이를 70px로 설정 */
-  }
+table.custom {
+  width: 100%;
+  max-width: 300px;
+  max-height: 300px;
+  border-collapse: collapse;
+}
 
-  /* result 테이블의 너비를 줄이는 스타일 */
-  table.result {
-    width: 100%; /* 기본적으로 테이블이 부모 컨테이너에 맞춰지도록 */
-    max-width: 300px; /* 최대 너비를 500px로 설정 (원하는 값으로 조정 가능) */
-    max-height: 300px;
-    border-collapse: collapse; /* 셀 경계 겹침 방지 */
-  }
-  
-  /* 테이블 내부 셀의 기본 스타일 */
-  table.result th, table.result td {
-    border: 1px solid #ddd; /* 셀 경계선 */
-    text-align: center; /* 텍스트를 가운데 정렬 */
-    font-size: 14px;
-  }
-  .result tr:nth-child(1) {
-    height: 40px; /* 3번째 행의 높이를 70px로 설정 */
-  }
-  .result tr:nth-child(2) {
-    height: 40px; /* 3번째 행의 높이를 70px로 설정 */
-  }
-  .result tr:nth-child(2) {
-    height: 40px; /* 3번째 행의 높이를 70px로 설정 */
-  }
-  .result tr:nth-child(4) {
-    height: 40px; /* 3번째 행의 높이를 70px로 설정 */
-  }
-  .result tr:nth-child(5) {
-    height: 40px; /* 3번째 행의 높이를 70px로 설정 */
-  }
+table.custom th, table.custom td {
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 14px;
+}
+
+.custom tr:nth-child(1) {
+  height: 40px;
+}
+
+.custom tr:nth-child(2) {
+  height: 30px;
+}
+
+.custom tr:nth-child(3) {
+  height: 30px;
+}
+
+.custom tr:nth-child(4) {
+  height: 30px;
+}
+
+.custom tr:nth-child(5) {
+  height: 30px;
+}
+
+.custom tr:nth-child(6) {
+  height: 30px;
+}
+
+.custom tr:nth-child(7) {
+  height: 30px;
+}
+
+table.result {
+  width: 100%;
+  max-width: 300px;
+  max-height: 300px;
+  border-collapse: collapse;
+}
+
+table.result th, table.result td {
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 14px;
+}
+
+.result tr:nth-child(1) {
+  height: 40px;
+}
+
+.result tr:nth-child(2) {
+  height: 40px;
+}
+
+.result tr:nth-child(4) {
+  height: 40px;
+}
+
+.result tr:nth-child(5) {
+  height: 40px;
+}
 
 select {
-  background-color: #f0f0f0; /* 배경색 설정 */
-  border: 1px #ccc; /* 테두리 */
-  padding: 10px; /* 패딩 */
-  font-size: 14px; /* 폰트 크기 */
-  color: #333; /* 텍스트 색상 */
-  width: 100%; /* 셀 전체를 차지하게 설정 */
-  height: 100%; /* 셀의 높이와 맞추기 */
-  box-sizing: border-box; /* 패딩과 테두리를 포함한 크기 조정 */
-  cursor: pointer; /* 마우스 커서 변경 */
-  text-align: center; /* 텍스트를 가운데 정렬 */
+  background-color: #f0f0f0;
+  border: 1px #ccc;
+  padding: 10px;
+  font-size: 14px;
+  color: #333;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: center;
 }
 
-/* 드롭다운 화살표 스타일 */
-select::after {
-    content: "▼"; /* 화살표 모양 */
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 12px;
-    color: #333;
-}
-
-/* 드롭다운 호버 시 */
 select:hover {
-    background-color: #e0e0e0; /* 호버 시 배경색 */
+  background-color: #e0e0e0;
 }
 
-/* 드롭다운 포커스 시 */
 select:focus {
-    outline: none; /* 기본 포커스 제거 */
-    border-color: #999; /* 포커스 시 테두리 색 */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* 포커스 시 그림자 */
+  outline: none;
+  border-color: #999;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 input {
-  width: 100%; /* 셀의 너비와 맞추기 */
-  height: 100%; /* 셀의 높이와 맞추기 */
-  box-sizing: border-box; /* 패딩과 테두리를 포함한 크기 조정 */
-  padding: 8px; /* 패딩 추가 (원하는 만큼) */
-  border: 1px #ccc; /* 테두리 설정 */
-  font-size: 12px; /* 글자 크기 설정 */
-  background-color: #f0f0f0; /* 배경색 설정 */
-  color: #333; /* 글자 색상 설정 */
-  text-align: center; /* 텍스트를 가운데 정렬 */
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  border: 1px #ccc;
+  font-size: 12px;
+  background-color: #f0f0f0;
+  color: #333;
+  text-align: center;
 }
 
-/* input 요소가 선택되었을 때의 스타일 */
 input:focus {
-  outline: none; /* 포커스 시 기본 테두리 제거 */
-  border-color: #999; /* 포커스 시 테두리 색 변경 */
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* 포커스 시 그림자 효과 */
+  outline: none;
+  border-color: #999;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }

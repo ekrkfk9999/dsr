@@ -11,7 +11,7 @@ fetch('map.json')
 
 const imageContainer = document.getElementById('image-container');
 const mapButtons = document.querySelectorAll('.map-button');
-const dropdownContent = document.querySelector('.dropdown-content'); // 드롭다운 컨텐츠 부분
+const dropdownContent = document.querySelector('.dropdown-content');
 
 let currentPortals = [];
 let currentWarps = [];
@@ -37,7 +37,7 @@ function showTooltipAtImageBottomRight(event, imageElement, text) {
     const imageBottomRightY = rect.bottom + window.pageYOffset;
 
     tooltip.style.position = 'absolute';
-    tooltip.style.left = `${imageBottomRightX-10}px`;
+    tooltip.style.left = `${imageBottomRightX - 10}px`;
     tooltip.style.top = `${imageBottomRightY}px`;
 
     document.body.appendChild(tooltip);
@@ -63,35 +63,28 @@ function initMap() {
             currentDatacube = [];
             currentMobs = [];
 
-            // 드롭다운 체크박스를 동적으로 생성하기 전에 기존 내용 초기화
             dropdownContent.innerHTML = '';
 
-            // 포탈 데이터가 있는 경우에만 체크박스 생성
             if (selectedMap.portals && selectedMap.portals.length > 0) {
                 createCheckbox('포탈', 'toggle-portals', '포탈 아이콘', selectedMap.portals, currentPortals);
             }
 
-            // 워프포인트 데이터가 있는 경우에만 체크박스 생성
             if (selectedMap.warps && selectedMap.warps.length > 0) {
                 createCheckbox('워프 포인트', 'toggle-warps', '워프포인트 아이콘', selectedMap.warps, currentWarps);
             }
 
-            // 상점 데이터가 있는 경우에만 체크박스 생성
             if (selectedMap.shops && selectedMap.shops.length > 0) {
                 createCheckbox('상점', 'toggle-shops', '상점 아이콘', selectedMap.shops, currentShops);
             }
 
-            // 오버플로우 데이터가 있는 경우에만 체크박스 생성
             if (selectedMap.overflows && selectedMap.overflows.length > 0) {
                 createCheckbox('오버플로우', 'toggle-overflows', '오버플로우 아이콘', selectedMap.overflows, currentOverflows);
             }
 
-            // 데이터큐브 데이터가 있는 경우에만 체크박스 생성
             if (selectedMap.datacube && selectedMap.datacube.length > 0) {
                 createCheckbox('데이터 큐브', 'toggle-datacube', '데이터큐브 아이콘', selectedMap.datacube, currentDatacube);
             }
 
-            // 몬스터 데이터가 있는 경우에만 체크박스 생성
             if (selectedMap.mobs && selectedMap.mobs.length > 0) {
                 createCheckbox('악역 디지몬', 'toggle-mob', '몬스터 아이콘', selectedMap.mobs, currentMobs);
             }
@@ -103,7 +96,6 @@ function initMap() {
     mapButtons[0].click();
 }
 
-// 동적으로 체크박스를 생성하는 함수
 function createCheckbox(labelText, checkboxId, iconName, mapData, currentArray) {
     const div = document.createElement('div');
     const input = document.createElement('input');
@@ -119,27 +111,22 @@ function createCheckbox(labelText, checkboxId, iconName, mapData, currentArray) 
     div.appendChild(input);
     div.appendChild(label);
     dropdownContent.appendChild(div);
-    
-    // 체크박스 클릭 시 해당 요소들의 가시성을 토글
+
     input.addEventListener('change', function() {
         const displayStyle = this.checked ? 'block' : 'none';
         currentArray.forEach(item => {
-            // 각 아이콘에 대해 처리
             if (item.mobImage) {
-                // 몹 이미지일 경우
                 item.mobImage.style.display = displayStyle;
                 item.typeImage.style.display = displayStyle;
                 if (item.evolIcon) {
                     item.evolIcon.style.display = displayStyle;
                 }
             } else {
-                // 일반 아이콘일 경우
                 item.style.display = displayStyle;
             }
         });
     });
 
-    // 지도에 해당 요소(아이콘) 추가
     mapData.forEach(item => {
         const imgElement = document.createElement('img');
         imgElement.src = item.src;
@@ -149,90 +136,68 @@ function createCheckbox(labelText, checkboxId, iconName, mapData, currentArray) 
         imgElement.style.display = input.checked ? 'block' : 'none';
 
         if (item.isAggressive) {
-            imgElement.style.border = '2px solid red';  // 빨간 테두리
+            imgElement.style.border = '2px solid red';
         }
 
         let evolIcon = null;
         if (item.evol) {
             evolIcon = document.createElement('img');
-            evolIcon.src = 'image/icon.png';  // 작은 아이콘 경로
+            evolIcon.src = 'image/icon.png';
             evolIcon.style.position = 'absolute';
-            evolIcon.style.top = `${item.top + 25}px`;  // 위치 조정 (몹 이미지 아래)
-            evolIcon.style.left = `${item.left + 8}px`; // 위치 조정 (중앙)
+            evolIcon.style.top = `${item.top + 25}px`;
+            evolIcon.style.left = `${item.left + 8}px`;
             evolIcon.style.width = '20px';
             evolIcon.style.height = '20px';
-            evolIcon.style.zIndex = '1001'; // 몹 이미지보다 위에 표시
-            evolIcon.style.display = input.checked ? 'block' : 'none';  // 체크박스 상태에 따라 초기 표시 여부 설정
+            evolIcon.style.zIndex = '1001';
+            evolIcon.style.display = input.checked ? 'block' : 'none';
             imageContainer.appendChild(evolIcon);
         }
 
-        // 아이콘 타입에 맞는 클래스를 추가하여 CSS 적용
-        if (checkboxId === 'toggle-portals') {
-            imgElement.classList.add('portal-image');
-        } else if (checkboxId === 'toggle-warps') {
-            imgElement.classList.add('warp-image');
-        } else if (checkboxId === 'toggle-shops') {
-            imgElement.classList.add('shop-image');
-        } else if (checkboxId === 'toggle-overflows') {
-            imgElement.classList.add('overflows-image');
-        } else if (checkboxId === 'toggle-datacube') {
-            imgElement.classList.add('datacube-image');
-        }
-
-        // mobs 전용 로직: 몹과 타입 이미지를 함께 추가
         if (checkboxId === 'toggle-mob') {
-            imgElement.classList.add('mob-image');  // 이 코드로 'mob-image' 클래스를 추가
+            imgElement.classList.add('mob-image');
 
-            // 몹 이미지와 타입 이미지를 함께 표시
             const typeElement = document.createElement('img');
-            typeElement.src = `image/${item.type}.webp`; // type 이미지 경로
+            typeElement.src = `image/${item.type}.webp`;
             typeElement.style.position = 'absolute';
-            typeElement.style.top = `${item.top -5}px`;  // 위치 조정
-            typeElement.style.left = `${item.left -5}px`; // 위치 조정
+            typeElement.style.top = `${item.top - 5}px`;
+            typeElement.style.left = `${item.left - 5}px`;
             typeElement.style.width = `18px`;
             typeElement.style.height = `19px`;
             typeElement.style.zIndex = `1000`;
             typeElement.style.display = input.checked ? 'block' : 'none';
 
-            // 몹에만 특별한 툴팁 적용
             addSpecialTooltipToMobs(imgElement, item.name, item.src, item.level, item.hp, item.강점, item.약점, item.items, item.evol);
 
-            // 이미지 컨테이너에 몹과 타입 이미지를 추가
             imageContainer.appendChild(imgElement);
             imageContainer.appendChild(typeElement);
 
-            // currentArray에 몹, 타입 이미지, evol 아이콘을 객체로 저장
             currentArray.push({ mobImage: imgElement, typeImage: typeElement, evolIcon: evolIcon });
         } else {
-            // 일반 아이콘에 툴팁 추가
             addTooltipToImage(imgElement, item.tooltip);
-            
-            // 이미지 컨테이너에 일반 아이콘 추가
             imageContainer.appendChild(imgElement);
-            currentArray.push(imgElement); // 배열에 일반 아이콘 추가
+            currentArray.push(imgElement);
         }
     });
 }
 
-// mobs 전용 툴팁 처리 함수
 function addSpecialTooltipToMobs(imageElement, name, src, level, hp, 강점, 약점, items, evol) {
     imageElement.addEventListener('mouseenter', function(event) {
-        showSpecialTooltipAtImage(event, imageElement, name, src, level, hp, 강점, 약점, items, evol); 
+        showSpecialTooltipAtImage(event, imageElement, name, src, level, hp, 강점, 약점, items, evol);
     });
-    imageElement.addEventListener('mouseleave', hideSpecialTooltip); 
+    imageElement.addEventListener('mouseleave', hideSpecialTooltip);
 }
 
 function showSpecialTooltipAtImage(event, imageElement, name, src, level, hp, 강점, 약점, items, evol) {
     let tooltip = document.createElement('div');
-    tooltip.className = 'special-tooltip'; 
+    tooltip.className = 'special-tooltip';
 
-    const 강점Parts = 강점.split(','); 
-    const 강점이미지 = 강점Parts[0] ? `image/${강점Parts[0].trim()}.webp` : null; 
+    const 강점Parts = 강점.split(',');
+    const 강점이미지 = 강점Parts[0] ? `image/${강점Parts[0].trim()}.webp` : null;
     const 강점텍스트 = 강점Parts[1] ? 강점Parts[1].trim() : '';
 
-    const 약점Parts = 약점.split(','); 
+    const 약점Parts = 약점.split(',');
     const 약점이미지 = 약점Parts[0] ? `image/${약점Parts[0].trim()}.webp` : null;
-    const 약점텍스트 = 약점Parts[1] ? 약점Parts[1].trim() : ''; 
+    const 약점텍스트 = 약점Parts[1] ? 약점Parts[1].trim() : '';
 
     const 드랍아이템목록 = Array.isArray(items) ? items : [];
 
@@ -279,14 +244,13 @@ function showSpecialTooltipAtImage(event, imageElement, name, src, level, hp, �
 
     document.body.appendChild(tooltip);
 
-    // 툴팁 위치 조정
     const rect = imageElement.getBoundingClientRect();
     const tooltipRect = tooltip.getBoundingClientRect();
     const imageBottomRightX = rect.right + window.pageXOffset;
     const imageBottomRightY = rect.bottom + window.pageYOffset;
-    
+
     const containerRect = imageContainer.getBoundingClientRect();
-    
+
     let tooltipTop = imageBottomRightY;
     if (tooltipTop + tooltipRect.height > containerRect.bottom + window.pageYOffset) {
         tooltipTop = containerRect.bottom + window.pageYOffset - tooltipRect.height - 10;
@@ -295,7 +259,7 @@ function showSpecialTooltipAtImage(event, imageElement, name, src, level, hp, �
     tooltip.style.left = `${imageBottomRightX + 10}px`;
     tooltip.style.top = `${tooltipTop}px`;
 }
-// 특별한 툴팁 숨기기 함수 (특별한 툴팁만)
+
 function hideSpecialTooltip() {
     const tooltip = document.querySelector('.special-tooltip');
     if (tooltip) {
@@ -313,14 +277,12 @@ function updateActiveButton(activeButton) {
 const dropdownButton = document.querySelector('.dropdown-button');
 const arrow = document.querySelector('.arrow');
 
-// 드롭다운 버튼 클릭 시 리스트 열기/닫기
 dropdownButton.addEventListener('click', function() {
-  dropdownContent.classList.toggle('show'); // 'show' 클래스를 토글하여 열고 닫음
+    dropdownContent.classList.toggle('show');
 
-  // 화살표 모양 변경
-  if (dropdownContent.classList.contains('show')) {
-    arrow.innerText = '▲'; // 펼쳐졌을 때 위쪽 화살표
-  } else {
-    arrow.innerText = '▼'; // 접혔을 때 아래쪽 화살표
-  }
+    if (dropdownContent.classList.contains('show')) {
+        arrow.innerText = '▲';
+    } else {
+        arrow.innerText = '▼';
+    }
 });

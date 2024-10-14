@@ -1,106 +1,107 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  @font-face {
-    font-family: 'NanumBarunGothic';
-    font-style: normal;
-    font-weight: 400;
-    src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
-    src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
-   }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  body {
-    font-family: 'NanumBarunGothic', sans-serif;
-    font-weight: normal;
-    background-color: #f4f4f9;
-  }
-  
-  .container {
-    width: 90%;
-    max-width: 1100px;
-    margin: 20px auto;
-  }
-  
-  .filters {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-  }
+@font-face {
+  font-family: 'NanumBarunGothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+  src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+}
 
-  .logo-container {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  #nav3 * {
-    padding: 0;
-    margin: 0;
-  }
-  
-  #nav3 ul, #nav3 ol {
-    list-style: none;
-  }
-  
-  #nav3 {
-    width: 80%;
-    overflow: hidden;
-    height: 80px;
-    background-color: #202020;
-  }
-    #nav3 {
-      width: 100%;
-      position: relative;
-      text-align: center;
-    }
-    #nav3 a {
-      text-decoration: none;
-      color: #fff;
-      font-size: 20px;
-    }
-    #nav3>a {
-      line-height: 80px;
-      display: block;
-      font-weight: 900;
-      position: absolute;
-      left: 30px;
-    }
-    #nav3>ul {
-      display: inline-block;
-    }
-    #nav3>ul li {
-      float: left;
-      line-height: 80px;
-      padding: 0 60px;
-    }
+body {
+  font-family: 'NanumBarunGothic', sans-serif;
+  font-weight: normal;
+  background-color: #f4f4f9;
+}
 
-  /* 캐릭터 이미지에 검은색 배경 추가 */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 20px auto;
+}
+
+.filters {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#nav3 * {
+  padding: 0;
+  margin: 0;
+}
+
+#nav3 ul,
+#nav3 ol {
+  list-style: none;
+}
+
+#nav3 {
+  width: 80%;
+  overflow: hidden;
+  height: 80px;
+  background-color: #202020;
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+#nav3 a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+}
+
+#nav3 > a {
+  line-height: 80px;
+  display: block;
+  font-weight: 900;
+  position: absolute;
+  left: 30px;
+}
+
+#nav3 > ul {
+  display: inline-block;
+}
+
+#nav3 > ul li {
+  float: left;
+  line-height: 80px;
+  padding: 0 60px;
+}
+
 #character-img {
   position: relative;
   top: 20px;
   left: 50px;
   width: 140px;
   height: 140px;
-  background-color: black; /* 검은색 배경 */
-  display: inline-block; /* 이미지를 가운데 정렬하려면 inline-block 사용 */
+  background-color: black;
+  display: inline-block;
 }
 
-/* 스킬 이미지를 둥글게 자르기 */
 .skill-icon {
-  width: 50px; /* 스킬 아이콘 크기 */
+  width: 50px;
   height: 50px;
-  border-radius: 50%; /* 둥글게 만들기 */
+  border-radius: 50%;
   overflow: hidden;
-  object-fit: cover; /* 이미지가 잘리지 않고 맞게 채워짐 */
-  border: 2px solid #fff; /* 하얀색 테두리 */
+  object-fit: cover;
+  border: 2px solid #fff;
 }
 
 h1 {
   position: relative;
-  top: 20px; /* 페이지의 위쪽으로부터 50px 떨어짐 */
+  top: 20px;
   left: 50px;
   margin-bottom: 10px;
 }
@@ -113,11 +114,10 @@ h2 {
   font-size: 15px;
 }
 
-/* 스탯 테이블 스타일 */
 .stat-table {
   position: relative;
-  top: -40px;   /* 위에서 50px */
-  left: 190px; /* 왼쪽에서 200px */
+  top: -40px;
+  left: 190px;
   border-collapse: collapse;
   margin-left: 20px;
   font-size: 15px;
@@ -137,59 +137,51 @@ h2 {
 
 .stat-table thead th {
   color: rgb(0, 0, 0);
-  background-color: rgb(229,229,229);
+  background-color: rgb(229, 229, 229);
 }
 
 #evoution-name {
   position: relative;
-  top: -100px; /* 페이지의 위쪽으로부터 50px 떨어짐 */
-  left: 65px; /* 페이지의 왼쪽으로부터 100px 떨어짐 */
+  top: -100px;
+  left: 65px;
   font-size: 15px;
   font-weight: bold;
 }
 
 #evolution-img {
   position: relative;
-  top: -40px; /* 페이지의 위쪽으로부터 50px 떨어짐 */
-  left: 8px; /* 페이지의 왼쪽으로부터 100px 떨어짐 */
+  top: -40px;
+  left: 8px;
 }
 
 #type-name {
   position: relative;
-  top: -100px; /* 페이지의 위쪽으로부터 50px 떨어짐 */
-  left: 54px; /* 페이지의 왼쪽으로부터 100px 떨어짐 */
+  top: -100px;
+  left: 54px;
   font-size: 15px;
   font-weight: bold;
 }
 
 #type-img {
   position: relative;
-  top: -48px; /* 페이지의 위쪽으로부터 50px 떨어짐 */
-  left: 20px; /* 페이지의 왼쪽으로부터 100px 떨어짐 */
+  top: -48px;
+  left: 20px;
 }
 
 #field-name {
   position: relative;
-  top: -100px; /* 페이지의 위쪽으로부터 50px 떨어짐 */
-  left: 73px; /* 페이지의 왼쪽으로부터 100px 떨어짐 */
+  top: -100px;
+  left: 73px;
   font-size: 15px;
   font-weight: bold;
 }
 
-#field-img1 {
-  position: relative;
-  top: -48px; /* 페이지의 위쪽으로부터 50px 떨어짐 */
-  left: 40px; /* 페이지의 왼쪽으로부터 100px 떨어짐 */
-}
-#field-img2 {
-  position: relative;
-  top: -48px; /* 페이지의 위쪽으로부터 50px 떨어짐 */
-  left: 40px; /* 페이지의 왼쪽으로부터 100px 떨어짐 */
-}
+#field-img1,
+#field-img2,
 #field-img3 {
   position: relative;
-  top: -48px; /* 페이지의 위쪽으로부터 50px 떨어짐 */
-  left: 40px; /* 페이지의 왼쪽으로부터 100px 떨어짐 */
+  top: -48px;
+  left: 40px;
 }
 
 #tree {
