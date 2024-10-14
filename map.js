@@ -153,6 +153,18 @@ function createCheckbox(labelText, checkboxId, iconName, mapData, currentArray) 
             imageContainer.appendChild(evolIcon);
         }
 
+        if (checkboxId === 'toggle-portals') {
+            imgElement.classList.add('portal-image');
+        } else if (checkboxId === 'toggle-warps') {
+            imgElement.classList.add('warp-image');
+        } else if (checkboxId === 'toggle-shops') {
+            imgElement.classList.add('shop-image');
+        } else if (checkboxId === 'toggle-overflows') {
+            imgElement.classList.add('overflows-image');
+        } else if (checkboxId === 'toggle-datacube') {
+            imgElement.classList.add('datacube-image');
+        }
+        
         if (checkboxId === 'toggle-mob') {
             imgElement.classList.add('mob-image');
 
