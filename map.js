@@ -103,7 +103,11 @@ function createCheckbox(labelText, checkboxId, iconName, mapData, currentArray) 
 
     input.type = 'checkbox';
     input.id = checkboxId;
-    input.checked = true;
+    if (checkboxId === 'toggle-warps' || checkboxId === 'toggle-portals' || checkboxId === 'toggle-overflows') {
+        input.checked = true;
+    } else {
+        input.checked = false;
+    }
 
     label.htmlFor = checkboxId;
     label.textContent = labelText;
