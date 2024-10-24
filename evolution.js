@@ -404,11 +404,11 @@ function showJogressTooltip(jogressImage, jogressDataEntry) {
             }
         });
 
-        if (jogressDataEntry.ingredient) {
+        if (jogressDataEntry.ingredient1 || jogressDataEntry.ingredient2) {
             tableHtml += `
                 <tr>
                     <th>진화 재료</th>
-                    <td colspan="2">${jogressDataEntry.ingredient}</td>
+                    <td colspan="2">${jogressDataEntry.ingredient1 || ''}, ${jogressDataEntry.ingredient2 || ''}</td>
                 </tr>`;
         }
 
