@@ -19,6 +19,7 @@ async function loadCSV(url) {
             타수: columns[13],
             범위: columns[14],
             속성: columns[15],
+            targetCount: columns[17],
             effect: columns[18],
             additionalTurn: columns[19]
         };
@@ -84,6 +85,9 @@ async function fetchCSV() {
             let backgroundColor = '';
             if (skill.additionalTurn) {
                 backgroundColor = 'background-color: rgb(255,234,234);';
+            }
+            if (skill.targetCount && skill.targetCount.trim() === '전체') {
+                backgroundColor = 'background-color: rgb(220,248,248);';  // 원하는 색상 코드로 변경 가능
             }
 
             const effectDescriptions = {
@@ -171,7 +175,7 @@ async function fetchCSV() {
         newRow.dataset.fields = 필드;
         newRow.innerHTML = `
             <td>
-                <div style="width: 25px; height: 25px; background-color: #343434; display: inline-block; vertical-align: middle;">
+                <div style="width: 25px; height: 25px; background-color: black; display: inline-block; vertical-align: middle;">
                     <img src="${characterImagePath}" alt="${name}" title="${name}" style="width: 100%; height: 100%;" onerror="this.src='image/digimon/default.webp';">
                 </div> 
                 <a href="character-detail.html?name=${encodeURIComponent(name)}" style="text-decoration: none; color: black;">${name}</a>
