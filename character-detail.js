@@ -53,7 +53,40 @@ function getQueryParam(param) {
           document.getElementById('stat-defense').textContent = columns[8];
           document.getElementById('stat-resistance').textContent = columns[9];
           document.getElementById('stat-speed').textContent = columns[10];
-  
+
+          const strengths = columns[11] ? columns[11].split(';').map(str => str.trim()) : [];
+          const strengthsDesc = columns[12] ? columns[12].split(';').map(desc => desc.trim()) : [];
+          const weaknesses = columns[13] ? columns[13].split(';').map(weak => weak.trim()) : [];
+          const weaknessesDesc = columns[14] ? columns[14].split(';').map(desc => desc.trim()) : [];
+          
+          const swTableBody = document.getElementById('sw').querySelector('tbody');
+          swTableBody.innerHTML = `
+          ${strengths.map((str, index) => `
+            <tr>
+              <td style="width: 60px; padding: 5px; text-align: center; position: relative; left: 50px; top: -20px;">
+                <div style="background-image: url('image/strongbackground.webp'); background-size: cover; background-position: center; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
+                  <img src="image/${str}.webp" alt="${str} 이미지" title="${str}" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+              </td>
+              <td style="padding: 5px; text-align: left; position: relative; left: 50px; top: -20px;">
+                <span style="font-size: 16px; font-weight: bold;">${strengthsDesc[index] || ''}</span>
+              </td>
+              ${weaknesses[index] ? `
+                <td style="width: 60px; padding: 5px; text-align: center; position: relative; left: 50px; top: -20px;">
+                  <div style="background-image: url('image/weakbackground.webp'); background-size: cover; background-position: center; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
+                    <img src="image/${weaknesses[index]}.webp" alt="${weaknesses[index]} 이미지" title="${weaknesses[index]}" style="width: 100%; height: 100%; object-fit: contain;">
+                  </div>
+                </td>
+                <td style="padding: 5px; text-align: left; position: relative; left: 50px; top: -20px;">
+                  <span style="font-size: 16px; font-weight: bold;">${weaknessesDesc[index] || ''}</span>
+                </td>
+              ` : `
+                <td></td><td></td>
+              `}
+            </tr>
+          `).join('')}
+        `;
+
           Promise.all([
             fetch('skill1.csv').then(res => res.text()),
             fetch('skill2.csv').then(res => res.text()),
