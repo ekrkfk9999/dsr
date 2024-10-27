@@ -5,20 +5,15 @@
 }
 
 @font-face {
-  font-family: "NanumBarunGothic";
-  font-style: normal;
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
   font-weight: 400;
-  src: url("//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot");
-  src: url("//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix")
-      format("embedded-opentype"),
-    url("//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff")
-      format("woff"),
-    url("//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf")
-      format("truetype");
+  font-style: normal;
 }
 
 body {
-  font-family: "NanumBarunGothic", sans-serif;
+  font-family: "Pretendard-Regular", sans-serif;
   font-weight: normal;
   background-color: #f4f4f9;
 }
@@ -48,7 +43,7 @@ header {
   height: 60px;
   max-width: 1200px;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -306,7 +301,7 @@ header {
   margin-bottom: 20px;
   border: 1px solid #ccc;
   padding: 10px;
-  margin-top: 80px;
+  margin-top: 100px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-auto-rows: 80px;
@@ -396,7 +391,7 @@ header {
   border-left: 1px solid #ccc;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  font-family: "NanumBarunGothic";
+  font-family: "Pretendard-Regular";
 }
 
 .menu-container button:first-child {
