@@ -5,15 +5,20 @@
 }
 
 @font-face {
-  font-family: 'NanumBarunGothic';
+  font-family: "NanumBarunGothic";
   font-style: normal;
   font-weight: 400;
-  src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
-  src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
- }
+  src: url("//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot");
+  src: url("//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix")
+      format("embedded-opentype"),
+    url("//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff")
+      format("woff"),
+    url("//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf")
+      format("truetype");
+}
 
 body {
-  font-family: 'NanumBarunGothic', sans-serif;
+  font-family: "NanumBarunGothic", sans-serif;
   font-weight: normal;
   background-color: #f4f4f9;
 }
@@ -22,6 +27,7 @@ body {
   width: 90%;
   max-width: 1000px;
   margin: 20px auto;
+  margin-top: 30px;
 }
 
 .maps-logo {
@@ -46,160 +52,267 @@ body {
   font-weight: bold;
 }
 
-#nav3 * {
-  padding: 0;
-  margin: 0;
-}
-
-#nav3 ul, #nav3 ol {
+.navbar li {
   list-style: none;
 }
 
-#nav3 {
-  width: 80%;
-  overflow: hidden;
-  height: 80px;
-  background-color: #202020;
+.navbar a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+  font-weight: bold;
 }
-  #nav3 {
-    width: 100%;
-    position: relative;
-    text-align: center;
-  }
-  #nav3 a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 20px;
-  }
-  #nav3>a {
-    line-height: 80px;
-    display: block;
-    font-weight: 900;
-    position: absolute;
-    left: 30px;
-  }
-  #nav3>ul {
-    display: inline-block;
-  }
-  #nav3>ul li {
-    float: left;
-    line-height: 80px;
-    padding: 0 60px;
+
+a:hover {
+  color: orange;
+}
+/* HEADER */
+header {
+  position: relative;
+  padding: 0 2rem;
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .links {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar .toggle_btn {
+  color: #000;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.action_btn a {
+  cursor: pointer;
+  transition: scale 0.2 ease;
+}
+
+.action_btn img {
+  width: 30px;
+  height: 30px;
+}
+
+.action_btn:hover {
+  scale: 1.05;
+}
+
+.action_btn:active {
+  scale: 0.95;
+}
+
+.navbar .action_btn + .action_btn {
+  margin-left: 20px;
+}
+
+.dropdown_menu {
+  display: none;
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  height: 0;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 100;
+}
+
+.dropdown_menu.open {
+  height: 240px;
+}
+
+.dropdown_menu li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown_menu a {
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  justify-content: center;
+}
+
+.inline-items {
+  display: flex;
+  justify-content: center;
+}
+
+.inline-items a {
+  display: inline-flex;
+  align-items: center;
+}
+
+.inline-items a + a {
+  margin-left: -150px;
+}
+
+.dropdown_menu .action_btn {
+  width: 100%;
+  display: flex;
+  justify-self: center;
+}
+
+@media (max-width: 992px) {
+  .navbar .links,
+  .navbar .action_btn,
+  .navbar .home_btn {
+    display: none;
   }
 
-  .filters {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 10px;
+  .navbar .toggle_btn {
+    display: block;
   }
-  
-  .filter-row {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+
+  .dropdown_menu {
+    display: block;
   }
-  
-  .filter-label {
-    width: 150px;
-    font-weight: bold;
+}
+
+@media (max-width: 576px) {
+  .dropdown_menu {
+    left: 2rem;
+    width: unset;
   }
+}
+
+.filters {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filter-label {
+  width: 150px;
+  font-weight: bold;
+}
 
 .map-group {
   font-size: 24px;
   font-weight: bold;
   color: #333;
   margin-bottom: 10px;
-  padding: 10px 20px;    
-  background-color: #f0f0f0; 
-  border-left: 5px solid #4CAF50; 
-  
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border-left: 5px solid #4caf50;
 }
 
 .map-buttons {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px; 
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .map-button {
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    padding: 6px 10px;
-    margin-top: 10px;
-    margin-right: 10px;
-    cursor: pointer;
-    display: inline-block;
-    text-align: center; 
-    border-radius: 3px;
-    font-weight: 800;
-    font-family: 'NanumBarunGothic';
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  border-radius: 3px;
+  font-weight: 800;
+  font-family: "NanumBarunGothic";
 }
 
 .map-button:hover {
-    background-color: #d6d6d6; 
+  background-color: #d6d6d6;
 }
 
 .map-button.active {
-    border-radius: 3px; 
-    background-color: #6c757d;
-    color: white;
-    border: 1px solid #5a6268; 
+  border-radius: 3px;
+  background-color: #6c757d;
+  color: white;
+  border: 1px solid #5a6268;
 }
 
 #image-container {
   position: relative;
-  width: 700px; 
-  height: 700px; 
+  width: 700px;
+  height: 700px;
   background-size: cover;
   overflow: hidden;
-  margin-top: 20px; 
+  margin-top: 20px;
   margin-left: 130px;
   z-index: 1;
 }
 
-.portal-image, .warp-image, .shop-image, .overflows-image{
-width: 41px;
-height: 41px;
+.portal-image,
+.warp-image,
+.shop-image,
+.overflows-image {
+  width: 41px;
+  height: 41px;
 }
 
 .datacube-image {
   width: 14px;
-  height: 14px; 
+  height: 14px;
 }
 .mob-image {
   width: 30px;
   height: 30px;
-  border-radius: 5px; 
+  border-radius: 5px;
   background-color: #000000;
   z-index: 999;
 }
 
 .portal-image {
-    position: absolute;
-    display: none;
-    z-index: 1; 
+  position: absolute;
+  display: none;
+  z-index: 1;
 }
 
 .warp-image {
-    position: absolute;
-    display: none;
-    z-index: 2;
+  position: absolute;
+  display: none;
+  z-index: 2;
 }
 
 .shop-image {
   position: absolute;
-  display: none; 
+  display: none;
 }
 
 .overflow-image {
   position: absolute;
-  display: none; 
+  display: none;
 }
 
 .datacube-image {
   position: absolute;
-  display: none; 
+  display: none;
   z-index: 3;
 }
 
@@ -223,10 +336,10 @@ height: 41px;
   max-width: 200px;
   text-align: center;
   line-height: 1.4;
-  white-space: normal; 
+  white-space: normal;
   z-index: 1000;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: visible; 
+  overflow: visible;
 }
 
 .special-tooltip {
@@ -242,7 +355,7 @@ height: 41px;
 .dropdown {
   position: absolute;
   top: 305px;
-  left: 160px; 
+  left: 160px;
   z-index: 10;
 }
 
@@ -255,21 +368,21 @@ height: 41px;
   cursor: pointer;
   border-radius: 8px;
   display: flex;
-  justify-content: space-between; 
-  align-items: center; 
-  border: 1px solid white; 
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid white;
 }
 
 .dropdown-button:hover {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 .dropdown-content {
-  display: none; 
+  display: none;
   position: absolute;
   background-color: rgba(21, 19, 46, 0.7);
   color: white;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 10;
   font-size: 15px;
   width: 113px;
@@ -286,7 +399,7 @@ height: 41px;
 }
 
 .dropdown-content input[type="checkbox"] {
-  margin-right: 5px; 
+  margin-right: 5px;
   vertical-align: middle;
 }
 
