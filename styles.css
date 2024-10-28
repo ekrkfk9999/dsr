@@ -164,6 +164,16 @@ header {
   }
 }
 
+@media (max-width: 768px) {
+  .reset-btn {
+    display: none;
+  }
+  .evolution-btn {
+    margin: 0 0;
+    padding: 0;
+  }
+}
+
 .container {
   width: 100%;
   max-width: 1320px;
