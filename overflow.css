@@ -5,15 +5,15 @@
 }
 
 @font-face {
-  font-family: "Pretendard-Regular";
-  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+  font-family: "paybooc-Bold";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff")
     format("woff");
-  font-weight: 400;
+  font-weight: normal;
   font-style: normal;
 }
 
 body {
-  font-family: "Pretendard-Regular", sans-serif;
+  font-family: "paybooc-Bold", sans-serif;
   font-weight: normal;
   background-color: #f4f4f9;
 }
@@ -57,9 +57,13 @@ body {
 }
 
 .stage p {
-  font-size: 23px;
+  font-size: 20px;
   text-align: center;
   margin-top: 15px;
+}
+
+.stage-btn {
+  font-family: "paybooc-Bold", sans-serif;
 }
 
 .scrollable-content {
@@ -73,12 +77,12 @@ body {
 }
 
 .scrollable-content .stage-btn {
-  font-size: 18px;
+  font-size: 16px;
   color: white;
   text-align: center;
   background-color: #090e1b;
-  padding: 10px;
-  margin: 5px 15px 6px 10px;
+  padding: 5px;
+  margin: 5px 15px 1px 10px;
   border-radius: 5px;
   height: 40px;
   width: 110px;
@@ -133,6 +137,7 @@ body {
 }
 
 .map-select {
+  font-family: "paybooc-Bold", sans-serif;
   position: absolute;
   top: 20px;
   left: 50%;
@@ -140,6 +145,7 @@ body {
 }
 
 .map-select select {
+  font-family: "paybooc-Bold", sans-serif;
   width: 306px;
   height: 40px;
   font-size: 20px;
@@ -148,7 +154,7 @@ body {
   border-radius: 10px;
   appearance: none;
   background-color: #0d0f1f;
-  color: #eef5f6dc;
+  color: white;
   cursor: pointer;
   border: none;
   outline: none;
@@ -215,7 +221,7 @@ body {
   bottom: 7px;
   right: 13px;
   color: #fff;
-  font-size: 14px;
+  font-size: 12px;
   padding: 2px 5px;
   border-radius: 5px;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
@@ -284,7 +290,7 @@ body {
   bottom: 7px;
   right: 13px;
   color: #fff;
-  font-size: 15px;
+  font-size: 13px;
   padding: 2px 4px;
   border-radius: 3px;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
