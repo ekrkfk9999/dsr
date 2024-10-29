@@ -142,6 +142,7 @@ body {
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
+  border: none;
 }
 
 .map-select select {
@@ -152,13 +153,30 @@ body {
   font-weight: 600;
   text-align: center;
   border-radius: 10px;
-  appearance: none;
   background-color: #0d0f1f;
   color: white;
   cursor: pointer;
   border: none;
   outline: none;
-  box-shadow: none;
+  appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-select::after {
+  content: "▼";
+  color: white;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s;
+  pointer-events: none;
+}
+
+.map-select.open::after {
+  transform: translateY(-50%) rotate(180deg);
 }
 
 .day {

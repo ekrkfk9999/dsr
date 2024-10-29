@@ -2,9 +2,7 @@ const buttons = document.querySelectorAll(".stage-btn");
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
-    // 모든 버튼에서 active 클래스 제거
     buttons.forEach((btn) => btn.classList.remove("active"));
-    // 클릭한 버튼에 active 클래스 추가
     button.classList.add("active");
   });
 });
@@ -98,11 +96,9 @@ function updateMobImages(map, stage) {
       (row) => row["맵"] === map && row["층"] === stageNumber
     );
 
-    // 기존 몹 이미지 초기화
     mobContainer.innerHTML = "<p>등장</p>";
 
     if (matchingRow) {
-      // 몹 데이터 설정 및 이미지 추가
       const mobData = [
         {
           name: matchingRow["몹1"],
@@ -136,7 +132,6 @@ function updateMobImages(map, stage) {
           const transformedAttribute =
             attributeMapping[mob.attribute] || mob.attribute;
 
-          // 툴팁 생성 및 내용 추가
           const tooltip = document.createElement("div");
           tooltip.classList.add("tooltip");
           tooltip.innerHTML = `
@@ -157,20 +152,16 @@ function updateMobImages(map, stage) {
         }
       });
       updateFirstClearRewards(matchingRow);
-      // 반복 보상 업데이트 호출
       updateRepeatRewards(matchingRow);
     }
   });
 }
 
-// 반복 보상 업데이트 함수
 function updateRepeatRewards(matchingRow) {
   const repeatContainer = document.querySelector(".repeat-item");
 
-  // 기존 내용 초기화
   repeatContainer.innerHTML = "<p>반복 클리어 보상</p>";
 
-  // 반복 보상 아이템과 개수를 배열로 저장
   const repeatRewards = [
     { name: matchingRow["반복1"], count: matchingRow["반복갯수1"] },
     { name: matchingRow["반복2"], count: matchingRow["반복갯수2"] },
@@ -212,10 +203,8 @@ function updateRepeatRewards(matchingRow) {
 function updateFirstClearRewards(matchingRow) {
   const firstContainer = document.querySelector(".first-item");
 
-  // 기존 내용 초기화
   firstContainer.innerHTML = "<p>최초 클리어 보상</p>";
 
-  // 최초 보상 아이템과 개수를 배열로 저장
   const firstRewards = [
     { name: matchingRow["최초1"], count: matchingRow["최초갯수1"] },
     { name: matchingRow["최초2"], count: matchingRow["최초갯수2"] },
@@ -246,7 +235,7 @@ function updateFirstClearRewards(matchingRow) {
 
       const count = document.createElement("span");
       count.classList.add("item-count");
-      count.textContent = `x${reward.count}`;
+      count.textContent = `x ${reward.count}`;
 
       itemContainer.appendChild(img);
       itemContainer.appendChild(count);
@@ -256,7 +245,6 @@ function updateFirstClearRewards(matchingRow) {
   });
 }
 
-// 드롭다운 변경 시 이벤트 처리
 mapDropdown.addEventListener("change", () => {
   const selectedMap = mapDropdown.value;
   const activeStage = document.querySelector(".stage-btn.active").textContent;
@@ -265,10 +253,8 @@ mapDropdown.addEventListener("change", () => {
   }
 });
 
-// Stage 버튼 클릭 시 이벤트 처리
 stageButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    // 현재 활성화된 버튼만 active 클래스 유지
     stageButtons.forEach((btn) => btn.classList.remove("active"));
     button.classList.add("active");
 
@@ -279,4 +265,15 @@ stageButtons.forEach((button) => {
       updateMobImages(selectedMap, selectedStage);
     }
   });
+});
+
+const selectElement = document.getElementById("map-dropdown");
+const selectContainer = document.querySelector(".map-select");
+
+selectElement.addEventListener("click", function () {
+  selectContainer.classList.toggle("open");
+});
+
+selectElement.addEventListener("blur", function () {
+  selectContainer.classList.remove("open");
 });
