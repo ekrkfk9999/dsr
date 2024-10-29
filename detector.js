@@ -250,10 +250,10 @@ function showDigimonDetails(digimonName, digimon, detectorData, csvData) {
     <img src="${typeImagePath}" alt="${digimon.type}" 
          style="width: 25px; height: 25px; position: absolute; left: 15px; top: 30%; transform: translateY(-50%);"
          onerror="this.src='image/default-type.webp';">
-    <p class="font-applied" style="text-align: center; margin: 0; line-height: 20px;">${digimonName}</p>
+    <p class="font-applied2" style="text-align: center; margin: 0; line-height: 20px;">${digimonName}</p>
     <div style="position: relative; width: 100%; margin-top: 10px;">
       <img src="image/map/hp.png" alt="HP Bar" style="width: 100%; height: 20px; display: block;">
-      <p class="font-applied" style="position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%); color: white;">
+      <p class="font-applied2" style="position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%); color: white;">
         ${digimon.HP}
       </p>
     </div>

@@ -12,6 +12,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "paybooc-Bold";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   font-family: "Pretendard-Regular", sans-serif;
   font-weight: normal;
@@ -20,6 +28,10 @@ body {
 
 .font-applied {
   font-family: "Pretendard-Regular", sans-serif;
+}
+
+.font-applied2 {
+  font-family: "paybooc-Bold", sans-serif;
 }
 
 .container1 {
