@@ -1,0 +1,334 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: "Pretendard-Regular", sans-serif;
+  font-weight: normal;
+  background-color: #f4f4f9;
+}
+
+.container1 {
+  position: relative;
+  width: 100%;
+  max-width: 1300px;
+  max-height: 720px;
+  margin: 20px auto;
+  margin-top: 130px;
+}
+
+.main {
+  position: relative;
+  background-color: #0d0f1f;
+  padding: 20px;
+  height: 720px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.main > p {
+  color: white;
+  font-size: 29px;
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.stage {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  width: 130px;
+  height: 640px;
+  border-radius: 10px;
+  background-color: #1c233a;
+  color: white;
+}
+
+.stage p {
+  font-size: 23px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.scrollable-content {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  margin-right: -10px;
+  height: 579px;
+  overflow-y: auto;
+  text-shadow: -1px -1px 0 black, /* 좌상 */ 1px -1px 0 black,
+    /* 우상 */ -1px 1px 0 black, /* 좌하 */ 1px 1px 0 black; /* 우하 */
+}
+
+.scrollable-content .stage-btn {
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  background-color: #090e1b;
+  padding: 10px;
+  margin: 5px 15px 6px 10px;
+  border-radius: 5px;
+  height: 40px;
+  width: 110px;
+  border: 1px solid transparent;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  outline: none;
+}
+
+.scrollable-content .stage-btn:hover {
+  border-color: #2b9df4;
+  box-shadow: 0 0 3px rgba(60, 204, 246, 0.5), 0 0 6px rgba(60, 204, 246, 0.3),
+    0 0 9px rgba(60, 204, 246, 0.2), 0 0 12px rgba(60, 204, 246, 0.1);
+}
+
+.scrollable-content .stage-btn.active {
+  background-color: #2b9df4;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
+.scrollable-content::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 5px;
+}
+
+.scrollable-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+  background: lightgray;
+  border-radius: 5px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb:hover {
+  background: lightgray;
+  border-radius: 5px;
+}
+
+.select-page {
+  position: absolute;
+  top: 60px;
+  left: 163px;
+  width: 892px;
+  height: 640px;
+  border-radius: 10px;
+  background-image: url("image/overflow/기어 사바나.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.map-select {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.map-select select {
+  width: 306px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 10px;
+  appearance: none;
+  background-color: #0d0f1f;
+  color: #eef5f6dc;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.day {
+  position: absolute;
+  top: 60px;
+  left: 1063px;
+  color: gray;
+}
+
+.day p {
+  width: 217px;
+  height: 42px;
+  text-align: center;
+  font-size: 22px;
+  background-color: #070a15;
+  border-radius: 10px;
+  margin: 0 0 6px 0;
+  padding: 6px;
+}
+
+.day p.active {
+  background-color: #246097;
+  color: white;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
+.mob {
+  position: absolute;
+  top: 253px;
+  left: 165px;
+  width: 78px;
+  height: 235px;
+  color: white;
+  z-index: 100;
+  background-color: #1c233a;
+  border-radius: 10px;
+}
+
+.mob p {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.mob .image-container {
+  position: relative;
+  border-radius: 10px;
+}
+
+.mob .image-container img {
+  background-color: #161616;
+  border-radius: 5px;
+  margin: 5px 0 3px 14px;
+  width: 50px;
+  height: auto;
+}
+
+.mob .overlay {
+  position: absolute;
+  bottom: 7px;
+  right: 13px;
+  color: #fff;
+  font-size: 14px;
+  padding: 2px 5px;
+  border-radius: 5px;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
+.mob .tooltip {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 90%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 15px;
+  padding: 15px;
+  border-radius: 5px;
+  white-space: nowrap;
+  z-index: 10;
+  box-shadow: 0 0 1px rgba(48, 164, 199, 0.3), 0 0 2px rgba(48, 164, 199, 0.2),
+    0 0 3px rgba(48, 164, 199, 0.1), 0 0 5px rgba(48, 164, 199, 0.1);
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
+.mob .image-container:hover .tooltip {
+  display: block;
+}
+
+.repeat-item {
+  position: absolute;
+  top: 500px;
+  left: 165px;
+  width: 422px;
+  height: 122px;
+  color: white;
+  z-index: 100;
+  background-color: #1c233a;
+  border-radius: 10px;
+  z-index: 10;
+  padding-left: 15px;
+}
+
+.repeat-item p {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.item-container {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.item-image {
+  width: 70px; /* 이미지 크기 */
+  height: 70px;
+  border-radius: 10px;
+  z-index: 100;
+  background-color: #0a0e1a;
+  margin: 5px 10px 0 0;
+}
+
+.item-count {
+  position: absolute;
+  bottom: 7px;
+  right: 13px;
+  color: #fff;
+  font-size: 15px;
+  padding: 2px 4px;
+  border-radius: 3px;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
+.first-item {
+  position: absolute;
+  top: 500px;
+  left: 596px;
+  width: 422px;
+  height: 122px;
+  color: white;
+  z-index: 100;
+  background-color: #1c233a;
+  border-radius: 10px;
+  z-index: 10;
+  padding-left: 15px;
+}
+
+.first-item p {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.custom-tooltip {
+  display: none;
+  position: absolute;
+  left: 0; /* 이미지의 좌하단에 맞춤 */
+  top: 100%; /* 이미지 바로 아래에 맞춤 */
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  z-index: 10;
+  box-shadow: 0 0 1px rgba(48, 164, 199, 0.3), 0 0 2px rgba(48, 164, 199, 0.2),
+    0 0 3px rgba(48, 164, 199, 0.1), 0 0 5px rgba(48, 164, 199, 0.1);
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
+.item-container:hover .custom-tooltip {
+  display: block; /* 마우스 호버 시 즉시 툴팁 표시 */
+}
