@@ -174,6 +174,7 @@ function hideTooltip() {
 function initMap() {
   mapDropdown.addEventListener("change", function () {
     const selectedMap = maps[mapDropdown.value];
+    console.log("선택된 맵 데이터:", selectedMap);
     if (selectedMap) {
       // 배경 이미지 설정 및 현재 아이콘 목록 초기화
       imageContainer.style.backgroundImage = `url(${selectedMap.backgroundImage})`;
@@ -521,9 +522,5 @@ const arrow = document.querySelector(".arrow");
 dropdownButton.addEventListener("click", function () {
   dropdownContent.classList.toggle("show");
 
-  if (dropdownContent.classList.contains("show")) {
-    arrow.innerText = "▲";
-  } else {
-    arrow.innerText = "▼";
-  }
+  arrow.classList.toggle("rotate");
 });
