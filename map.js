@@ -1,3 +1,102 @@
+const selectElement = document.getElementById("con-dropdown");
+const selectContainer = document.querySelector(".dropdown-con");
+
+const mapSelectElement = document.getElementById("map-dropdown");
+const mapSelectContainer = document.querySelector(".dropdown-map");
+
+selectElement.addEventListener("click", function () {
+  selectContainer.classList.toggle("open");
+});
+
+selectElement.addEventListener("blur", function () {
+  selectContainer.classList.remove("open");
+});
+
+mapSelectElement.addEventListener("click", function () {
+  mapSelectContainer.classList.toggle("open");
+});
+
+mapSelectElement.addEventListener("blur", function () {
+  mapSelectContainer.classList.remove("open");
+});
+
+const conDropdown = document.getElementById("con-dropdown");
+const mapDropdown = document.getElementById("map-dropdown");
+const mapSelect = document.getElementById("map-dropdown");
+
+// 각 지역에 대한 맵 옵션 데이터
+const mapOptions = {
+  파일섬: ["용의 눈 호수", "기어 사바나", "시작의 마을", "무한 산"],
+  서버대륙: [
+    "사막 지대",
+    "어둠성 계곡",
+    "개굴몬 성 1F",
+    "개굴몬 성 2F",
+    "어둠성 내부",
+  ],
+  "현실 세계": [
+    "캠핑장",
+    "빛의 언덕",
+    "지하철 역",
+    "오다이바 입구",
+    "오다이바 북부",
+    "시부야",
+    "오다이바 남부",
+    "국제 전시장",
+  ],
+  "스파이럴 마운틴": [
+    "네트워크 바다",
+    "수목 지구",
+    "강철 도시",
+    "강철 도시 지하",
+    "어둠의 권역",
+    "스파이럴 마운틴 정상",
+    "???",
+  ],
+};
+
+// 이미지 업데이트 함수
+function updateImage(selectedMap) {
+  let imagePath;
+  if (selectedMap === "???") {
+    imagePath = "image/map/ApocalymonArea.png";
+  } else {
+    imagePath = `image/map/${selectedMap.replace(/\s+/g, "")}.webp`;
+  }
+
+  // 이미지 요소를 700x700 크기로 업데이트
+  imageContainer.innerHTML = `<img src="${imagePath}" alt="${selectedMap}" width="700" height="700">`;
+}
+
+// 지역 선택 시 map-dropdown 옵션 업데이트 및 첫 번째 값으로 이미지 설정
+conDropdown.addEventListener("change", function () {
+  const selectedRegion = conDropdown.value;
+  const options = mapOptions[selectedRegion];
+
+  // map-dropdown 옵션을 업데이트
+  mapSelect.innerHTML = "";
+  options.forEach((option) => {
+    const opt = document.createElement("option");
+    opt.value = option;
+    opt.textContent = option;
+    mapSelect.appendChild(opt);
+  });
+
+  // 첫 번째 옵션 선택 및 이미지 업데이트
+  mapSelect.value = options[0];
+  updateImage(options[0]);
+});
+
+// map-dropdown 선택 변경 시 이미지 업데이트
+mapSelect.addEventListener("change", function () {
+  updateImage(mapSelect.value);
+});
+
+// 페이지 로드 시 초기 이미지 설정
+window.onload = function () {
+  conDropdown.dispatchEvent(new Event("change"));
+};
+
 let maps = {};
 
 // JSON 데이터 처리
@@ -5,12 +104,34 @@ fetch("map.json")
   .then((response) => response.json())
   .then((data) => {
     maps = data;
-    initMap();
+    initializeDropdownOptions(); // 드롭다운 옵션 초기화
   })
   .catch((error) => console.error("Error loading JSON data:", error));
 
+function initializeDropdownOptions() {
+  conDropdown.addEventListener("change", function () {
+    const selectedRegion = conDropdown.value;
+    const options = mapOptions[selectedRegion];
+
+    // map-dropdown 옵션을 업데이트
+    mapDropdown.innerHTML = "";
+    options.forEach((option) => {
+      const opt = document.createElement("option");
+      opt.value = option;
+      opt.textContent = option;
+      mapDropdown.appendChild(opt);
+    });
+
+    // 첫 번째 옵션 선택 후 initMap 호출
+    mapDropdown.value = options[0];
+    initMap(); // 첫 번째 값에 대해 아이콘 표시
+  });
+
+  // 초기 설정
+  conDropdown.dispatchEvent(new Event("change"));
+}
+
 const imageContainer = document.getElementById("image-container");
-const mapButtons = document.querySelectorAll(".map-button");
 const dropdownContent = document.querySelector(".dropdown-content");
 
 let currentPortals = [];
@@ -51,9 +172,11 @@ function hideTooltip() {
 }
 
 function initMap() {
-  mapButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      const selectedMap = maps[this.getAttribute("data-map")];
+  mapDropdown.addEventListener("change", function () {
+    const selectedMap = maps[mapDropdown.value];
+    console.log("선택된 맵 데이터:", selectedMap);
+    if (selectedMap) {
+      // 배경 이미지 설정 및 현재 아이콘 목록 초기화
       imageContainer.style.backgroundImage = `url(${selectedMap.backgroundImage})`;
       imageContainer.innerHTML = "";
       currentPortals = [];
@@ -62,9 +185,9 @@ function initMap() {
       currentOverflows = [];
       currentDatacube = [];
       currentMobs = [];
-
       dropdownContent.innerHTML = "";
 
+      // 카테고리별로 체크박스를 생성
       if (selectedMap.portals && selectedMap.portals.length > 0) {
         createCheckbox(
           "포탈",
@@ -124,12 +247,11 @@ function initMap() {
           currentMobs
         );
       }
-
-      updateActiveButton(this);
-    });
+    }
   });
 
-  mapButtons[0].click();
+  // 페이지 로드 시 초기 맵 설정
+  mapDropdown.dispatchEvent(new Event("change"));
 }
 
 function createCheckbox(
@@ -186,8 +308,8 @@ function createCheckbox(
       evolIcon = document.createElement("img");
       evolIcon.src = "image/icon.png";
       evolIcon.style.position = "absolute";
-      evolIcon.style.top = `${item.top + 25}px`;
-      evolIcon.style.left = `${item.left + 8}px`;
+      evolIcon.style.top = `${item.top + 20}px`;
+      evolIcon.style.left = `${item.left + 5}px`;
       evolIcon.style.width = "20px";
       evolIcon.style.height = "20px";
       evolIcon.style.zIndex = "1001";
@@ -394,7 +516,7 @@ function updateActiveButton(activeButton) {
   activeButton.classList.add("active");
 }
 
-const dropdownButton = document.querySelector(".dropdown-button");
+const dropdownButton = document.querySelector(".dropdown-icon");
 const arrow = document.querySelector(".arrow");
 
 dropdownButton.addEventListener("click", function () {

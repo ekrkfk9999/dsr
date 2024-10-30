@@ -5,22 +5,22 @@
 }
 
 @font-face {
-  font-family: "Pretendard-Regular";
-  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+  font-family: "paybooc-Bold";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff")
     format("woff");
-  font-weight: 400;
+  font-weight: normal;
   font-style: normal;
 }
 
 body {
-  font-family: "Pretendard-Regular", sans-serif;
+  font-family: "paybooc-Bold", sans-serif;
   font-weight: normal;
   background-color: #f4f4f9;
 }
 
 .container1 {
-  width: 90%;
-  max-width: 1000px;
+  width: 100%;
+  max-width: 740px;
   margin: 20px auto;
   margin-top: 130px;
 }
@@ -193,11 +193,22 @@ header {
   }
 }
 
-.filters {
-  background-color: white;
+.main {
+  background-color: #0d0f1f;
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 10px;
+  height: 838px;
+  width: 740px;
+}
+
+.main > p {
+  color: #12aaf7;
+  font-size: 29px;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .filter-row {
@@ -253,14 +264,21 @@ header {
 }
 
 #image-container {
-  position: relative;
+  position: absolute;
+  top: 109px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 700px;
   height: 700px;
   background-size: cover;
+  border-radius: 10px;
   overflow: hidden;
-  margin-top: 20px;
-  margin-left: 130px;
   z-index: 1;
+}
+
+.map-image {
+  width: 700px;
+  height: 700px;
 }
 
 .portal-image,
@@ -347,44 +365,164 @@ header {
   z-index: 1000;
 }
 
-.dropdown {
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-icon {
+  font-family: "paybooc-Bold", sans-serif;
   position: absolute;
-  top: 305px;
-  left: 160px;
+  top: 64px;
+  left: 600px;
   z-index: 10;
-}
-
-.dropdown-button {
-  background-color: rgb(21, 19, 46);
+  background-color: #060a15;
   color: white;
+  width: 120px;
+  height: 33px;
   padding: 5px 6px;
-  font-size: 14px;
-  border: none;
+  font-size: 13px;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  border: 1px solid white;
+  text-align: center;
+  border: none;
+  box-shadow: 0 0 1px rgba(48, 164, 199, 0.3), 0 0 2px rgba(48, 164, 199, 0.2),
+    0 0 3px rgba(48, 164, 199, 0.1), 0 0 5px rgba(48, 164, 199, 0.1);
 }
 
-.dropdown-button:hover {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+.dropdown-con {
+  position: absolute;
+  top: 64px;
+  left: 20px;
+  background-color: #060a15;
+  color: white;
+  width: 120px;
+  height: 33px;
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: none;
+  box-shadow: 0 0 1px rgba(48, 164, 199, 0.3), 0 0 2px rgba(48, 164, 199, 0.2),
+    0 0 3px rgba(48, 164, 199, 0.1), 0 0 5px rgba(48, 164, 199, 0.1);
+}
+
+.dropdown-con select {
+  font-family: "paybooc-Bold", sans-serif;
+  width: 120px;
+  height: 33px;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 7px;
+  background-color: #060a15;
+  color: white;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown-con::after {
+  content: "▼";
+  color: white;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s;
+  pointer-events: none;
+}
+
+.dropdown-con.open::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.dropdown-map {
+  position: absolute;
+  top: 64px;
+  left: 150px;
+  background-color: #060a15;
+  color: white;
+  width: 120px;
+  height: 33px;
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: none;
+  box-shadow: 0 0 1px rgba(48, 164, 199, 0.3), 0 0 2px rgba(48, 164, 199, 0.2),
+    0 0 3px rgba(48, 164, 199, 0.1), 0 0 5px rgba(48, 164, 199, 0.1);
+}
+
+.dropdown-map select {
+  font-family: "paybooc-Bold", sans-serif;
+  width: 120px;
+  height: 33px;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 7px;
+  background-color: #060a15;
+  color: white;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown-map::after {
+  content: "▼";
+  color: white;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s;
+  pointer-events: none;
+}
+
+.dropdown-map.open::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.dropdown-icon:hover,
+.dropdown-con:hover,
+.dropdown-map:hover {
+  border-color: #2b9df4;
+  box-shadow: 0 0 5px rgba(60, 204, 246, 0.7), 0 0 8px rgba(60, 204, 246, 0.5),
+    0 0 11px rgba(60, 204, 246, 0.4), 0 0 14px rgba(60, 204, 246, 0.2);
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: rgba(21, 19, 46, 0.7);
+  top: 99px;
+  left: 600px;
+  background-color: #060a15;
   color: white;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 10;
-  font-size: 15px;
-  width: 113px;
+  font-size: 13px;
+  width: 120px;
   padding: 5px 10px;
   border-radius: 8px;
   margin-top: 5px;
-  border: 1px solid white;
+  border: none;
+  box-shadow: 0 0 1px rgba(48, 164, 199, 0.3), 0 0 2px rgba(48, 164, 199, 0.2),
+    0 0 3px rgba(48, 164, 199, 0.1), 0 0 5px rgba(48, 164, 199, 0.1);
 }
 
 .dropdown-content div {
@@ -401,6 +539,23 @@ header {
 .dropdown-content label {
   line-height: 1.5;
   vertical-align: middle;
+}
+
+.map-dropdown select {
+  font-family: "paybooc-Bold", sans-serif;
+  width: 306px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 10px;
+  appearance: none;
+  background-color: #0d0f1f;
+  color: white;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
 .arrow {

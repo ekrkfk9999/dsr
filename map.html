@@ -101,95 +101,32 @@
     <script src="assets/js/main.js"></script>
 
     <div class="container1" style="position: relative" ;>
-      <div class="filters">
-        <div class="filter-row">
-          <label class="filter-label">파일섬</label>
-          <div class="map-buttons">
-            <button class="map-button" data-map="시작의 마을">
-              시작의 마을
-            </button>
-            <button class="map-button" data-map="용의 눈 호수">
-              용의 눈 호수
-            </button>
-            <button class="map-button" data-map="기어 사바나">
-              기어 사바나
-            </button>
-            <button class="map-button" data-map="무한 산">무한 산</button>
-          </div>
-        </div>
-
-        <div class="filter-row">
-          <label class="filter-label">서버대륙</label>
-          <div class="map-buttons">
-            <button class="map-button" data-map="사막 지대">사막 지대</button>
-            <button class="map-button" data-map="어둠성 계곡">
-              어둠성 계곡
-            </button>
-            <button class="map-button" data-map="개굴몬 성 1F">
-              개굴몬 성 1F
-            </button>
-            <button class="map-button" data-map="개굴몬 성 2F">
-              개굴몬 성 2F
-            </button>
-            <button class="map-button" data-map="어둠성 내부">
-              어둠성 내부
-            </button>
-          </div>
-        </div>
-
-        <div class="filter-row">
-          <label class="filter-label">현실 세계</label>
-          <div class="map-buttons">
-            <button class="map-button" data-map="캠핑장">캠핑장</button>
-            <button class="map-button" data-map="빛의 언덕">빛의 언덕</button>
-            <button class="map-button" data-map="지하철 역">지하철 역</button>
-            <button class="map-button" data-map="오다이바 입구">
-              오다이바 입구
-            </button>
-            <button class="map-button" data-map="오다이바 북부">
-              오다이바 북부
-            </button>
-            <button class="map-button" data-map="시부야">시부야</button>
-            <button class="map-button" data-map="오다이바 남부">
-              오다이바 남부
-            </button>
-            <button class="map-button" data-map="국제 전시장">
-              국제 전시장
-            </button>
-          </div>
-        </div>
-
-        <div class="filter-row">
-          <label class="filter-label">스파이럴 마운틴</label>
-          <div class="map-buttons">
-            <button class="map-button" data-map="네트워크 바다">
-              네트워크 바다
-            </button>
-            <button class="map-button" data-map="수목 지구">수목 지구</button>
-            <button class="map-button" data-map="강철 도시">강철 도시</button>
-            <button class="map-button" data-map="강철 도시 지하">
-              강철 도시 지하
-            </button>
-            <button class="map-button" data-map="어둠의 권역">
-              어둠의 권역
-            </button>
-            <button class="map-button" data-map="스파이럴 마운틴 정상">
-              스파이럴 마운틴 정상
-            </button>
-            <button class="map-button" data-map="???">???</button>
-          </div>
-        </div>
-
+      <div class="main">
+        <p>지도</p>
         <div class="dropdown">
-          <button class="dropdown-button">
+          <div class="dropdown-con">
+            <select id="con-dropdown">
+              <option value="파일섬" selected>파일섬</option>
+              <option value="서버대륙">서버대륙</option>
+              <option value="현실 세계">현실 세계</option>
+              <option value="스파이럴 마운틴">스파이럴 마운틴</option>
+            </select>
+          </div>
+          <div class="dropdown-map">
+            <select id="map-dropdown">
+              
+            </select>
+          </div>
+          <button class="dropdown-icon">
             아이콘 필터 <span class="arrow">▼</span>
           </button>
-
           <div class="dropdown-content" id="dropdown-content"></div>
         </div>
-
-        <div id="image-container"></div>
       </div>
+
+      <div id="image-container">    
+      </div>
+    </div>
     </div>
   </body>
 </html>
