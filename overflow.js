@@ -125,8 +125,10 @@ function updateMobImages(map, stage) {
           const container = document.createElement("div");
           container.classList.add("image-container");
 
+          const sanitizedFileName = mob.name.replace(/:/g, "_");
+
           const img = document.createElement("img");
-          img.src = `image/digimon/${mob.name}/${mob.name}.webp`;
+          img.src = `image/digimon/${sanitizedFileName}/${sanitizedFileName}.webp`;
           img.alt = mob.name;
 
           const transformedAttribute =

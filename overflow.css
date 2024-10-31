@@ -368,8 +368,8 @@ header {
 }
 
 .mob .image-container {
-  position: relative;
-  border-radius: 10px;
+  position: relative; /* 가상 요소의 기준이 될 상대 위치 설정 */
+  display: inline-block;
 }
 
 .mob .image-container img {
@@ -378,16 +378,27 @@ header {
   margin: 5px 0 3px 14px;
   width: 50px;
   height: auto;
+}
+
+.mob .image-container::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  width: 40px; /* 배경 이미지 크기 설정 */
+  height: 40px;
   background-image: url("image/item/item5.png");
-  background-position: top left, center;
   background-repeat: no-repeat;
   background-size: auto, contain;
+  background-position: top left, center;
+  z-index: 1; /* img 위에 오도록 설정 */
+  pointer-events: none; /* 클릭 불가 */
 }
 
 .mob .overlay {
   position: absolute;
-  bottom: 7px;
-  right: 13px;
+  bottom: 8px;
+  right: -3px;
   color: #fff;
   font-size: 12px;
   padding: 2px 5px;
