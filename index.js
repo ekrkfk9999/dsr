@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background-repeat: no-repeat; /* 배경 이미지 반복 제거 */
                 background-size: auto, contain; /* 첫 번째 이미지 자동 크기, 두 번째 이미지 크기 조정 */
                 border-radius: 5px;">
-              <span style="position: absolute; bottom: 5px; right: 0px; color: white; font-size: 11px; padding: 1px 3px; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;">
+              <span style="position: absolute; bottom: 0px; right: 0px; color: white; font-size: 11px; padding: 1px 3px; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;">
                 ${itemQty ? itemQty.trim() : ""}
               </span>
             </div>
