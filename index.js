@@ -96,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((response) => response.json())
     .then((data) => {
       const couponContainer = document.querySelector(".coupon-container");
+      let availableCoupons = 0;
 
       for (let couponName in data) {
         const couponData = data[couponName];
@@ -104,6 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const endDate = new Date(endDateStr);
 
         if (today <= endDate) {
+          availableCoupons++;
           const couponEl = document.createElement("div");
           couponEl.classList.add("coupon-list");
 
@@ -115,7 +117,6 @@ document.addEventListener("DOMContentLoaded", function () {
           periodEl.classList.add("coupon-period");
           periodEl.innerHTML = `<p>${couponData.period}</p>`;
 
-          // 구성품 확인용 텍스트 요소 생성
           const showItemsText = document.createElement("span");
           showItemsText.classList.add("show-items");
           showItemsText.textContent = "구성품 확인";
@@ -142,11 +143,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 display: inline-block; 
                 width: 45px; 
                 height: 45px; 
-                background-color: #0a0e1a; /* 배경색 설정 */
-                background-image: url('${backgroundPath}'), url('${imgPath}'); /* 두 개의 이미지 설정 */
-                background-position: top left, center; /* 첫 번째 이미지는 좌상단, 두 번째 이미지는 중앙 */
-                background-repeat: no-repeat; /* 배경 이미지 반복 제거 */
-                background-size: auto, contain; /* 첫 번째 이미지 자동 크기, 두 번째 이미지 크기 조정 */
+                background-color: #0a0e1a;
+                background-image: url('${backgroundPath}'), url('${imgPath}'); 
+                background-position: top left, center;
+                background-repeat: no-repeat;
+                background-size: auto, contain;
                 border-radius: 5px;">
               <span style="position: absolute; bottom: 0px; right: 0px; color: white; font-size: 11px; padding: 1px 3px; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;">
                 ${itemQty ? itemQty.trim() : ""}
@@ -193,6 +194,12 @@ document.addEventListener("DOMContentLoaded", function () {
               .catch((err) => console.error("복사 실패:", err));
           });
         }
+      }
+      if (availableCoupons === 0) {
+        const noCouponsEl = document.createElement("p");
+        noCouponsEl.textContent = "현재 사용 가능한 쿠폰이 없습니다.";
+        noCouponsEl.style.fontSize = "13px";
+        couponContainer.appendChild(noCouponsEl);
       }
     })
     .catch((error) => console.error("Error loading coupon data:", error));
