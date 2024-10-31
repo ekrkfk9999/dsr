@@ -12,6 +12,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "paybooc-Bold";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   font-family: "Pretendard-Regular", sans-serif;
   font-weight: normal;
@@ -821,4 +829,122 @@ tbody {
 .fc-currentMonth-button:hover,
 .fc-customText-button:hover {
   background: none;
+}
+
+.calendar-container {
+  width: 100%;
+  margin: 130px auto 0;
+  padding: 0 10%;
+  display: flex;
+  align-items: flex-start;
+}
+
+.coupon {
+  margin-left: 130px;
+  background-color: #f0f0f0;
+  width: 200px;
+  height: auto;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  border: #c0c0c0 1px solid;
+  position: relative;
+}
+
+.overflow {
+  margin-right: 130px;
+  background-color: #f0f0f0;
+  width: 200px;
+  height: auto;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  border: #c0c0c0 1px solid;
+  position: relative;
+}
+
+.overflow-title {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 10px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  width: calc(100% + 20px);
+  display: block;
+  margin: -10px 0 10px -10px;
+  box-sizing: border-box;
+}
+
+.coupon-list::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  height: 1px;
+  margin-top: 5px;
+  background-color: #c0c0c0;
+}
+.coupon-list:last-child::after {
+  content: none;
+}
+
+.coupon-title {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 10px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  width: calc(100% + 20px);
+  display: block;
+  margin: -10px 0 10px -10px;
+  box-sizing: border-box;
+}
+
+#calendar {
+  flex-grow: 0.4;
+}
+
+.coupon-name {
+  margin-top: 10px;
+  font-weight: bold;
+}
+.coupon-period {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.coupon-number {
+  cursor: pointer;
+}
+
+.today-day {
+  font-size: 13px;
+}
+
+.tooltip-coupon {
+  font-family: "paybooc-Bold";
+  position: absolute;
+  background-color: #1c233a;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  display: none;
+  z-index: 1000;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
+.show-items {
+  margin-bottom: 10px;
+  display: inline-block;
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  padding: 2px 4px;
+  font-size: 13px;
+  cursor: pointer;
+  margin-left: 5px;
 }
