@@ -62,10 +62,53 @@ function displayMobButtons(detectorData, detector, csvData) {
         .forEach((btn) => btn.classList.remove("active"));
       button.classList.add("active");
       showDigimonInfo(detector, digimonName, digimon, csvData, detectorData);
+      if (digimonName === "묘티스몬") {
+        createVenomMyotismonButton(detectorData, detector, csvData);
+      } else {
+        removeVenomMyotismonButton();
+      }
     });
 
     mobButtonsContainer.appendChild(button);
   });
+}
+
+// 베놈묘티스몬 버튼 추가 함수
+function createVenomMyotismonButton(detectorData, detector, csvData) {
+  const mobButtonsContainer = document.querySelector(".mob-buttons");
+
+  // 베놈묘티스몬 버튼이 이미 있는지 확인
+  if (document.querySelector(".venom-myotismon-button")) return;
+
+  const venomButton = document.createElement("button");
+  venomButton.className = "mob-button venom-myotismon-button";
+  venomButton.innerText = "베놈묘티스몬";
+
+  venomButton.addEventListener("click", () => {
+    document
+      .querySelectorAll(".mob-button")
+      .forEach((btn) => btn.classList.remove("active"));
+    venomButton.classList.add("active");
+
+    const venomDigimon = detectorData[detector]["악역 디지몬"]["베놈묘티스몬"];
+    showDigimonInfo(
+      detector,
+      "베놈묘티스몬",
+      venomDigimon,
+      csvData,
+      detectorData
+    );
+  });
+
+  mobButtonsContainer.appendChild(venomButton);
+}
+
+// 베놈묘티스몬 버튼 삭제 함수
+function removeVenomMyotismonButton() {
+  const venomButton = document.querySelector(".venom-myotismon-button");
+  if (venomButton) {
+    venomButton.remove();
+  }
 }
 
 function showDigimonInfo(
