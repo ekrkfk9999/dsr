@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         title: "점핑 익스프레스",
         start: "2024-10-10",
-        end: "2024-11-7",
+        end: "2024-11-07",
         backgroundColor: "pink",
       },
       {
