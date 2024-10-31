@@ -30,6 +30,12 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     events: [
       {
+        title: "점핑 익스프레스",
+        start: "2024-10-10",
+        end: "2024-11-7",
+        backgroundColor: "pink",
+      },
+      {
         title: "디지패스 2024 시즌11",
         start: "2024-10-24",
         end: "2024-11-21",
