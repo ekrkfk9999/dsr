@@ -124,26 +124,37 @@ document.addEventListener("DOMContentLoaded", function () {
           tooltip.classList.add("tooltip-coupon");
 
           couponData.items.forEach((item) => {
-            const [itemName, itemQty] = item.split("x");
+            const [itemName, itemQty, itemGrade] = item.split("x");
             const sanitizedName = itemName.trim().replace(/%/g, "^");
             const imgPath = `image/item/${sanitizedName}.png`;
+            const backgroundPath = `image/item/item${itemGrade.trim()}.png`;
 
             const itemElement = document.createElement("div");
             itemElement.classList.add("tooltip-item");
             itemElement.style.display = "flex";
             itemElement.style.alignItems = "center";
             itemElement.style.gap = "10px";
+            itemElement.style.marginBottom = "10px";
 
-            // 이미지와 개수를 포함한 HTML 추가
             itemElement.innerHTML = `
-          <div style="position: relative; display: inline-block;">
-            <img src="${imgPath}" alt="${itemName.trim()}" style="width: 45px; height: 45px; background-color: #0a0e1a; border-radius: 5px;">
-            <span style="position: absolute; bottom: 5px; right: 0px; color: white; font-size: 11px; padding: 1px 3px; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;">${
-              itemQty ? itemQty.trim() : ""
-            }</span>
-          </div>
-          <span>${itemName.trim()}</span>
-        `;
+            <div style="
+                position: relative; 
+                display: inline-block; 
+                width: 45px; 
+                height: 45px; 
+                background-color: #0a0e1a; /* 배경색 설정 */
+                background-image: url('${backgroundPath}'), url('${imgPath}'); /* 두 개의 이미지 설정 */
+                background-position: top left, center; /* 첫 번째 이미지는 좌상단, 두 번째 이미지는 중앙 */
+                background-repeat: no-repeat; /* 배경 이미지 반복 제거 */
+                background-size: auto, contain; /* 첫 번째 이미지 자동 크기, 두 번째 이미지 크기 조정 */
+                border-radius: 5px;">
+              <span style="position: absolute; bottom: 5px; right: 0px; color: white; font-size: 11px; padding: 1px 3px; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;">
+                ${itemQty ? itemQty.trim() : ""}
+              </span>
+            </div>
+            <span>${itemName.trim()}</span>
+          `;
+
             tooltip.appendChild(itemElement);
           });
 
