@@ -959,3 +959,16 @@ tbody {
   cursor: pointer;
   margin-left: 5px;
 }
+
+.locations-today a {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.locations-today a:last-child {
+  margin-bottom: 0;
+}
+
+.locations-today {
+  margin-top: 10px;
+}
