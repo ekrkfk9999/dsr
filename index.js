@@ -246,7 +246,7 @@ document.addEventListener("DOMContentLoaded", function () {
   for (const location in schedule) {
     if (schedule[location].includes(todayDay)) {
       const link = locationLinks[location];
-      locationsToday.push(`<a href="${link}" target="_blank">${location}</a>`);
+      locationsToday.push(`<a href="${link}">${location}</a>`);
     }
   }
 
