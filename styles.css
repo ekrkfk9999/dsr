@@ -867,7 +867,11 @@ tbody {
 .kakaopay img {
   width: 140px;
   height: auto;
-  margin: 10px 0 10px 0;
+  margin: 10px 0 0 0;
+}
+
+.kptext {
+  font-size: 11px;
 }
 
 .overflow {
