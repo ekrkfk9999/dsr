@@ -279,3 +279,20 @@ selectElement.addEventListener("click", function () {
 selectElement.addEventListener("blur", function () {
   selectContainer.classList.remove("open");
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const urlParams = new URLSearchParams(window.location.search);
+  const selectedMap = urlParams.get("map") || "기어 사바나";
+
+  const mapDropdown = document.getElementById("map-dropdown");
+  mapDropdown.value = selectedMap;
+
+  const selectPage = document.querySelector(".select-page");
+  selectPage.style.backgroundImage = `url('image/overflow/${selectedMap}.png')`;
+
+  setActiveDays(selectedMap);
+
+  const defaultStage =
+    document.querySelector(".stage-btn.active")?.textContent || "1 Stage";
+  updateMobImages(selectedMap, defaultStage);
+});

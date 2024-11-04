@@ -30,12 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     events: [
       {
-        title: "점핑 익스프레스",
-        start: "2024-10-10",
-        end: "2024-11-07",
-        backgroundColor: "pink",
-      },
-      {
         title: "디지패스 2024 시즌11",
         start: "2024-10-24",
         end: "2024-11-21",
@@ -56,6 +50,12 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         title: "2.51 업데이트",
         start: "2024-11-07",
+        backgroundColor: "green",
+        textColor: "white",
+      },
+      {
+        title: "2.52 업데이트",
+        start: "2024-11-21",
         backgroundColor: "green",
         textColor: "white",
       },
@@ -233,16 +233,26 @@ document.addEventListener("DOMContentLoaded", function () {
     "스파이럴 마운틴": ["월요일", "목요일", "일요일"],
   };
 
+  const locationLinks = {
+    "기어 사바나": "overflow.html?map=기어 사바나",
+    "무한 산": "overflow.html?map=무한 산",
+    "사막 지대": "overflow.html?map=사막 지대",
+    "어둠성 계곡": "overflow.html?map=어둠성 계곡",
+    "현실 세계": "overflow.html?map=현실 세계",
+    "스파이럴 마운틴": "overflow.html?map=스파이럴 마운틴",
+  };
+
   const locationsToday = [];
   for (const location in schedule) {
     if (schedule[location].includes(todayDay)) {
-      locationsToday.push(location);
+      const link = locationLinks[location];
+      locationsToday.push(`<a href="${link}" target="_blank">${location}</a>`);
     }
   }
 
   const locationDiv = document.createElement("div");
   locationDiv.classList.add("locations-today");
-  locationDiv.innerHTML = `${locationsToday.join("<br>")}`;
+  locationDiv.innerHTML = locationsToday.join("<br>");
 
   document.querySelector(".overflow").appendChild(locationDiv);
 });
